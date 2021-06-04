@@ -45,8 +45,8 @@ class Data(object):
 		if self.images != [] and self.labels != []:
 			file_images = open('resources\pickled_data\images_pickled', 'wb')
 			file_labels = open('resources\pickled_data\labels_pickled', 'wb')
-			pkl.dump(self.images, file_images, protocol=2)
-			pkl.dump(self.labels, file_labels, protocol=2)
+			pkl.dump(self.images, file_images, protocol=pkl.HIGHEST_PROTOCOL)
+			pkl.dump(self.labels, file_labels, protocol=pkl.HIGHEST_PROTOCOL)
 			file_images.close()
 			file_labels.close()
 

@@ -1,17 +1,23 @@
-# import matplotlib.pyplot as plt
+import program.data
+import time
+
+xxx = program.data.Data()
+
+
+# start = time.time()
+# xxx.import_data()
+# end = time.time()
+# print(end - start)
 #
-# import program.data
 #
-# xxx = program.data.Data()
-# xxx.load()
+# start = time.time()
+# xxx.dump_data()
+# end = time.time()
+# print(end - start)
 #
-# img = xxx.images[0]
-#
-# plt.imshow(img)
-# plt.show()
-#
-#
-# img = xxx.images[-1]
-#
-# plt.imshow(img)
-# plt.show()
+
+
+start = time.time()
+xxx.load_data()
+end = time.time()
+print(end - start)
