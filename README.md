@@ -52,7 +52,6 @@
 
 
 
-<!-- szczegóły-pracy-inżynierskiej -->
 ## Szczegóły pracy inżynierskiej
 
 ### Temat pracy
