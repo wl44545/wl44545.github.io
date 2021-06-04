@@ -2,11 +2,9 @@
 Moduł zawierający obsługę danych źródłowych.
 """
 import os
-
-import cv2
-import numpy as np
 import matplotlib.pyplot as plt
 import pickle as pkl
+
 
 class Data(object):
 	"""
@@ -21,6 +19,9 @@ class Data(object):
 		self.labels = []
 
 	def import_data(self):
+		"""
+		Odczyt prosto z plików .png.
+		"""
 		for entry in os.scandir(r'resources\raw_data\normal'):
 			if entry.path.endswith(".png") and entry.is_file():
 				image = plt.imread(entry.path)
@@ -37,12 +38,25 @@ class Data(object):
 				self.images.append(image)
 				self.labels.append(2)
 
-
 	def dump_data(self):
-		file_images = open('resources\pickled_data\images_pickled', 'wb')
-		file_labels = open('resources\pickled_data\labels_pickled', 'wb')
-		pkl.dump(self.images, file_images, protocol=2)
-		pkl.dump(self.labels, file_labels, protocol=2)
+		"""
+		Zapis skompresowanych danych.
+		"""
+		if self.images != [] and self.labels != []:
+			file_images = open('resources\pickled_data\images_pickled', 'wb')
+			file_labels = open('resources\pickled_data\labels_pickled', 'wb')
+			pkl.dump(self.images, file_images, protocol=2)
+			pkl.dump(self.labels, file_labels, protocol=2)
+			file_images.close()
+			file_labels.close()
+
+	def load_data(self):
+		"""
+		Odczyt skompresowanych danych.
+		"""
+		file_images = open('resources\pickled_data\images_pickled', 'rb')
+		file_labels = open('resources\pickled_data\labels_pickled', 'rb')
+		self.images = pkl.load(file_images)
+		self.labels = pkl.load(file_labels)
 		file_images.close()
 		file_labels.close()
-
