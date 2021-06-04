@@ -32,10 +32,86 @@ Moduł zawierający miary jakości klasyfikacji.
 &#34;&#34;&#34;
 
 
-class MeasuringQuality(object):
+class MeasuringQuality:
         &#34;&#34;&#34;
         Miary jakości klasyfikacji.
-        &#34;&#34;&#34;</code></pre>
+        &#34;&#34;&#34;
+        def __init__(self):
+                &#34;&#34;&#34;
+                Konstruktor.
+                &#34;&#34;&#34;
+                self.true_positive = 0
+                self.true_negative = 0
+                self.false_positive = 0
+                self.false_negative = 0
+                self.recall = 0
+                self.sensitivity = 0
+                self.specificity = 0
+                self.fall_out = 0
+                self.precision = 0
+                self.accuracy = 0
+                self.error = 0
+                self.f1 = 0
+
+                self.confusion_matrix = None
+                self.roc_curve = None
+
+                self.actual_labels = None
+                self.predicted_labels = None
+
+        def update(self, actual, predicted):
+                &#34;&#34;&#34;
+                Metoda przesyłająca etykietki klas.
+                &#34;&#34;&#34;
+                self.actual_labels = actual
+                self.predicted_labels = predicted
+
+        def calculate(self):
+                &#34;&#34;&#34;
+                Metoda obliczająca statystyki.
+                &#34;&#34;&#34;
+                for i in range(len(self.actual_labels)):
+                        if self.actual_labels[i] == 0 and self.predicted_labels[i] == 0:
+                                self.true_negative += 1
+                        elif self.actual_labels[i] == 1 and self.predicted_labels[i] == 1:
+                                self.true_positive += 1
+                        elif self.actual_labels[i] == 1 and self.predicted_labels[i] == 0:
+                                self.false_negative += 1
+                        elif self.actual_labels[i] == 0 and self.predicted_labels[i] == 1:
+                                self.false_positive += 1
+
+                if (self.true_negative + self.true_positive) != 0:
+                        self.recall = self.true_positive / (self.true_negative + self.true_positive)
+                else:
+                        self.recall = 0
+
+                if (self.true_positive + self.false_negative) != 0:
+                        self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
+                else:
+                        self.sensitivity = 0
+
+                if (self.false_positive + self.true_negative) != 0:
+                        self.specificity = self.true_negative / (self.false_positive + self.true_negative)
+                else:
+                        self.specificity = 0
+
+                if (self.false_positive + self.false_negative) != 0:
+                        self.fall_out = self.false_negative / (self.false_positive + self.false_negative)
+                else:
+                        self.fall_out = 0
+
+                if (self.true_positive + self.false_positive) != 0:
+                        self.precision = self.true_positive / (self.true_positive + self.false_positive)
+                else:
+                        self.precision = 0
+
+                self.accuracy = (self.true_positive + self.true_negative) / len(self.actual_labels)
+                self.error = (self.false_negative + self.false_positive) / len(self.actual_labels)
+
+                if (self.recall + self.sensitivity) != 0:
+                        self.f1 = (2 * self.recall * self.sensitivity) / (self.recall + self.sensitivity)
+                else:
+                        self.f1 = 0</code></pre>
 </details>
 </section>
 <section>
@@ -51,16 +127,170 @@ class MeasuringQuality(object):
 <span>class <span class="ident">MeasuringQuality</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Miary jakości klasyfikacji.</p></div>
+<div class="desc"><p>Miary jakości klasyfikacji.</p>
+<p>Konstruktor.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class MeasuringQuality(object):
+<pre><code class="python">class MeasuringQuality:
         &#34;&#34;&#34;
         Miary jakości klasyfikacji.
-        &#34;&#34;&#34;</code></pre>
+        &#34;&#34;&#34;
+        def __init__(self):
+                &#34;&#34;&#34;
+                Konstruktor.
+                &#34;&#34;&#34;
+                self.true_positive = 0
+                self.true_negative = 0
+                self.false_positive = 0
+                self.false_negative = 0
+                self.recall = 0
+                self.sensitivity = 0
+                self.specificity = 0
+                self.fall_out = 0
+                self.precision = 0
+                self.accuracy = 0
+                self.error = 0
+                self.f1 = 0
+
+                self.confusion_matrix = None
+                self.roc_curve = None
+
+                self.actual_labels = None
+                self.predicted_labels = None
+
+        def update(self, actual, predicted):
+                &#34;&#34;&#34;
+                Metoda przesyłająca etykietki klas.
+                &#34;&#34;&#34;
+                self.actual_labels = actual
+                self.predicted_labels = predicted
+
+        def calculate(self):
+                &#34;&#34;&#34;
+                Metoda obliczająca statystyki.
+                &#34;&#34;&#34;
+                for i in range(len(self.actual_labels)):
+                        if self.actual_labels[i] == 0 and self.predicted_labels[i] == 0:
+                                self.true_negative += 1
+                        elif self.actual_labels[i] == 1 and self.predicted_labels[i] == 1:
+                                self.true_positive += 1
+                        elif self.actual_labels[i] == 1 and self.predicted_labels[i] == 0:
+                                self.false_negative += 1
+                        elif self.actual_labels[i] == 0 and self.predicted_labels[i] == 1:
+                                self.false_positive += 1
+
+                if (self.true_negative + self.true_positive) != 0:
+                        self.recall = self.true_positive / (self.true_negative + self.true_positive)
+                else:
+                        self.recall = 0
+
+                if (self.true_positive + self.false_negative) != 0:
+                        self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
+                else:
+                        self.sensitivity = 0
+
+                if (self.false_positive + self.true_negative) != 0:
+                        self.specificity = self.true_negative / (self.false_positive + self.true_negative)
+                else:
+                        self.specificity = 0
+
+                if (self.false_positive + self.false_negative) != 0:
+                        self.fall_out = self.false_negative / (self.false_positive + self.false_negative)
+                else:
+                        self.fall_out = 0
+
+                if (self.true_positive + self.false_positive) != 0:
+                        self.precision = self.true_positive / (self.true_positive + self.false_positive)
+                else:
+                        self.precision = 0
+
+                self.accuracy = (self.true_positive + self.true_negative) / len(self.actual_labels)
+                self.error = (self.false_negative + self.false_positive) / len(self.actual_labels)
+
+                if (self.recall + self.sensitivity) != 0:
+                        self.f1 = (2 * self.recall * self.sensitivity) / (self.recall + self.sensitivity)
+                else:
+                        self.f1 = 0</code></pre>
 </details>
+<h3>Methods</h3>
+<dl>
+<dt id="program.measuring_quality.measuring_quality.MeasuringQuality.calculate"><code class="name flex">
+<span>def <span class="ident">calculate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Metoda obliczająca statystyki.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate(self):
+        &#34;&#34;&#34;
+        Metoda obliczająca statystyki.
+        &#34;&#34;&#34;
+        for i in range(len(self.actual_labels)):
+                if self.actual_labels[i] == 0 and self.predicted_labels[i] == 0:
+                        self.true_negative += 1
+                elif self.actual_labels[i] == 1 and self.predicted_labels[i] == 1:
+                        self.true_positive += 1
+                elif self.actual_labels[i] == 1 and self.predicted_labels[i] == 0:
+                        self.false_negative += 1
+                elif self.actual_labels[i] == 0 and self.predicted_labels[i] == 1:
+                        self.false_positive += 1
+
+        if (self.true_negative + self.true_positive) != 0:
+                self.recall = self.true_positive / (self.true_negative + self.true_positive)
+        else:
+                self.recall = 0
+
+        if (self.true_positive + self.false_negative) != 0:
+                self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
+        else:
+                self.sensitivity = 0
+
+        if (self.false_positive + self.true_negative) != 0:
+                self.specificity = self.true_negative / (self.false_positive + self.true_negative)
+        else:
+                self.specificity = 0
+
+        if (self.false_positive + self.false_negative) != 0:
+                self.fall_out = self.false_negative / (self.false_positive + self.false_negative)
+        else:
+                self.fall_out = 0
+
+        if (self.true_positive + self.false_positive) != 0:
+                self.precision = self.true_positive / (self.true_positive + self.false_positive)
+        else:
+                self.precision = 0
+
+        self.accuracy = (self.true_positive + self.true_negative) / len(self.actual_labels)
+        self.error = (self.false_negative + self.false_positive) / len(self.actual_labels)
+
+        if (self.recall + self.sensitivity) != 0:
+                self.f1 = (2 * self.recall * self.sensitivity) / (self.recall + self.sensitivity)
+        else:
+                self.f1 = 0</code></pre>
+</details>
+</dd>
+<dt id="program.measuring_quality.measuring_quality.MeasuringQuality.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, actual, predicted)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Metoda przesyłająca etykietki klas.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, actual, predicted):
+        &#34;&#34;&#34;
+        Metoda przesyłająca etykietki klas.
+        &#34;&#34;&#34;
+        self.actual_labels = actual
+        self.predicted_labels = predicted</code></pre>
+</details>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -80,6 +310,10 @@ class MeasuringQuality(object):
 <ul>
 <li>
 <h4><code><a title="program.measuring_quality.measuring_quality.MeasuringQuality" href="#program.measuring_quality.measuring_quality.MeasuringQuality">MeasuringQuality</a></code></h4>
+<ul class="">
+<li><code><a title="program.measuring_quality.measuring_quality.MeasuringQuality.calculate" href="#program.measuring_quality.measuring_quality.MeasuringQuality.calculate">calculate</a></code></li>
+<li><code><a title="program.measuring_quality.measuring_quality.MeasuringQuality.update" href="#program.measuring_quality.measuring_quality.MeasuringQuality.update">update</a></code></li>
+</ul>
 </li>
 </ul>
 </li>
