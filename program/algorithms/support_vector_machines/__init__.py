@@ -1,0 +1,3 @@
+"""
+Klasyfikatory SVM
+"""
