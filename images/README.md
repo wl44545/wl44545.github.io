@@ -10,7 +10,7 @@
 <br>
 <p align="center">
 	<a href="https://github.com/wl44545/praca-inzynierska">
-		<img src="images/logo.png" alt="Logo" width="80" height="80">
+		<img src="logo.png" alt="Logo" width="80" height="80">
 	</a>
 	<h2 align="center">Praca inżynierska</h2>
 	<h3 align="center">Rozpoznawanie choroby COVID-19 na zdjęciach rentgenowskich płuc z wykorzystaniem
