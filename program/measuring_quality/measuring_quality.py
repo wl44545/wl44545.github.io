@@ -26,3 +26,18 @@ class MeasuringQuality:
 
 		self.confusion_matrix = None
 		self.roc_curve = None
+
+		self.actual_labels = None
+		self.predicted_labels = None
+
+	def update(self, actual, predicted):
+		"""
+		Metoda przesyłająca etykietki klas.
+		:param actual:
+		:type actual:
+		:param predicted:
+		:type predicted:
+		"""
+		self.actual_labels = actual
+		self.predicted_labels = predicted
+
