@@ -1,12 +1,10 @@
-
+<!--
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
+-->
 
 
 <br>
@@ -23,34 +21,31 @@
 <br>
 <br>
 
-
 <details open="open">
   <summary>Spis treści</summary>
   <ol>
     <li>
       <a href="#szczegóły-pracy-inżynierskiej">Szczegóły pracy inżynierskiej</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#temat-pracy">Temat pracy</a></li>
+		<li><a href="#cel-pracy">Cel pracy</a></li>
+		<li><a href="#zakres-prac">Zakres prac</a></li>
+		<li><a href="#opiekun-pracy">Opiekun pracy</a></li>
+		<li><a href="#katedra">Katedra</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
+	<li>
+      <a href="#implementacja">Implementacja</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+		<li><a href="#planowany-harmonogram">Planowany harmonogram</a></li>
+		<li><a href="#postęp-prac">Postęp prac</a></li>
+		<li><a href="#biblioteki">Biblioteki</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#dokumentacja">Dokumentacja</a></li>
+	<li><a href="#kontakt">Kontakt</a></li>
   </ol>
 </details>
-
-
-
 
 ## Szczegóły pracy inżynierskiej
 
@@ -85,8 +80,90 @@ Wydział Informatyki
 Katedra Sztucznej Inteligencji i Matematyki Stosowanej
 
 
+## Implementacja
 
-## Biblioteki
+### Planowany harmonogram
+
+A. Część programistyczna
+1. Opracowanie zbioru danych
+	* zebranie danych
+	* skalowanie obrazów
+	* przygotowanie danych
+2. Implementacja algorytmów
+	* Naiwny klasyfikator Bayesa
+	* Boosting
+		* AdaBoost
+		* GradientBoost
+	* SVM
+		* Liniowe SVM
+		* Nieliniowe SVM
+	* Głębokie sieci neuronowe
+		* VGG-19
+		* ResNet-50
+		* EfficientNet-B0
+		* DenseNet-121
+3. Opracowanie miar jakości klasyfikacji
+	* Krzywa ROC
+	* Tabele kontyngencji
+		* wyniki prawdziwie pozytywne
+		* wyniki prawdziwie negatywne
+		* wyniki fałszywie pozytywne
+		* wyniki fałszywie negatywne
+	* Miary jakości
+		* dokładność
+		* prezycja
+		* czułość
+		* specyficzność
+		* F1
+
+B. Część opisowa
+1. Wstęp
+2. COVID-19
+3. Uczenie maszynowe
+	* Opis
+	* Algorytmy
+		* Naiwny klasyfikator Bayesa
+		* Boosting
+			* AdaBoost
+			* GradientBoost
+		* SVM
+			* Liniowe SVM
+			* Nieliniowe SVM
+		* Głębokie sieci neuronowe
+			* VGG-19
+			* ResNet-50
+			* EfficientNet-B0
+			* DenseNet-121
+4. Zbiór danych
+	* Źródło
+	* Zawartość
+	* Opis zdjęć
+5. Metodologia
+	* Opis
+	* Obróbka danych
+6. Wyniki
+	* Krzywa ROC
+	* Tabele kontyngencji
+		* wyniki prawdziwie pozytywne
+		* wyniki prawdziwie negatywne
+		* wyniki fałszywie pozytywne
+		* wyniki fałszywie negatywne
+	* Miary jakości
+		* dokładność
+		* prezycja
+		* czułość
+		* specyficzność
+		* F1	
+7. Porównanie wyników
+8. Wnioski	
+
+
+### Postęp prac
+
+* BRAK
+
+
+### Biblioteki
 * [TensorFlow](https://www.tensorflow.org/)
 * [Keras](https://keras.io/)
 * [NumPy](https://numpy.org/)
@@ -102,15 +179,11 @@ Katedra Sztucznej Inteligencji i Matematyki Stosowanej
 Łukasz Więckowski
 <br>
 [lukasz_wieckowski@zut.edu.pl](lukasz_wieckowski@zut.edu.pl)
+<br>
+[linkedin.com/lukaszwieckowski](https://www.linkedin.com/in/lukaszwieckowski)
 
 
 
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/wl44545/praca-inzynierska.svg?style=for-the-badge
 [contributors-url]: https://github.com/wl44545/praca-inzynierska/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/wl44545/praca-inzynierska.svg?style=for-the-badge
@@ -123,4 +196,3 @@ Katedra Sztucznej Inteligencji i Matematyki Stosowanej
 [license-url]: https://github.com/wl44545/praca-inzynierska/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
