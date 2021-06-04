@@ -1,0 +1,3 @@
+"""
+Katalog przechowujący wszystkie dane.
+"""
