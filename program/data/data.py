@@ -2,8 +2,12 @@
 Moduł zawierający obsługę danych źródłowych.
 """
 import os
+from os import path
+import cv2
 import matplotlib.pyplot as plt
 import pickle as pkl
+
+from tqdm import tqdm
 
 
 class Data(object):
@@ -20,23 +24,49 @@ class Data(object):
 
 	def import_data(self):
 		"""
-		Odczyt prosto z plików .png.
+		Odczyt prosto z plików png.
 		"""
-		for entry in os.scandir(r'resources\raw_data\normal'):
-			if entry.path.endswith(".png") and entry.is_file():
-				image = plt.imread(entry.path)
-				self.images.append(image)
-				self.labels.append(0)
-		for entry in os.scandir(r'resources\raw_data\pneumonia'):
-			if entry.path.endswith(".png") and entry.is_file():
-				image = plt.imread(entry.path)
-				self.images.append(image)
-				self.labels.append(1)
-		for entry in os.scandir(r'resources\raw_data\covid'):
-			if entry.path.endswith(".png") and entry.is_file():
-				image = plt.imread(entry.path)
-				self.images.append(image)
-				self.labels.append(2)
+
+		for file in tqdm(os.listdir(r'resources\raw_data\normal')):
+			img_path = os.path.join(r'resources\raw_data\normal', file)
+			print(img_path)
+			image = cv2.imread(img_path)
+			self.images.append(image)
+			self.labels.append(0)
+
+		for file in tqdm(os.listdir(r'resources\raw_data\pneumonia')):
+			img_path = os.path.join(r'resources\raw_data\pneumonia', file)
+			print(img_path)
+			image = cv2.imread(img_path)
+			self.images.append(image)
+			self.labels.append(1)
+
+		for file in tqdm(os.listdir(r'resources\raw_data\covid')):
+			img_path = os.path.join(r'resources\raw_data\covid', file)
+			print(img_path)
+			image = cv2.imread(img_path)
+			self.images.append(image)
+			self.labels.append(2)
+
+
+
+
+		# for entry in os.scandir(r'resources\raw_data\normal'):
+		# 	if entry.path.endswith(".png") and entry.is_file():
+		# 		image = plt.imread(entry.path)
+		# 		self.images.append(image)
+		# 		self.labels.append(0)
+		# for entry in os.scandir(r'resources\raw_data\pneumonia'):
+		# 	if entry.path.endswith(".png") and entry.is_file():
+		# 		image = cv2.imread(entry.path)
+		# 		#image = plt.imread(entry.path)
+		# 		self.images.append(image)
+		# 		self.labels.append(1)
+		# for entry in os.scandir(r'resources\raw_data\covid'):
+		# 	if entry.path.endswith(".png") and entry.is_file():
+		# 		image = plt.imread(entry.path)
+		# 		self.images.append(image)
+		# 		self.labels.append(2)
 
 	def dump_data(self):
 		"""
