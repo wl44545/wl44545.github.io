@@ -1,3 +1,3 @@
 """
-Klasyfikatory liniowe
+Moduł zawierający algorytmy klasyfikacji liniowej.
 """

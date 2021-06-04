@@ -1,3 +1,3 @@
 """
-Klasyfikatory SVM
+Moduł zawierający algorytmy SVM.
 """

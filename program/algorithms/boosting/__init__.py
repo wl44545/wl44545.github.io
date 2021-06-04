@@ -1,3 +1,3 @@
 """
-Boosting
+Moduł zawierający algorytmy Boostingu.
 """

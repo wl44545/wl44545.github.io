@@ -1,3 +1,3 @@
 """
-Sieci neuronowe
+Moduł zawierający sieci neuronowe.
 """

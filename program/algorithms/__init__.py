@@ -1,3 +1,3 @@
 """
-Algorytmy klasyfikacji
+Moduł zawierający algorytmy klasyfikacji.
 """

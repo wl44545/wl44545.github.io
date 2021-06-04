@@ -1,3 +1,3 @@
 """
-Miary jakości klasyfikacji
+Moduł zawierający miary jakości klasyfikacji.
 """
