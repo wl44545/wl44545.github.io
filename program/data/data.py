@@ -13,6 +13,7 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from random import randint,uniform
+import numpy as np
 
 
 class Data(object):
@@ -26,6 +27,10 @@ class Data(object):
         self.class_names = ['normal', 'pneumonia', 'covid']
         self.images = []
         self.labels = []
+        self.X_train = []
+        self.y_train = []
+        self.X_test = []
+        self.y_test = []
 
     def import_data(self):
         """
@@ -80,44 +85,38 @@ class Data(object):
         for i in range(len(self.images)):
             self.images[i] = cv2.resize(self.images[i], (height, width))
 
-    def augment_data(self, augmentation_factor):
+    def augment_data(self, augmentation_factor=0.25):
         """
         Rozszerzenie danych.
         """
         N = len(self.images)
-        n = augmentation_factor * N
+        n = int(augmentation_factor * N)
         for _ in range(n):
             i = randint(0, N)
             label = self.labels[i]
             image = self.images[i]
-            opt = randint(1, 6)
-
-            if opt == 1:
-                new_image = tf.image.flip_left_right(image)
-                self.images.append(new_image)
+            for _ in range(4):
+                self.images.append(tf.image.central_crop(image, central_fraction=uniform(0.25, 0.75)))
+                self.labels.append(label)
+                self.images.append(tf.image.adjust_brightness(image, uniform(0.25, 0.75)))
+                self.labels.append(label)
+                self.images.append(tf.image.adjust_saturation(image, uniform(0.25, 0.75)))
+                self.labels.append(label)
+                image = tf.image.rot90(image)
+                self.images.append(image)
                 self.labels.append(label)
 
-            elif opt == 2:
-                new_image = tf.image.flip_up_down(image)
-                self.images.append(new_image)
-                self.labels.append(label)
-
-            elif opt == 3:
-                new_image = tf.image.adjust_saturation(image, uniform(0, 10))
-                self.images.append(new_image)
-                self.labels.append(label)
-
-            elif opt == 4:
-                new_image = tf.image.adjust_brightness(image, uniform(0, 1))
-                self.images.append(new_image)
-                self.labels.append(label)
-
-            elif opt == 5:
-                new_image = tf.image.central_crop(image, central_fraction=uniform(0, 1))
-                self.images.append(new_image)
-                self.labels.append(label)
-
-            elif opt == 6:
-                new_image = tf.image.rot90(image)
-                self.images.append(new_image)
-                self.labels.append(label)
+    def train_test_split(self, train_fraction=0.75, random_state=0):
+        """
+        Podział zbioru danych na podzbiory: uczący i testowy.
+        """
+        N = len(self.images)
+        np.random.seed(random_state)
+        indexes = np.random.permutation(N)
+        split = round(train_fraction * N)
+        X = self.images[indexes]
+        y = self.labels[indexes]
+        self.X_train = X[:split]
+        self.y_train = y[:split]
+        self.X_test = X[split:]
+        self.y_test = y[split:]
