@@ -9,19 +9,16 @@ import numpy as np
 
 data = Data()
 data.load_data()
-data.augment_data(0.1)
-data.tts_manual()
+data.train_test_split()
 
-# m, n = data.X_train.shape
+m, n = data.X_train.shape
 
 dnbc = NaiveBayesClassifier(domain_sizes=np.ones(len(data.X_train)).astype("int32"), laplace=True, logarithm=True)
 dnbc.fit(data.X_train, data.y_train)
 y_test_pred = dnbc.predict(data.X_test)
 y_train_pred = dnbc.predict(data.X_train)
 
-mq = MeasuringQuality()
-mq.update("dnbc",data.y_test,y_test_pred)
-mq.calculate()
+mq = MeasuringQuality("dnbc","desc", 0.0,0.0,data.y_test,y_test_pred)
 
 s = Statistics()
 s.insert(mq)

@@ -73,8 +73,8 @@ class Data(object):
         """
         file_images = open('resources\pickled_data\images.pickled', 'rb')
         file_labels = open('resources\pickled_data\labels.pickled', 'rb')
-        self.images = pkl.load(file_images)
-        self.labels = pkl.load(file_labels)
+        self.images = np.array(pkl.load(file_images)).astype("int32")
+        self.labels = np.array(pkl.load(file_labels)).astype("int32")
         file_images.close()
         file_labels.close()
 
