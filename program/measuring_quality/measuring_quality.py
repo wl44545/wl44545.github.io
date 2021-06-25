@@ -11,6 +11,7 @@ class MeasuringQuality:
 		"""
 		Konstruktor.
 		"""
+		self.name = ""
 		self.true_positive = 0
 		self.true_negative = 0
 		self.false_positive = 0
@@ -30,10 +31,11 @@ class MeasuringQuality:
 		self.actual_labels = None
 		self.predicted_labels = None
 
-	def update(self, actual, predicted):
+	def update(self, name, actual, predicted):
 		"""
 		Metoda przesyłająca etykietki klas.
 		"""
+		self.name = name
 		self.actual_labels = actual
 		self.predicted_labels = predicted
 

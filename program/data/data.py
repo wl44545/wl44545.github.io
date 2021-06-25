@@ -60,8 +60,8 @@ class Data(object):
         Zapis skompresowanych danych.
         """
         if self.images != [] and self.labels != []:
-            file_images = open('resources\pickled_data\images_pickled', 'wb')
-            file_labels = open('resources\pickled_data\labels_pickled', 'wb')
+            file_images = open('resources\pickled_data\images.pickled', 'wb')
+            file_labels = open('resources\pickled_data\labels.pickled', 'wb')
             pkl.dump(self.images, file_images, protocol=pkl.HIGHEST_PROTOCOL)
             pkl.dump(self.labels, file_labels, protocol=pkl.HIGHEST_PROTOCOL)
             file_images.close()
@@ -71,8 +71,8 @@ class Data(object):
         """
         Odczyt skompresowanych danych.
         """
-        file_images = open('resources\pickled_data\images_pickled', 'rb')
-        file_labels = open('resources\pickled_data\labels_pickled', 'rb')
+        file_images = open('resources\pickled_data\images.pickled', 'rb')
+        file_labels = open('resources\pickled_data\labels.pickled', 'rb')
         self.images = pkl.load(file_images)
         self.labels = pkl.load(file_labels)
         file_images.close()
@@ -112,7 +112,7 @@ class Data(object):
         """
         N = len(self.images)
         np.random.seed(random_state)
-        indexes = np.random.permutation(N)
+        indexes = np.random.permutation(N).astype(int)
         split = round(train_fraction * N)
         X = self.images[indexes]
         y = self.labels[indexes]
@@ -120,3 +120,12 @@ class Data(object):
         self.y_train = y[:split]
         self.X_test = X[split:]
         self.y_test = y[split:]
+
+    def discretize(X, B, X_train_ref=None):
+        if X_train_ref is None:
+            X_train_ref = X
+        mins = np.min(X_train_ref, axis=0)
+        maxes = np.max(X_train_ref, axis=0)
+        X = np.floor(((X - mins) / (maxes - mins)) * B).astype("int32")
+        X = np.clip(X, 0, B - 1)
+        return X

@@ -1,36 +1,37 @@
 import cv2
-
-import program.data
+from program.data import Data
+from program.measuring_quality.measuring_quality import MeasuringQuality
+from program.measuring_quality.statictics import Statistics
+from program.algorithms.linear_classifiers.naive_bayes_classifier import NaiveBayesClassifier
 import time
 import numpy as np
 
-xxx = program.data.Data()
-
-
-# start = time.time()
-# xxx.import_data()
-# end = time.time()
-# print(end - start)
+#
+# data = Data()
+# data.load_data()
+# data.augment_data(0.1)
+# data.train_test_split()
+#
+# m, n = data.X_train.shape
+#
+# dnbc = NaiveBayesClassifier(domain_sizes=np.ones(n).astype("int32"), laplace=True, logarithm=True)
+# dnbc.fit(data.X_train, data.y_train)
+# y_test_pred = dnbc.predict(data.X_test)
+# y_train_pred = dnbc.predict(data.X_train)
 #
 #
-# start = time.time()
-# xxx.dump_data()
-# end = time.time()
-# print(end - start)
+# print(y_test_pred)
 
 
+mq = MeasuringQuality()
+mq.update("testowe",[0,0,0,1,1,1],[0,0,1,1,1,0])
+mq.calculate()
 
-start = time.time()
-xxx.load_data()
-end = time.time()
-print(end - start)
-
-xxx.augment_data(0.1)
-
-cv2.startWindowThread()
-image = xxx.images[-1]
-image = np.array(image)
-image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-# image = cv2.resize(image, (100,100))
-cv2.imshow("aa", image)
-cv2.waitKey()
+s = Statistics()
+s.insert(mq)
+s.insert(mq)
+s.insert(mq)
+s.create_statistics()
+s.show()
+s.export_csv()
+s.export_html()
