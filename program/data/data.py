@@ -121,6 +121,18 @@ class Data(object):
         self.X_test = X[split:]
         self.y_test = y[split:]
 
+    def tts_manual(self, train_fraction=0.75, random_state=0):
+        """
+        Podział zbioru danych na podzbiory: uczący i testowy.
+        """
+        N = len(self.images)
+        split = round(train_fraction * N)
+        self.X_train = self.images[:split]
+        self.y_train = self.labels[:split]
+        self.X_test = self.images[split:]
+        self.y_test = self.labels[split:]
+
+
     def discretize(X, B, X_train_ref=None):
         if X_train_ref is None:
             X_train_ref = X

@@ -18,7 +18,9 @@ class Statistics:
 		self.dataframe = None
 
 	def insert(self, measuring_quality: MeasuringQuality):
-		self.data.append([measuring_quality.name, measuring_quality.true_positive, measuring_quality.true_negative,
+		self.data.append([measuring_quality.method, measuring_quality.description, measuring_quality.train_time,
+		                  measuring_quality.predict_time, measuring_quality.true_positive,
+		                  measuring_quality.true_negative,
 		                  measuring_quality.false_positive, measuring_quality.false_negative, measuring_quality.recall,
 		                  measuring_quality.sensitivity, measuring_quality.specificity, measuring_quality.fall_out,
 		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
@@ -26,9 +28,12 @@ class Statistics:
 
 	def create_statistics(self):
 		self.dataframe = pd.DataFrame(self.data,
-		                  columns=['name', 'true_positive', 'true_negative', 'false_positive', 'false_negative',
-		                           'recall', 'sensitivity', 'specificity', 'fall_out', 'precision', 'accuracy', 'error',
-		                           'f1', 'confusion_matrix', 'roc_curve'])
+		                              columns=['method', 'description', 'train_time', 'predict_time', 'true_positive',
+		                                       'true_negative', 'false_positive',
+		                                       'false_negative',
+		                                       'recall', 'sensitivity', 'specificity', 'fall_out', 'precision',
+		                                       'accuracy', 'error',
+		                                       'f1', 'confusion_matrix', 'roc_curve'])
 
 	def show(self):
 		print(self.dataframe)

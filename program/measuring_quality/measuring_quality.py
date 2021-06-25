@@ -7,37 +7,36 @@ class MeasuringQuality:
 	"""
 	Miary jakości klasyfikacji.
 	"""
-	def __init__(self):
+
+	def __init__(self, method, description, train_time, predict_time, actual, predicted):
 		"""
 		Konstruktor.
 		"""
-		self.name = ""
-		self.true_positive = 0
-		self.true_negative = 0
-		self.false_positive = 0
-		self.false_negative = 0
-		self.recall = 0
-		self.sensitivity = 0
-		self.specificity = 0
-		self.fall_out = 0
-		self.precision = 0
-		self.accuracy = 0
-		self.error = 0
-		self.f1 = 0
+		self.method = method
+		self.description = description
+		self.train_time = train_time
+		self.predict_time = predict_time
+		self.actual_labels = actual
+		self.predicted_labels = predicted
 
 		self.confusion_matrix = None
 		self.roc_curve = None
 
-		self.actual_labels = None
-		self.predicted_labels = None
+		self.true_positive = 0
+		self.true_negative = 0
+		self.false_positive = 0
+		self.false_negative = 0
+		self.recall = 0.0
+		self.sensitivity = 0.0
+		self.specificity = 0.0
+		self.fall_out = 0.0
+		self.precision = 0.0
+		self.accuracy = 0.0
+		self.error = 0.0
+		self.f1 = 0.0
 
-	def update(self, name, actual, predicted):
-		"""
-		Metoda przesyłająca etykietki klas.
-		"""
-		self.name = name
-		self.actual_labels = actual
-		self.predicted_labels = predicted
+		self.calculate()
+
 
 	def calculate(self):
 		"""
