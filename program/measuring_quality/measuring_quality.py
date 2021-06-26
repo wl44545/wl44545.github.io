@@ -1,60 +1,106 @@
 """
 Moduł zawierający miary jakości klasyfikacji.
 """
-from sklearn.metrics import *
+import uuid
+
+from numpy import interp
+from sklearn import metrics
+import numpy as np
+import matplotlib.pyplot as plt
+import itertools
+import pandas as pd
+import seaborn as sn
+
 
 class MeasuringQuality:
 	"""
 	Miary jakości klasyfikacji.
 	"""
 
-	def __init__(self, method, description, train_time, predict_time, y_true, y_pred):
+	def __init__(self, method, description, train_time, predict_time, y_true, y_pred, y_score):
 		"""
 		Konstruktor.
 		"""
 		self.method = method
 		self.description = description
+
 		self.train_time = train_time
 		self.predict_time = predict_time
+
 		self.y_true = y_true
 		self.y_pred = y_pred
+		self.y_score = y_score
 
 		self.confusion_matrix = None
 		self.roc_curve = None
+		self.auc = None
 
-		self.true_positive = 0
-		self.true_negative = 0
-		self.false_positive = 0
-		self.false_negative = 0
-		self.recall = 0.0
-		self.sensitivity = 0.0
-		self.specificity = 0.0
-		self.fall_out = 0.0
-		self.precision = 0.0
-		self.accuracy = 0.0
-		self.error = 0.0
-		self.f1 = 0.0
+		self.true_positive = None
+		self.true_negative = None
+		self.false_positive = None
+		self.false_negative = None
+
+		self.accuracy = None
+		self.error = None
+		self.precision = None
+		self.specificity = None
+		self.sensitivity = None
+		self.f1 = None
 
 		self.calculate()
-
-
 
 	def calculate(self):
 		"""
 		Metoda obliczająca statystyki.
 		"""
-		self.confusion_matrix = multilabel_confusion_matrix(self.y_true, self.y_pred)
+		self.confusion_matrix = metrics.confusion_matrix(self.y_true, self.y_pred)
+		self.true_negative, self.false_positive, self.false_negative, self.true_positive = self.confusion_matrix.ravel()
+		self.roc_curve = metrics.roc_curve(self.y_true, self.y_score[:, 1])
+		self.auc = metrics.roc_auc_score(self.y_true, self.y_score[:, 1])
 
-		self.true_positive = self.confusion_matrix[:, 1, 1]
-		self.true_negative = self.confusion_matrix[:, 0, 0]
-		self.false_positive = self.confusion_matrix[:, 0, 1]
-		self.false_negative = self.confusion_matrix[:, 1, 0]
-
-		self.recall = self.true_positive / (self.true_negative + self.true_positive)
-		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative )
+		self.accuracy = metrics.accuracy_score(self.y_true, self.y_pred)
+		self.error = 1 - self.accuracy
+		self.precision = metrics.precision_score(self.y_true, self.y_pred)
 		self.specificity = self.true_negative / (self.true_negative + self.false_positive)
-		self.fall_out = self.false_negative / (self.false_positive + self.false_negative)
-		self.precision = self.true_positive / (self.true_positive + self.false_positive)
-		self.accuracy = (self.true_positive + self.true_negative) / (len(self.true_positive) + len(self.true_negative) +len(self.false_positive) + len(self.false_negative))
-		self.error = (self.false_negative + self.false_positive) / (len(self.true_positive) + len(self.true_negative) +len(self.false_positive) + len(self.false_negative))
-		self.f1 = (2 * self.recall * self.sensitivity) / (self.recall + self.sensitivity)
+		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
+		self.f1 = metrics.f1_score(self.y_true, self.y_pred)
+
+		fn1 = draw_roc(self.roc_curve)
+		fn2 = draw_confusion(self.confusion_matrix)
+
+		self.roc_curve = "<img src=\"./images/"+fn1+"\"/>"
+		self.confusion_matrix ="<img src=\"./images/"+fn2+"\"/>"
+
+
+def draw_confusion(confusion):
+	plt.figure()
+	df = pd.DataFrame(confusion, columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
+	sn.heatmap(df, annot=True, cmap="YlGnBu")
+	plt.xlabel("Predicted")
+	plt.ylabel("Actual")
+	filename = str(uuid.uuid1())+".png"
+	plt.savefig("resources/results/images/"+filename)
+	return filename
+	# plt.show()
+	# df = pd.DataFrame(confusion/np.sum(confusion), columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
+	# sn.heatmap(df, annot=True, cmap="YlGnBu")
+	# plt.xlabel("Predicted")
+	# plt.ylabel("Actual")
+	# filename = "./images/"+str(uuid.uuid1)+".png"
+	# plt.savefig(filename)
+	# return filename
+
+
+def draw_roc(roc):
+	plt.figure()
+	plt.plot(roc[0], roc[1], color='darkorange', label='ROC curve')
+	plt.plot([0, 1], [0, 1], color='navy', linestyle='--')
+	plt.xlim([0.0, 1.0])
+	plt.ylim([0.0, 1.05])
+	plt.xlabel('False Positive Rate')
+	plt.ylabel('True Positive Rate')
+	plt.title('Receiver operating characteristic example')
+	plt.legend(loc="lower right")
+	filename = str(uuid.uuid1())+".png"
+	plt.savefig("resources/results/images/"+filename)
+	return filename

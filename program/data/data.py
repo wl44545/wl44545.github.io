@@ -24,7 +24,7 @@ class Data(object):
         """
         Konstruktor.
         """
-        self.class_names = ['normal', 'pneumonia', 'covid']
+        self.class_names = ['normal','covid']
         self.images = []
         self.labels = []
         self.X_train = []
@@ -32,37 +32,12 @@ class Data(object):
         self.X_test = []
         self.y_test = []
 
-    def reduce_data(self, n):
-        new_images = []
-        new_labels = []
-        normal = 0
-        pneumonia = 0
-        covid = 0
-        for i in range(len(self.images)):
-            if self.labels[i] == 0:
-                if normal < n:
-                    new_images.append(self.images[i])
-                    new_labels.append(self.labels[i])
-                    normal += 1
-            if self.labels[i] == 1:
-                if pneumonia < n:
-                    new_images.append(self.images[i])
-                    new_labels.append(self.labels[i])
-                    pneumonia += 1
-            if self.labels[i] == 2:
-                if covid < n:
-                    new_images.append(self.images[i])
-                    new_labels.append(self.labels[i])
-                    covid += 1
-        self.images = new_images
-        self.labels = new_labels
 
     def import_data(self, size=0):
         """
         Odczyt prosto z plików png.
         """
         normal_counter = 0
-        pneumonia_counter = 0
         covid_counter = 0
         for file in tqdm(os.listdir(r'resources\raw_data\normal')):
             if normal_counter < size or size == 0:
@@ -72,21 +47,13 @@ class Data(object):
                 self.images.append(image)
                 self.labels.append(0)
                 normal_counter += 1
-        for file in tqdm(os.listdir(r'resources\raw_data\pneumonia')):
-            if pneumonia_counter < size or size == 0:
-                img_path = os.path.join(r'resources\raw_data\pneumonia', file)
-                image = cv2.imread(img_path)
-                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                self.images.append(image)
-                self.labels.append(1)
-                pneumonia_counter += 1
         for file in tqdm(os.listdir(r'resources\raw_data\covid')):
             if covid_counter < size or size == 0:
                 img_path = os.path.join(r'resources\raw_data\covid', file)
                 image = cv2.imread(img_path)
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                 self.images.append(image)
-                self.labels.append(2)
+                self.labels.append(1)
                 covid_counter += 1
 
     def dump_data(self, size=0):

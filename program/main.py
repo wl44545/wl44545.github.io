@@ -12,31 +12,32 @@ from program.algorithms.boosting.ada_boost import AdaBoost
 from program.algorithms.boosting.gradient_boost import GradientBoost
 
 
-
 data = Data()
+# data.import_data(40)
+# data.dump_data(40)
 
-data.import_data(30)
-data.dump_data(30)
-
-data.load_data(30)
-data.split_data()
+data.load_data(40)
+data.split_data(0.5)
+print(data.y_train)
 
 statistics = Statistics()
 
 statistics.insert(BernoulliNBC(data).start())
-statistics.insert(ComplementNBC(data).start())
-statistics.insert(GaussianNBC(data).start())
-statistics.insert(MultinomialNBC(data).start())
-
-statistics.insert(LinearSVM(data).start())
-statistics.insert(NonLinearSVM(data).start())
-
-statistics.insert(AdaBoost(data).start())
-statistics.insert(GradientBoost(data).start())
+# statistics.insert(ComplementNBC(data).start())
+# statistics.insert(GaussianNBC(data).start())
+# statistics.insert(MultinomialNBC(data).start())
+#
+# statistics.insert(LinearSVM(data).start())
+# statistics.insert(NonLinearSVM(data).start())
+#
+# statistics.insert(AdaBoost(data).start())
+# statistics.insert(GradientBoost(data).start())
 
 statistics.create_statistics()
 statistics.show()
 statistics.export_csv()
 statistics.export_html()
+
+
 
 

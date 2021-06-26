@@ -1,6 +1,8 @@
 """
 Moduł zawierający miary jakości klasyfikacji.
 """
+import numpy as np
+
 from measuring_quality import MeasuringQuality
 import pandas as pd
 
@@ -21,17 +23,18 @@ class Statistics:
 		self.data.append([measuring_quality.method, measuring_quality.description, measuring_quality.train_time,
 		                  measuring_quality.predict_time, measuring_quality.true_positive,
 		                  measuring_quality.true_negative,
-		                  measuring_quality.false_positive, measuring_quality.false_negative, measuring_quality.recall,
-		                  measuring_quality.sensitivity, measuring_quality.specificity, measuring_quality.fall_out,
+		                  measuring_quality.false_positive, measuring_quality.false_negative,
+		                  measuring_quality.sensitivity, measuring_quality.specificity,
 		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
 		                  measuring_quality.f1, measuring_quality.confusion_matrix, measuring_quality.roc_curve])
+
 
 	def create_statistics(self):
 		self.dataframe = pd.DataFrame(self.data,
 		                              columns=['method', 'description', 'train_time', 'predict_time', 'true_positive',
 		                                       'true_negative', 'false_positive',
 		                                       'false_negative',
-		                                       'recall', 'sensitivity', 'specificity', 'fall_out', 'precision',
+		                                       'sensitivity', 'specificity', 'precision',
 		                                       'accuracy', 'error',
 		                                       'f1', 'confusion_matrix', 'roc_curve'])
 
@@ -42,7 +45,13 @@ class Statistics:
 		self.dataframe.to_csv(r'resources\results\result.csv', index=False, header=True)
 
 	def export_html(self):
-		html = self.dataframe.to_html()
-		text_file = open(r'resources\results\result.html', "w")
+		# df = self.dataframe.as_matrix()
+		# for x in np.nditer(df, flags=['refs_ok'], op_flags=['copy', 'readonly']):
+		# 	df[df == x] = str(str(x).encode("latin-1", "replace").decode('utf8'))
+		# self.dataframe = pd.DataFrame(df)
+
+
+		html = str(self.dataframe.to_html()).replace("&lt;","<").replace("&gt;",">")
+		text_file = open(r'resources\results\result.html', "w", encoding="utf-8")
 		text_file.write(html)
 		text_file.close()

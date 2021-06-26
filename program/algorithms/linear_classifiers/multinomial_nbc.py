@@ -18,6 +18,7 @@ class MultinomialNBC:
 
 		predict_time_start = time()
 		y_pred = self.classifier.predict(self.data.X_test)
+		y_score = self.classifier.predict_proba(self.data.X_test)
 		predict_time_stop = time()
 
-		return MeasuringQuality("MultinomialNBC","Naive Bayes classifier for multinomial models", train_time_stop-train_time_start,predict_time_stop-predict_time_start,self.data.y_test,y_pred)
+		return MeasuringQuality("MultinomialNBC","Naive Bayes classifier for multinomial models", train_time_stop-train_time_start,predict_time_stop-predict_time_start,self.data.y_test,y_pred,y_score)

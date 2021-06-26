@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import sklearn
 from sklearn.naive_bayes import BernoulliNB
 from time import time
 from measuring_quality import MeasuringQuality
@@ -18,6 +20,7 @@ class BernoulliNBC:
 
 		predict_time_start = time()
 		y_pred = self.classifier.predict(self.data.X_test)
+		y_score = self.classifier.predict_proba(self.data.X_test)
 		predict_time_stop = time()
 
-		return MeasuringQuality("BernoulliNBC","Naive Bayes classifier for multivariate Bernoulli models", train_time_stop-train_time_start,predict_time_stop-predict_time_start,self.data.y_test,y_pred)
+		return MeasuringQuality("BernoulliNBC","Naive Bayes classifier for multivariate Bernoulli models", train_time_stop-train_time_start,predict_time_stop-predict_time_start,self.data.y_test,y_pred,y_score)
