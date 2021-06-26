@@ -10,14 +10,15 @@ from program.algorithms.support_vector_machines.linear_svm import LinearSVM
 from program.algorithms.support_vector_machines.nonlinear_svm import NonLinearSVM
 from program.algorithms.boosting.ada_boost import AdaBoost
 from program.algorithms.boosting.gradient_boost import GradientBoost
+from program.algorithms.neighbors.k_neighbors import KNeighbors
 
 
 data = Data()
-# data.import_data(1000)
-# data.dump_data(1000)
+data.import_data(25)
+data.dump_data(25)
 
-data.load_data(100)
-data.split_data(0.25)
+data.load_data(25)
+data.split_data(0.5)
 
 statistics = Statistics()
 
@@ -26,10 +27,14 @@ statistics.insert(ComplementNBC(data).start())
 statistics.insert(GaussianNBC(data).start())
 statistics.insert(MultinomialNBC(data).start())
 
-# statistics.insert(LinearSVM(data).start())
+statistics.insert(KNeighbors(data).start())
+
+statistics.insert(LinearSVM(data).start())
 statistics.insert(NonLinearSVM(data).start())
-# statistics.insert(AdaBoost(data).start())
-# statistics.insert(GradientBoost(data).start())
+
+statistics.insert(AdaBoost(data).start())
+statistics.insert(GradientBoost(data).start())
+
 
 statistics.create_statistics()
 statistics.show()

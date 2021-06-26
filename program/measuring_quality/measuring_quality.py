@@ -3,8 +3,8 @@ Moduł zawierający miary jakości klasyfikacji.
 """
 import uuid
 
-from numpy import interp
 from sklearn import metrics
+from numpy import interp
 import numpy as np
 import matplotlib.pyplot as plt
 import itertools
@@ -54,7 +54,7 @@ class MeasuringQuality:
 		Metoda obliczająca statystyki.
 		"""
 		self.confusion_matrix = metrics.confusion_matrix(self.y_true, self.y_pred)
-		self.true_negative, self.false_positive, self.false_negative, self.true_positive = self.confusion_matrix.ravel()
+		[[self.true_negative, self.false_positive], [self.false_negative, self.true_positive]] = self.confusion_matrix
 
 		if len(self.y_score.shape) == 1:
 			tmp = self.y_score[:]
