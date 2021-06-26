@@ -1,10 +1,12 @@
 """
 Moduł zawierający miary jakości klasyfikacji.
 """
-import numpy as np
 
 from measuring_quality import MeasuringQuality
 import pandas as pd
+import os
+import shutil
+
 
 
 class Statistics:
@@ -18,6 +20,8 @@ class Statistics:
 		"""
 		self.data = []
 		self.dataframe = None
+		shutil.rmtree("resources/results/images")
+		os.mkdir("resources/results/images")
 
 	def insert(self, measuring_quality: MeasuringQuality):
 		self.data.append([measuring_quality.method, measuring_quality.description, measuring_quality.train_time,

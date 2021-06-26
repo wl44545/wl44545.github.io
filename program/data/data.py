@@ -97,15 +97,15 @@ class Data(object):
             label = self.labels[i]
             image = self.images[i]
             for _ in range(4):
-                self.images.append(tf.image.central_crop(image, central_fraction=uniform(0.25, 0.75)))
+                # self.images.append(cv2.GaussianBlur(image,(5,5),0))
+                # self.labels.append(label)
+                self.images.append(cv2.flip(image, 0))
                 self.labels.append(label)
-                self.images.append(tf.image.adjust_brightness(image, uniform(0.25, 0.75)))
+                self.images.append(cv2.flip(image, 1))
                 self.labels.append(label)
-                self.images.append(tf.image.adjust_saturation(image, uniform(0.25, 0.75)))
+                self.images.append(cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
                 self.labels.append(label)
-                image = tf.image.rot90(image)
-                self.images.append(image)
-                self.labels.append(label)
+                image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
 
     def split_data(self, test_size=0.25, random_state=0):
         """
