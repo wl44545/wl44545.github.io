@@ -14,15 +14,15 @@ from program.algorithms.neighbors.k_neighbors import KNeighbors
 
 
 data = Data()
-# data.import_data(25)
-# data.dump_data(25)
+data.import_data(500)
+data.dump_data(500)
 
-data.load_data(1000)
-
-data.augment_data(0.25)
+data.load_data(500)
+data.augment_data(0.1)
 data.split_data(0.25)
 
 statistics = Statistics()
+statistics.update_data(data)
 
 statistics.insert(BernoulliNBC(data).start())
 statistics.insert(ComplementNBC(data).start())
@@ -31,11 +31,11 @@ statistics.insert(MultinomialNBC(data).start())
 
 statistics.insert(KNeighbors(data).start())
 
-# statistics.insert(LinearSVM(data).start())
-# statistics.insert(NonLinearSVM(data).start())
-#
-# statistics.insert(AdaBoost(data).start())
-# statistics.insert(GradientBoost(data).start())
+statistics.insert(LinearSVM(data).start())
+statistics.insert(NonLinearSVM(data).start())
+
+statistics.insert(AdaBoost(data).start())
+statistics.insert(GradientBoost(data).start())
 
 
 statistics.create_statistics()

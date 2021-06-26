@@ -25,6 +25,8 @@ class Data(object):
         Konstruktor.
         """
         self.class_names = ['normal','covid']
+        self.data_size = 0
+        self.augmented_size = 0
         self.images = []
         self.labels = []
         self.X_train = []
@@ -76,6 +78,7 @@ class Data(object):
         file_labels = open('resources\pickled_data\labels'+str(size)+'.pickled', 'rb')
         self.images = pkl.load(file_images)
         self.labels = pkl.load(file_labels)
+        self.size = len(self.images)
         file_images.close()
         file_labels.close()
 
@@ -106,6 +109,7 @@ class Data(object):
                 self.images.append(cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
                 self.labels.append(label)
                 image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+        self.augmented_size = len(self.images)
 
     def split_data(self, test_size=0.25, random_state=0):
         """

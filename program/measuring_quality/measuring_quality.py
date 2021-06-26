@@ -83,7 +83,7 @@ class MeasuringQuality:
 
 def draw_confusion(confusion):
 	plt.figure()
-	df = pd.DataFrame(confusion, columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
+	df = pd.DataFrame(confusion/np.sum(confusion), columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
 	sn.heatmap(df, annot=True, cmap="YlGnBu")
 	plt.xlabel("Predicted")
 	plt.ylabel("Actual")
