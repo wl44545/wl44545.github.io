@@ -55,8 +55,17 @@ class MeasuringQuality:
 		"""
 		self.confusion_matrix = metrics.confusion_matrix(self.y_true, self.y_pred)
 		self.true_negative, self.false_positive, self.false_negative, self.true_positive = self.confusion_matrix.ravel()
-		self.roc_curve = metrics.roc_curve(self.y_true, self.y_score[:, 1])
-		self.auc = metrics.roc_auc_score(self.y_true, self.y_score[:, 1])
+
+		if len(self.y_score.shape) == 1:
+			tmp = self.y_score[:]
+		elif len(self.y_score.shape) == 2:
+			tmp = self.y_score[:, 1]
+
+		self.roc_curve = metrics.roc_curve(self.y_true, tmp)
+		self.auc = metrics.roc_auc_score(self.y_true, tmp)
+
+		# self.roc_curve = metrics.roc_curve(self.y_true, self.y_score[:, 1])
+		# self.auc = metrics.roc_auc_score(self.y_true, self.y_score[:, 1])
 
 		self.accuracy = metrics.accuracy_score(self.y_true, self.y_pred)
 		self.error = 1 - self.accuracy
@@ -68,8 +77,8 @@ class MeasuringQuality:
 		fn1 = draw_roc(self.roc_curve)
 		fn2 = draw_confusion(self.confusion_matrix)
 
-		self.roc_curve = "<img src=\"./images/"+fn1+"\"/>"
-		self.confusion_matrix ="<img src=\"./images/"+fn2+"\"/>"
+		self.roc_curve = "<a href=\"./images/"+fn1+"\"><img src=\"./images/"+fn1+"\" width=200 height=200 /></a>"
+		self.confusion_matrix = "<a href=\"./images/"+fn2+"\"><img src=\"./images/"+fn2+"\" width=200 height=200 /></a>"
 
 
 def draw_confusion(confusion):

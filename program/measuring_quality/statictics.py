@@ -28,6 +28,13 @@ class Statistics:
 		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
 		                  measuring_quality.f1, measuring_quality.confusion_matrix, measuring_quality.roc_curve])
 
+		print(measuring_quality.method, measuring_quality.description, measuring_quality.train_time,
+		                  measuring_quality.predict_time, measuring_quality.true_positive,
+		                  measuring_quality.true_negative,
+		                  measuring_quality.false_positive, measuring_quality.false_negative,
+		                  measuring_quality.sensitivity, measuring_quality.specificity,
+		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
+		                  measuring_quality.f1)
 
 	def create_statistics(self):
 		self.dataframe = pd.DataFrame(self.data,
@@ -45,12 +52,6 @@ class Statistics:
 		self.dataframe.to_csv(r'resources\results\result.csv', index=False, header=True)
 
 	def export_html(self):
-		# df = self.dataframe.as_matrix()
-		# for x in np.nditer(df, flags=['refs_ok'], op_flags=['copy', 'readonly']):
-		# 	df[df == x] = str(str(x).encode("latin-1", "replace").decode('utf8'))
-		# self.dataframe = pd.DataFrame(df)
-
-
 		html = str(self.dataframe.to_html()).replace("&lt;","<").replace("&gt;",">")
 		text_file = open(r'resources\results\result.html', "w", encoding="utf-8")
 		text_file.write(html)
