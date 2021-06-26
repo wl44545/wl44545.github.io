@@ -20,6 +20,4 @@ class BernoulliNBC:
 		y_pred = self.classifier.predict(self.data.X_test)
 		predict_time_stop = time()
 
-		print("bernuli",len(y_pred),len(self.data.y_test),len(self.data.X_test))
-
 		return MeasuringQuality("BernoulliNBC","Naive Bayes classifier for multivariate Bernoulli models", train_time_stop-train_time_start,predict_time_stop-predict_time_start,self.data.y_test,y_pred)
