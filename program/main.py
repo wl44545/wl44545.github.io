@@ -2,27 +2,30 @@ import cv2
 from program.data import Data
 from program.measuring_quality.measuring_quality import MeasuringQuality
 from program.measuring_quality.statictics import Statistics
-from program.algorithms.linear_classifiers.naive_bayes_classifier import NaiveBayesClassifier
-import time
-import numpy as np
+from program.algorithms.linear_classifiers.bernoulli_nbc import BernoulliNBC
+from program.algorithms.linear_classifiers.complement_nbc import ComplementNBC
+from program.algorithms.linear_classifiers.gaussian_nbc import GaussianNBC
+from program.algorithms.linear_classifiers.multinomial_nbc import MultinomialNBC
 
 
 data = Data()
-data.load_data()
-data.train_test_split()
+data.load_data(100)
+data.split_data()
 
-m, n = data.X_train.shape
+print(len(data.X_train),len(data.X_test),len(data.y_train),len(data.y_test))
 
-dnbc = NaiveBayesClassifier(domain_sizes=np.ones(len(data.X_train)).astype("int32"), laplace=True, logarithm=True)
-dnbc.fit(data.X_train, data.y_train)
-y_test_pred = dnbc.predict(data.X_test)
-y_train_pred = dnbc.predict(data.X_train)
+statistics = Statistics()
 
-mq = MeasuringQuality("dnbc","desc", 0.0,0.0,data.y_test,y_test_pred)
 
-s = Statistics()
-s.insert(mq)
-s.create_statistics()
-s.show()
-s.export_csv()
-s.export_html()
+statistics.insert(BernoulliNBC(data).start())
+statistics.insert(ComplementNBC(data).start())
+statistics.insert(GaussianNBC(data).start())
+statistics.insert(MultinomialNBC(data).start())
+
+
+statistics.create_statistics()
+statistics.show()
+statistics.export_csv()
+statistics.export_html()
+
+

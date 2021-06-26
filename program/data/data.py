@@ -4,7 +4,7 @@ Moduł zawierający obsługę danych źródłowych.
 import os
 import cv2
 import pickle as pkl
-
+from sklearn.model_selection import train_test_split
 from tensorflow.keras import layers
 from tensorflow.python.ops.image_ops_impl import flip_up_down
 from tqdm import tqdm
@@ -32,49 +32,83 @@ class Data(object):
         self.X_test = []
         self.y_test = []
 
-    def import_data(self):
+    def reduce_data(self, n):
+        new_images = []
+        new_labels = []
+        normal = 0
+        pneumonia = 0
+        covid = 0
+        for i in range(len(self.images)):
+            if self.labels[i] == 0:
+                if normal < n:
+                    new_images.append(self.images[i])
+                    new_labels.append(self.labels[i])
+                    normal += 1
+            if self.labels[i] == 1:
+                if pneumonia < n:
+                    new_images.append(self.images[i])
+                    new_labels.append(self.labels[i])
+                    pneumonia += 1
+            if self.labels[i] == 2:
+                if covid < n:
+                    new_images.append(self.images[i])
+                    new_labels.append(self.labels[i])
+                    covid += 1
+        self.images = new_images
+        self.labels = new_labels
+
+    def import_data(self, size=0):
         """
         Odczyt prosto z plików png.
         """
+        normal_counter = 0
+        pneumonia_counter = 0
+        covid_counter = 0
         for file in tqdm(os.listdir(r'resources\raw_data\normal')):
-            img_path = os.path.join(r'resources\raw_data\normal', file)
-            image = cv2.imread(img_path)
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-            self.images.append(image)
-            self.labels.append(0)
+            if normal_counter < size or size == 0:
+                img_path = os.path.join(r'resources\raw_data\normal', file)
+                image = cv2.imread(img_path)
+                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                self.images.append(image)
+                self.labels.append(0)
+                normal_counter += 1
         for file in tqdm(os.listdir(r'resources\raw_data\pneumonia')):
-            img_path = os.path.join(r'resources\raw_data\pneumonia', file)
-            image = cv2.imread(img_path)
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-            self.images.append(image)
-            self.labels.append(1)
+            if pneumonia_counter < size or size == 0:
+                img_path = os.path.join(r'resources\raw_data\pneumonia', file)
+                image = cv2.imread(img_path)
+                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                self.images.append(image)
+                self.labels.append(1)
+                pneumonia_counter += 1
         for file in tqdm(os.listdir(r'resources\raw_data\covid')):
-            img_path = os.path.join(r'resources\raw_data\covid', file)
-            image = cv2.imread(img_path)
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-            self.images.append(image)
-            self.labels.append(2)
+            if covid_counter < size or size == 0:
+                img_path = os.path.join(r'resources\raw_data\covid', file)
+                image = cv2.imread(img_path)
+                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                self.images.append(image)
+                self.labels.append(2)
+                covid_counter += 1
 
-    def dump_data(self):
+    def dump_data(self, size=0):
         """
         Zapis skompresowanych danych.
         """
         if self.images != [] and self.labels != []:
-            file_images = open('resources\pickled_data\images.pickled', 'wb')
-            file_labels = open('resources\pickled_data\labels.pickled', 'wb')
+            file_images = open('resources\pickled_data\images'+str(size)+'.pickled', 'wb')
+            file_labels = open('resources\pickled_data\labels'+str(size)+'.pickled', 'wb')
             pkl.dump(self.images, file_images, protocol=pkl.HIGHEST_PROTOCOL)
             pkl.dump(self.labels, file_labels, protocol=pkl.HIGHEST_PROTOCOL)
             file_images.close()
             file_labels.close()
 
-    def load_data(self):
+    def load_data(self, size=0):
         """
         Odczyt skompresowanych danych.
         """
-        file_images = open('resources\pickled_data\images.pickled', 'rb')
-        file_labels = open('resources\pickled_data\labels.pickled', 'rb')
-        self.images = np.array(pkl.load(file_images)).astype("int32")
-        self.labels = np.array(pkl.load(file_labels)).astype("int32")
+        file_images = open('resources\pickled_data\images'+str(size)+'.pickled', 'rb')
+        file_labels = open('resources\pickled_data\labels'+str(size)+'.pickled', 'rb')
+        self.images = pkl.load(file_images)
+        self.labels = pkl.load(file_labels)
         file_images.close()
         file_labels.close()
 
@@ -106,38 +140,12 @@ class Data(object):
                 self.images.append(image)
                 self.labels.append(label)
 
-    def train_test_split(self, train_fraction=0.75, random_state=0):
+    def split_data(self, test_size=0.25, random_state=0):
         """
         Podział zbioru danych na podzbiory: uczący i testowy.
         """
-        N = len(self.images)
-        np.random.seed(random_state)
-        indexes = np.random.permutation(N).astype(int)
-        split = round(train_fraction * N)
-        X = self.images[indexes]
-        y = self.labels[indexes]
-        self.X_train = X[:split]
-        self.y_train = y[:split]
-        self.X_test = X[split:]
-        self.y_test = y[split:]
-
-    def tts_manual(self, train_fraction=0.75, random_state=0):
-        """
-        Podział zbioru danych na podzbiory: uczący i testowy.
-        """
-        N = len(self.images)
-        split = round(train_fraction * N)
-        self.X_train = self.images[:split]
-        self.y_train = self.labels[:split]
-        self.X_test = self.images[split:]
-        self.y_test = self.labels[split:]
-
-
-    def discretize(X, B, X_train_ref=None):
-        if X_train_ref is None:
-            X_train_ref = X
-        mins = np.min(X_train_ref, axis=0)
-        maxes = np.max(X_train_ref, axis=0)
-        X = np.floor(((X - mins) / (maxes - mins)) * B).astype("int32")
-        X = np.clip(X, 0, B - 1)
-        return X
+        tmp = []
+        for image in self.images:
+            tmp.append(np.asarray(image).flatten())
+        self.images = np.array(tmp)
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.images, self.labels, test_size=test_size, random_state=random_state)
