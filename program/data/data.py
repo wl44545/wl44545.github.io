@@ -14,6 +14,7 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from random import randint,uniform
 import numpy as np
+from shutil import copy,rmtree
 
 
 class Data(object):
@@ -24,7 +25,7 @@ class Data(object):
         """
         Konstruktor.
         """
-        self.class_names = ['normal','covid']
+        self.class_names = ['normal', 'covid']
         self.data_size = 0
         self.augmented_size = 0
         self.images = []
@@ -34,6 +35,55 @@ class Data(object):
         self.X_test = []
         self.y_test = []
 
+    def make_data(self, normal_size=0, covid_size=0, split_factor=0, augmentation_factor=0):
+        normal_counter = 0
+        covid_counter = 0
+        rmtree(r'resources\prepared_data')
+        os.mkdir(r'resources\prepared_data')
+        os.mkdir(r'resources\prepared_data\test')
+        os.mkdir(r'resources\prepared_data\train')
+        os.mkdir(r'resources\prepared_data\test\normal')
+        os.mkdir(r'resources\prepared_data\train\normal')
+        os.mkdir(r'resources\prepared_data\test\covid')
+        os.mkdir(r'resources\prepared_data\train\covid')
+        for file in tqdm(os.listdir(r'resources\raw_data\normal')):
+            if normal_counter < normal_size:
+                src_path = os.path.join(r'resources\raw_data\normal', file)
+                if normal_counter < normal_size*split_factor:
+                    dest_path = os.path.join(r'resources\prepared_data\test\normal', file)
+                    copy(src_path,dest_path)
+                    image = cv2.imread(src_path)
+                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    self.X_test.append(np.asarray(image).flatten())
+                    self.y_test.append(0)
+                else:
+                    dest_path = os.path.join(r'resources\prepared_data\train\normal', file)
+                    copy(src_path,dest_path)
+                    image = cv2.imread(src_path)
+                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    self.X_train.append(np.asarray(image).flatten())
+                    self.y_train.append(0)
+            normal_counter += 1
+        for file in tqdm(os.listdir(r'resources\raw_data\covid')):
+            if covid_counter < covid_size:
+                src_path = os.path.join(r'resources\raw_data\covid', file)
+                if covid_counter < covid_size*split_factor:
+                    dest_path = os.path.join(r'resources\prepared_data\test\covid', file)
+                    copy(src_path,dest_path)
+                    image = cv2.imread(src_path)
+                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    self.X_test.append(np.asarray(image).flatten())
+                    self.y_test.append(1)
+                else:
+                    dest_path = os.path.join(r'resources\prepared_data\train\covid', file)
+                    copy(src_path,dest_path)
+                    image = cv2.imread(src_path)
+                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    self.X_train.append(np.asarray(image).flatten())
+                    self.y_train.append(1)
+            covid_counter += 1
+        self.data_size = len(self.X_train)+len(self.X_test)
+        self.augmented_size = self.data_size
 
     def import_data(self, size=0):
         """
@@ -78,7 +128,7 @@ class Data(object):
         file_labels = open('resources\pickled_data\labels'+str(size)+'.pickled', 'rb')
         self.images = pkl.load(file_images)
         self.labels = pkl.load(file_labels)
-        self.size = len(self.images)
+        self.data_size = len(self.images)
         file_images.close()
         file_labels.close()
 

@@ -1,6 +1,7 @@
 import cv2
 
 from algorithms.naive_bayes.discrete_nbc import DiscreteNBC
+from algorithms.neural_networks.test_ai import TestAI
 from program.data import Data
 from program.measuring_quality.measuring_quality import MeasuringQuality
 from program.measuring_quality.statictics import Statistics
@@ -14,19 +15,22 @@ from program.algorithms.boosting.ada_boost import AdaBoost
 from program.algorithms.boosting.gradient_boost import GradientBoost
 from program.algorithms.neighbors.k_neighbors import KNeighbors
 
-
 data = Data()
-# data.import_data(500)
+data.make_data(50, 50, 0.25, 0.1)
+
+# data.import_data(5000)
 # data.dump_data(500)
 
-data.load_data(500)
-data.augment_data(0.1)
-data.split_data(0.25)
+# data.load_data(500)
+# data.augment_data(0.1)
+# data.split_data(0.25)
 
 statistics = Statistics()
 statistics.update_data(data)
 
-statistics.insert(DiscreteNBC(data).start())
+statistics.insert(TestAI(data).start())
+
+# statistics.insert(DiscreteNBC(data).start())
 
 # statistics.insert(BernoulliNBC(data).start())
 # statistics.insert(ComplementNBC(data).start())
@@ -46,7 +50,3 @@ statistics.create_statistics()
 statistics.show()
 statistics.export_csv()
 statistics.export_html()
-
-
-
-

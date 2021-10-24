@@ -51,7 +51,7 @@ class Statistics:
 		                                       'f1', 'confusion_matrix', 'roc_curve'])
 
 	def update_data(self, data:Data):
-		self.data_info = data.size, data.augmented_size, len(data.X_train), len(data.X_test)
+		self.data_info = data.data_size, data.augmented_size, len(data.X_train), len(data.X_test)
 
 	def show(self):
 		print(self.dataframe)

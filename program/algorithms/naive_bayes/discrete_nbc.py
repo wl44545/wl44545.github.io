@@ -91,7 +91,7 @@ class DiscreteNBCImpl(BaseEstimator, ClassifierMixin):
 					for j in range(n):
 						probs[i, y] += self.P_[y, j][X[i, j]]
 					probs[i, y] += self.PY_[y]
-					#probs[i] = np.exp(probs[i])
+					# probs[i] = np.exp(probs[i])
 				else:
 					for j in range(n):
 						probs[i, y] *= self.P_[y, j][X[i, j]]
