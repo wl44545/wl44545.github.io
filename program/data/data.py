@@ -34,6 +34,8 @@ class Data(object):
         self.y_train = []
         self.X_test = []
         self.y_test = []
+        self.dataset_train = None
+        self.dataset_test = None
 
     def make_data(self, normal_size=0, covid_size=0, split_factor=0, augmentation_factor=0):
         normal_counter = 0
@@ -47,7 +49,7 @@ class Data(object):
         os.mkdir(r'resources\prepared_data\test\covid')
         os.mkdir(r'resources\prepared_data\train\covid')
         for file in tqdm(os.listdir(r'resources\raw_data\normal')):
-            if normal_counter < normal_size:
+            if normal_counter < normal_size or normal_size==0:
                 src_path = os.path.join(r'resources\raw_data\normal', file)
                 if normal_counter < normal_size*split_factor:
                     dest_path = os.path.join(r'resources\prepared_data\test\normal', file)
@@ -65,7 +67,7 @@ class Data(object):
                     self.y_train.append(0)
             normal_counter += 1
         for file in tqdm(os.listdir(r'resources\raw_data\covid')):
-            if covid_counter < covid_size:
+            if covid_counter < covid_size or covid_size==0:
                 src_path = os.path.join(r'resources\raw_data\covid', file)
                 if covid_counter < covid_size*split_factor:
                     dest_path = os.path.join(r'resources\prepared_data\test\covid', file)
@@ -82,8 +84,31 @@ class Data(object):
                     self.X_train.append(np.asarray(image).flatten())
                     self.y_train.append(1)
             covid_counter += 1
-        self.data_size = len(self.X_train)+len(self.X_test)
+        self.data_size = (len(self.X_train), len(self.X_test))
         self.augmented_size = self.data_size
+
+    def preprocess_data(self, batch_size):
+
+        self.dataset_train = tf.keras.preprocessing.image_dataset_from_directory(
+            r'resources\prepared_data\train',
+            labels="inferred",
+            label_mode="categorical",
+            class_names=self.class_names,
+            batch_size=batch_size,
+            image_size=(224, 224),
+            shuffle=True,
+            seed=123
+        )
+        self.dataset_test = tf.keras.preprocessing.image_dataset_from_directory(
+            r'resources\prepared_data\test',
+            labels="inferred",
+            label_mode="categorical",
+            class_names=self.class_names,
+            batch_size=batch_size,
+            image_size=(224, 224),
+            shuffle=True,
+            seed=123
+        )
 
     def import_data(self, size=0):
         """

@@ -27,7 +27,9 @@ class DiscreteNBC:
 		y_score = self.classifier.predict_proba(self.data.X_test)
 		predict_time_stop = time()
 
-		return MeasuringQuality("DiscreteNBC","DiscreteNBC", train_time_stop-train_time_start,predict_time_stop-predict_time_start,self.data.y_test,y_pred,y_score)
+		mq = MeasuringQuality("DiscreteNBC","DiscreteNBC", train_time_stop-train_time_start,predict_time_stop-predict_time_start)
+		mq.calculate_algorithm(self.data.y_test,y_pred,y_score)
+		return mq
 
 
 class DiscreteNBCImpl(BaseEstimator, ClassifierMixin):

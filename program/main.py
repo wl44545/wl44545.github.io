@@ -1,7 +1,6 @@
 import cv2
 
 from algorithms.naive_bayes.discrete_nbc import DiscreteNBC
-from algorithms.neural_networks.test_ai import TestAI
 from program.data import Data
 from program.measuring_quality.measuring_quality import MeasuringQuality
 from program.measuring_quality.statictics import Statistics
@@ -17,7 +16,7 @@ from program.algorithms.neighbors.k_neighbors import KNeighbors
 
 data = Data()
 data.make_data(50, 50, 0.25, 0.1)
-
+data.preprocess_data(32)
 # data.import_data(5000)
 # data.dump_data(500)
 
@@ -28,11 +27,14 @@ data.make_data(50, 50, 0.25, 0.1)
 statistics = Statistics()
 statistics.update_data(data)
 
-statistics.insert(TestAI(data).start())
+from program.algorithms.neural_networks.test import ai
 
-# statistics.insert(DiscreteNBC(data).start())
+#ai(data)
 
-# statistics.insert(BernoulliNBC(data).start())
+
+#statistics.insert(DiscreteNBC(data).start())
+
+statistics.insert(BernoulliNBC(data).start())
 # statistics.insert(ComplementNBC(data).start())
 # statistics.insert(GaussianNBC(data).start())
 # statistics.insert(MultinomialNBC(data).start())
