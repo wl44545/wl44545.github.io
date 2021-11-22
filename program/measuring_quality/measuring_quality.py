@@ -28,6 +28,7 @@ class MeasuringQuality:
 		self.predict_time = predict_time
 
 		self.confusion_matrix = None
+		self.confusion_matrix_percentage = None
 		self.roc_curve = None
 		self.auc = None
 
@@ -42,6 +43,9 @@ class MeasuringQuality:
 		self.specificity = None
 		self.sensitivity = None
 		self.f1 = None
+
+	def __str__(self):
+		return "method: {}, description: {},  train_time: {}, predict_time: {},  true_positive: {}, true_negative: {}, false_positive: {}, false_negative: {}, sensitivity: {},  specificity: {}, precision: {},  accuracy: {},  error: {}, f1: {}".format(self.method, self.description, self.train_time,self.predict_time, self.true_positive,self.true_negative,self.false_positive, self.false_negative,self.sensitivity, self.specificity,self.precision, self.accuracy, self.error,self.f1)
 
 	def calculate_algorithm(self, y_true, y_pred, y_score):
 		"""
@@ -69,13 +73,33 @@ class MeasuringQuality:
 		self.__draw_roc(self.roc_curve)
 		self.__draw_confusion(self.confusion_matrix)
 
-	def calculate_neural_network(self, history):
+	def calculate_neural_network(self, y_true, y_pred):
 		"""
 		Metoda obliczająca statystyki.
 		"""
-		pass
+		self.confusion_matrix = metrics.confusion_matrix(y_true, y_pred)
+		[[self.true_negative, self.false_positive], [self.false_negative, self.true_positive]] = self.confusion_matrix
+
+		self.accuracy = metrics.accuracy_score(y_true, y_pred)
+		self.error = 1 - self.accuracy
+		self.precision = metrics.precision_score(y_true, y_pred)
+		self.specificity = self.true_negative / (self.true_negative + self.false_positive)
+		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
+		self.f1 = metrics.f1_score(y_true, y_pred)
+
+		self.__draw_confusion(self.confusion_matrix)
+
+		#aa = tf.math.confusion_matrix(labels=labels, predictions=predictions).numpy()
 
 	def __draw_confusion(self, confusion):
+		plt.figure()
+		df = pd.DataFrame(confusion, columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
+		sn.heatmap(df, annot=True, cmap="YlGnBu")
+		plt.xlabel("Predicted")
+		plt.ylabel("Actual")
+		filename = str(uuid.uuid1())+".png"
+		plt.savefig("resources/results/images/"+filename)
+		self.confusion_matrix = "<a href=\"./images/" + filename + "\"><img src=\"./images/" + filename + "\" width=200 height=200 /></a>"
 		plt.figure()
 		df = pd.DataFrame(confusion/np.sum(confusion), columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
 		sn.heatmap(df, annot=True, cmap="YlGnBu")
@@ -83,7 +107,7 @@ class MeasuringQuality:
 		plt.ylabel("Actual")
 		filename = str(uuid.uuid1())+".png"
 		plt.savefig("resources/results/images/"+filename)
-		self.confusion_matrix = "<a href=\"./images/" + filename + "\"><img src=\"./images/" + filename + "\" width=200 height=200 /></a>"
+		self.confusion_matrix_percentage = "<a href=\"./images/" + filename + "\"><img src=\"./images/" + filename + "\" width=200 height=200 /></a>"
 
 	def __draw_roc(self, roc):
 		plt.figure()

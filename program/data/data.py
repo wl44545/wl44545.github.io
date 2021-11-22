@@ -27,6 +27,8 @@ class Data(object):
         """
         self.class_names = ['normal', 'covid']
         self.data_size = 0
+        self.train_size = 0
+        self.test_size = 0
         self.augmented_size = 0
         self.images = []
         self.labels = []
@@ -84,7 +86,9 @@ class Data(object):
                     self.X_train.append(np.asarray(image).flatten())
                     self.y_train.append(1)
             covid_counter += 1
-        self.data_size = (len(self.X_train), len(self.X_test))
+        self.train_size = len(self.X_train)
+        self.test_size = len(self.X_test)
+        self.data_size = self.train_size + self.test_size
         self.augmented_size = self.data_size
 
     def preprocess_data(self, batch_size):

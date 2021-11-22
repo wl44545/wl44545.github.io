@@ -31,15 +31,7 @@ class Statistics:
 		                  measuring_quality.false_positive, measuring_quality.false_negative,
 		                  measuring_quality.sensitivity, measuring_quality.specificity,
 		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
-		                  measuring_quality.f1, measuring_quality.confusion_matrix, measuring_quality.roc_curve])
-
-		print(measuring_quality.method, measuring_quality.description, measuring_quality.train_time,
-		                  measuring_quality.predict_time, measuring_quality.true_positive,
-		                  measuring_quality.true_negative,
-		                  measuring_quality.false_positive, measuring_quality.false_negative,
-		                  measuring_quality.sensitivity, measuring_quality.specificity,
-		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
-		                  measuring_quality.f1)
+		                  measuring_quality.f1, measuring_quality.confusion_matrix, measuring_quality.confusion_matrix_percentage, measuring_quality.roc_curve])
 
 	def create_statistics(self):
 		self.dataframe = pd.DataFrame(self.data,
@@ -48,7 +40,7 @@ class Statistics:
 		                                       'false_negative',
 		                                       'sensitivity', 'specificity', 'precision',
 		                                       'accuracy', 'error',
-		                                       'f1', 'confusion_matrix', 'roc_curve'])
+		                                       'f1', 'confusion_matrix', 'confusion_matrix_percentage', 'roc_curve'])
 
 	def update_data(self, data:Data):
 		self.data_info = data.data_size, data.augmented_size, len(data.X_train), len(data.X_test)
