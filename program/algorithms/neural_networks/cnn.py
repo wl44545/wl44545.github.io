@@ -16,7 +16,7 @@ class CNN:
 
 	def __init__(self, model, data, batch_size, epochs, log_subdir):
 
-		epochs = 1
+		epochs = 8
 		self.data = data
 		self.train_steps = int((data.data_size[0][0]+data.data_size[0][1]) / batch_size)
 		self.epochs = epochs

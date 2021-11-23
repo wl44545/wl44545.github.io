@@ -2,7 +2,10 @@
 Moduł zawierający obsługę danych źródłowych.
 """
 import os
+import random
+
 import cv2
+from numpy.matlib import rand
 from tqdm import tqdm
 import tensorflow as tf
 import numpy as np
@@ -32,7 +35,7 @@ class Data(object):
         self.dataset_train = None
         self.dataset_test = None
 
-    def __prepare(self, normal_size=0, covid_size=0, split_factor=0.0):
+    def __prepare(self, normal_size, covid_size, split_factor):
         normal_counter = 0
         covid_counter = 0
         os.mkdir(r'resources\tmp')
@@ -69,7 +72,7 @@ class Data(object):
             covid_counter += 1
         logging.info("Data prepared")
 
-    def __augment(self, augmentation_factor=0.0):
+    def __augment(self, augmentation_factor):
         rmtree(r'resources\data')
         os.mkdir(r'resources\data')
         os.mkdir(r'resources\data\test')
@@ -84,11 +87,24 @@ class Data(object):
         for file in tqdm(os.listdir(r'resources\tmp\train\normal')):
             if normal_counter < augmentation_factor*normal_original_size:
                 image = cv2.imread(os.path.join(r'resources\tmp\train\normal', file))
-                path = os.path.join(r'resources\data\train\normal', file)
-                cv2.imwrite(path + "_augmented_1.png", cv2.GaussianBlur(image, (5, 5), 0))
-                cv2.imwrite(path + "_augmented_2.png", cv2.flip(image, 0))
-                cv2.imwrite(path + "_augmented_3.png", cv2.flip(image, 1))
-                cv2.imwrite(path + "_augmented_4.png", cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
+                opt = random.randrange(0, 9, 1)
+                if opt == 0:
+                    image = cv2.GaussianBlur(image, (5, 5), 0)
+                elif opt == 1:
+                    image = cv2.flip(image, 1)
+                elif opt == 2:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(0.25, 0.5))
+                elif opt == 3:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(0.5, 0.75))
+                elif opt == 4:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(0.75, 1.0))
+                elif opt == 5:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(1.0, 1.25))
+                elif opt == 6:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(1.25, 1.5))
+                elif opt == 7:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(1.5, 1.75))
+                cv2.imwrite(os.path.join(r'resources\data\train\normal', file) + "_augmented.png", image)
             normal_counter += 1
 
         covid_original_size = len(os.listdir(r'resources\tmp\train\covid'))
@@ -96,11 +112,24 @@ class Data(object):
         for file in tqdm(os.listdir(r'resources\tmp\train\covid')):
             if covid_counter < augmentation_factor*covid_original_size:
                 image = cv2.imread(os.path.join(r'resources\tmp\train\covid', file))
-                path = os.path.join(r'resources\data\train\covid', file)
-                cv2.imwrite(path + "_augmented_1.png", cv2.GaussianBlur(image, (5, 5), 0))
-                cv2.imwrite(path + "_augmented_2.png", cv2.flip(image, 0))
-                cv2.imwrite(path + "_augmented_3.png", cv2.flip(image, 1))
-                cv2.imwrite(path + "_augmented_4.png", cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
+                opt = random.randrange(0, 9, 1)
+                if opt == 0:
+                    image = cv2.GaussianBlur(image, (5, 5), 0)
+                elif opt == 1:
+                    image = cv2.flip(image, 1)
+                elif opt == 2:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(0.25, 0.5))
+                elif opt == 3:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(0.5, 0.75))
+                elif opt == 4:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(0.75, 1.0))
+                elif opt == 5:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(1.0, 1.25))
+                elif opt == 6:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(1.25, 1.5))
+                elif opt == 7:
+                    image = cv2.convertScaleAbs(image, alpha=random.uniform(1.5, 1.75))
+                cv2.imwrite(os.path.join(r'resources\data\train\covid', file) + "_augmented.png", image)
             covid_counter += 1
         logging.info("Data augmented")
 
@@ -198,7 +227,7 @@ class Data(object):
         self.X_test = self.__pca_one(np.array(self.X_test), len(self.X_test[0]))
         logging.info("Data processed by PCA")
 
-    def load(self, normal_size=2, covid_size=2, batch_size=1, split_factor=0.5, augmentation_factor=0.5):
+    def load(self, normal_size, covid_size, batch_size, split_factor, augmentation_factor):
         self.__prepare(normal_size,covid_size,split_factor)
         self.__augment(augmentation_factor)
         self.__copy()
