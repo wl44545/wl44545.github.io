@@ -1,4 +1,21 @@
-<p2>Original data size: 128</p2><br><p2>Data size afer augmentation: 128</p2><br><p2>Train data size: 96</p2><br><p2>Test data size: 32</p2><br><br><br><table border="1" class="dataframe">
+
+		<p2><b>Original data size:</b></p2><br>
+		<p2>Train Normal: 21</p2><br>
+		<p2>Train COVID: 14</p2><br>
+		<p2>Train SUM: 35</p2><br>
+		<p2>Test Normal: 9</p2><br>
+		<p2>Test COVID: 6</p2><br>
+		<p2>Test SUM: 15</p2><br>
+
+		<p2><b>Augmented data size:</b></p2><br>
+		<p2>Train Normal: 65</p2><br>
+		<p2>Train COVID: 42</p2><br>
+		<p2>Train SUM: 107</p2><br>
+		<p2>Test Normal: 9</p2><br>
+		<p2>Test COVID: 6</p2><br>
+		<p2>Test SUM: 15</p2><br>	
+		
+		<table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -16,6 +33,7 @@
       <th>accuracy</th>
       <th>error</th>
       <th>f1</th>
+      <th>my_score</th>
       <th>confusion_matrix</th>
       <th>confusion_matrix_percentage</th>
       <th>roc_curve</th>
@@ -24,23 +42,66 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>VGG19</td>
-      <td></td>
-      <td>70.28937</td>
-      <td>14.061861</td>
-      <td>5</td>
-      <td>7</td>
+      <td>DiscreteNBC</td>
+      <td>DiscreteNBC</td>
+      <td>49.987332</td>
+      <td>10.962909</td>
+      <td>2</td>
       <td>9</td>
-      <td>11</td>
-      <td>0.3125</td>
-      <td>0.4375</td>
-      <td>0.357143</td>
-      <td>0.375</td>
-      <td>0.625</td>
+      <td>0</td>
+      <td>4</td>
       <td>0.333333</td>
-      <td><a href="./images/1d947615-4b99-11ec-a7fb-68f728e1134a.png"><img src="./images/1d947615-4b99-11ec-a7fb-68f728e1134a.png" width=200 height=200 /></a></td>
-      <td><a href="./images/1db504fd-4b99-11ec-81ca-68f728e1134a.png"><img src="./images/1db504fd-4b99-11ec-81ca-68f728e1134a.png" width=200 height=200 /></a></td>
-      <td>None</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.733333</td>
+      <td>0.266667</td>
+      <td>0.5</td>
+      <td>0.008203</td>
+      <td><a href="./images/b67a66df-4c98-11ec-9789-68f728e1134a.png"><img src="./images/b67a66df-4c98-11ec-9789-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b69d7f98-4c98-11ec-8800-68f728e1134a.png"><img src="./images/b69d7f98-4c98-11ec-8800-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b64bba09-4c98-11ec-9304-68f728e1134a.png"><img src="./images/b64bba09-4c98-11ec-9304-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BernoulliNBC</td>
+      <td>Naive Bayes classifier for multivariate Bernoulli models</td>
+      <td>0.501248</td>
+      <td>0.065938</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.600000</td>
+      <td>0.400000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td><a href="./images/b78d1542-4c98-11ec-81aa-68f728e1134a.png"><img src="./images/b78d1542-4c98-11ec-81aa-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b7bc86f3-4c98-11ec-997c-68f728e1134a.png"><img src="./images/b7bc86f3-4c98-11ec-997c-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b75d7fc8-4c98-11ec-88eb-68f728e1134a.png"><img src="./images/b75d7fc8-4c98-11ec-88eb-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>DenseNet121</td>
+      <td></td>
+      <td>20.990489</td>
+      <td>4.461163</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.600000</td>
+      <td>0.400000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td><a href="./images/ca29b507-4c98-11ec-84e9-68f728e1134a.png"><img src="./images/ca29b507-4c98-11ec-84e9-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/ca4d26c0-4c98-11ec-aeb0-68f728e1134a.png"><img src="./images/ca4d26c0-4c98-11ec-aeb0-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/ca612b70-4c98-11ec-8bf8-68f728e1134a.png"><img src="./images/ca612b70-4c98-11ec-8bf8-68f728e1134a.png" width=200 height=200 /></a></td>
     </tr>
   </tbody>
 </table>

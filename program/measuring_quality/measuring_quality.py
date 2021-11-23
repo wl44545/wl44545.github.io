@@ -44,8 +44,10 @@ class MeasuringQuality:
 		self.sensitivity = None
 		self.f1 = None
 
+		self.my_score = None
+
 	def __str__(self):
-		return "method: {}, description: {},  train_time: {}, predict_time: {},  true_positive: {}, true_negative: {}, false_positive: {}, false_negative: {}, sensitivity: {},  specificity: {}, precision: {},  accuracy: {},  error: {}, f1: {}".format(self.method, self.description, self.train_time,self.predict_time, self.true_positive,self.true_negative,self.false_positive, self.false_negative,self.sensitivity, self.specificity,self.precision, self.accuracy, self.error,self.f1)
+		return "method: {}, description: {},  train_time: {}, predict_time: {},  true_positive: {}, true_negative: {}, false_positive: {}, false_negative: {}, sensitivity: {},  specificity: {}, precision: {},  accuracy: {},  error: {}, f1: {}".format(self.method, self.description, self.train_time,self.predict_time, self.true_positive,self.true_negative,self.false_positive, self.false_negative,self.sensitivity, self.specificity,self.precision, self.accuracy, self.error, self.f1, self.my_score)
 
 	def calculate_algorithm(self, y_true, y_pred, y_score):
 		"""
@@ -70,6 +72,8 @@ class MeasuringQuality:
 		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
 		self.f1 = metrics.f1_score(y_true, y_pred)
 
+		self.my_score = self.f1/(self.train_time+self.predict_time)
+
 		self.__draw_roc(self.roc_curve)
 		self.__draw_confusion(self.confusion_matrix)
 
@@ -87,13 +91,13 @@ class MeasuringQuality:
 		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
 		self.f1 = metrics.f1_score(y_true, y_pred)
 
-		self.__draw_confusion(self.confusion_matrix)
+		self.my_score = self.f1 / (self.train_time + self.predict_time)
 
+		self.__draw_confusion(self.confusion_matrix)
 
 		self.roc_curve = metrics.roc_curve(y_true, y_pred)
 		self.__draw_roc(self.roc_curve)
 
-		#aa = tf.math.confusion_matrix(labels=labels, predictions=predictions).numpy()
 
 	def __draw_confusion(self, confusion):
 		plt.figure()

@@ -16,9 +16,9 @@ class CNN:
 
 	def __init__(self, model, data, batch_size, epochs, log_subdir):
 
-		epochs = 8
+		epochs = 1
 		self.data = data
-		self.train_steps = int(data.train_size / batch_size)
+		self.train_steps = int((data.data_size[0][0]+data.data_size[0][1]) / batch_size)
 		self.epochs = epochs
 
 		self.tensorboard = tf.keras.callbacks.TensorBoard(log_dir="resources/logs/"+log_subdir, histogram_freq=1)

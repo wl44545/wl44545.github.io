@@ -31,7 +31,8 @@ class Statistics:
 		                  measuring_quality.false_positive, measuring_quality.false_negative,
 		                  measuring_quality.sensitivity, measuring_quality.specificity,
 		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
-		                  measuring_quality.f1, measuring_quality.confusion_matrix, measuring_quality.confusion_matrix_percentage, measuring_quality.roc_curve])
+		                  measuring_quality.f1, measuring_quality.my_score, measuring_quality.confusion_matrix,
+		                  measuring_quality.confusion_matrix_percentage, measuring_quality.roc_curve])
 
 	def create_statistics(self):
 		dataframe = pd.DataFrame(self.data,
@@ -40,11 +41,12 @@ class Statistics:
 		                                       'false_negative',
 		                                       'sensitivity', 'specificity', 'precision',
 		                                       'accuracy', 'error',
-		                                       'f1', 'confusion_matrix', 'confusion_matrix_percentage', 'roc_curve'])
-		self.dataframe = dataframe.sort_values("f1", ascending=False)
+		                                       'f1', 'my_score', 'confusion_matrix',
+		                                       'confusion_matrix_percentage', 'roc_curve'])
+		self.dataframe = dataframe.sort_values("my_score", ascending=False)
 
 	def update_data(self, data:Data):
-		self.data_info = data.data_size, data.augmented_size, len(data.X_train), len(data.X_test)
+		self.data_info = data.original_size, data.data_size
 
 	def show(self):
 		print(self.dataframe)
@@ -53,7 +55,38 @@ class Statistics:
 		self.dataframe.to_csv(r'resources\results\result.csv', index=False, header=True)
 
 	def export_html(self):
-		datainfo = "<p2>Original data size: "+str(self.data_info[0])+"</p2><br>"+"<p2>Data size afer augmentation: "+str(self.data_info[1])+"</p2><br>"+"<p2>Train data size: "+str(self.data_info[2])+"</p2><br>"+"<p2>Test data size: "+str(self.data_info[3])+"</p2><br><br><br>"
+		datainfo = """
+		<p2><b>Original data size:</b></p2><br>
+		<p2>Train Normal: {}</p2><br>
+		<p2>Train COVID: {}</p2><br>
+		<p2>Train SUM: {}</p2><br>
+		<p2>Test Normal: {}</p2><br>
+		<p2>Test COVID: {}</p2><br>
+		<p2>Test SUM: {}</p2><br>
+
+		<p2><b>Augmented data size:</b></p2><br>
+		<p2>Train Normal: {}</p2><br>
+		<p2>Train COVID: {}</p2><br>
+		<p2>Train SUM: {}</p2><br>
+		<p2>Test Normal: {}</p2><br>
+		<p2>Test COVID: {}</p2><br>
+		<p2>Test SUM: {}</p2><br>	
+		
+		""".format(
+			self.data_info[0][0][0],
+			self.data_info[0][0][1],
+			self.data_info[0][0][0] + self.data_info[0][0][1],
+			self.data_info[0][1][0],
+			self.data_info[0][1][1],
+			self.data_info[0][1][0] + self.data_info[0][1][1],
+			self.data_info[1][0][0],
+			self.data_info[1][0][1],
+			self.data_info[1][0][0] + self.data_info[1][0][1],
+			self.data_info[1][1][0],
+			self.data_info[1][1][1],
+			self.data_info[1][1][0] + self.data_info[1][1][1],
+		)
+
 		html = str(self.dataframe.to_html()).replace("&lt;","<").replace("&gt;",">")
 		text_file = open(r'resources\results\result.html', "w", encoding="utf-8")
 		text_file.write(datainfo)

@@ -3,35 +3,28 @@ Moduł zawierający obsługę danych źródłowych.
 """
 import os
 import cv2
-import pickle as pkl
-from sklearn.model_selection import train_test_split
-from tensorflow.keras import layers
-from tensorflow.python.ops.image_ops_impl import flip_up_down
 from tqdm import tqdm
 import tensorflow as tf
-from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
-from tensorflow import keras
-from tensorflow.keras.models import Sequential
-from random import randint,uniform
 import numpy as np
-from shutil import copy,rmtree
+from shutil import copy, rmtree
+import logging
 
 
 class Data(object):
     """
     Dane źródłowe.
     """
+
     def __init__(self):
         """
         Konstruktor.
         """
         self.class_names = ['normal', 'covid']
-        self.data_size = 0
-        self.train_size = 0
-        self.test_size = 0
-        self.augmented_size = 0
-        self.images = []
-        self.labels = []
+
+        # [[train-normal, train-covid],[test-normal, test-covid]]
+        self.data_size = [[0, 0], [0, 0]]
+        self.original_size = [[0, 0], [0, 0]]
+
         self.X_train = []
         self.y_train = []
         self.X_test = []
@@ -39,7 +32,157 @@ class Data(object):
         self.dataset_train = None
         self.dataset_test = None
 
-    def __pca(self, X, num_components):
+    def __prepare(self, normal_size=0, covid_size=0, split_factor=0.0):
+        normal_counter = 0
+        covid_counter = 0
+        os.mkdir(r'resources\tmp')
+        os.mkdir(r'resources\tmp\test')
+        os.mkdir(r'resources\tmp\train')
+        os.mkdir(r'resources\tmp\test\normal')
+        os.mkdir(r'resources\tmp\train\normal')
+        os.mkdir(r'resources\tmp\test\covid')
+        os.mkdir(r'resources\tmp\train\covid')
+
+        for file in tqdm(os.listdir(r'resources\raw_data\normal')):
+            if normal_counter < normal_size:
+                src_path = os.path.join(r'resources\raw_data\normal', file)
+                if normal_counter < int(normal_size * split_factor):
+                    dest_path = os.path.join(r'resources\tmp\test\normal', file)
+                    copy(src_path, dest_path)
+                    self.original_size[1][0] += 1
+                else:
+                    dest_path = os.path.join(r'resources\tmp\train\normal', file)
+                    copy(src_path, dest_path)
+                    self.original_size[0][0] += 1
+            normal_counter += 1
+        for file in tqdm(os.listdir(r'resources\raw_data\covid')):
+            if covid_counter < covid_size:
+                src_path = os.path.join(r'resources\raw_data\covid', file)
+                if covid_counter < int(covid_size * split_factor):
+                    dest_path = os.path.join(r'resources\tmp\test\covid', file)
+                    copy(src_path, dest_path)
+                    self.original_size[1][1] += 1
+                else:
+                    dest_path = os.path.join(r'resources\tmp\train\covid', file)
+                    copy(src_path, dest_path)
+                    self.original_size[0][1] += 1
+            covid_counter += 1
+        logging.info("Data prepared")
+
+    def __augment(self, augmentation_factor=0.0):
+        rmtree(r'resources\data')
+        os.mkdir(r'resources\data')
+        os.mkdir(r'resources\data\test')
+        os.mkdir(r'resources\data\train')
+        os.mkdir(r'resources\data\test\normal')
+        os.mkdir(r'resources\data\train\normal')
+        os.mkdir(r'resources\data\test\covid')
+        os.mkdir(r'resources\data\train\covid')
+
+        normal_original_size = len(os.listdir(r'resources\tmp\train\normal'))
+        normal_counter = 0
+        for file in tqdm(os.listdir(r'resources\tmp\train\normal')):
+            if normal_counter < augmentation_factor*normal_original_size:
+                image = cv2.imread(os.path.join(r'resources\tmp\train\normal', file))
+                path = os.path.join(r'resources\data\train\normal', file)
+                cv2.imwrite(path + "_augmented_1.png", cv2.GaussianBlur(image, (5, 5), 0))
+                cv2.imwrite(path + "_augmented_2.png", cv2.flip(image, 0))
+                cv2.imwrite(path + "_augmented_3.png", cv2.flip(image, 1))
+                cv2.imwrite(path + "_augmented_4.png", cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
+            normal_counter += 1
+
+        covid_original_size = len(os.listdir(r'resources\tmp\train\covid'))
+        covid_counter = 0
+        for file in tqdm(os.listdir(r'resources\tmp\train\covid')):
+            if covid_counter < augmentation_factor*covid_original_size:
+                image = cv2.imread(os.path.join(r'resources\tmp\train\covid', file))
+                path = os.path.join(r'resources\data\train\covid', file)
+                cv2.imwrite(path + "_augmented_1.png", cv2.GaussianBlur(image, (5, 5), 0))
+                cv2.imwrite(path + "_augmented_2.png", cv2.flip(image, 0))
+                cv2.imwrite(path + "_augmented_3.png", cv2.flip(image, 1))
+                cv2.imwrite(path + "_augmented_4.png", cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
+            covid_counter += 1
+        logging.info("Data augmented")
+
+    def __copy(self):
+        for file in tqdm(os.listdir(r'resources\tmp\train\normal')):
+            src_path = os.path.join(r'resources\tmp\train\normal', file)
+            dest_path = os.path.join(r'resources\data\train\normal', file)
+            copy(src_path, dest_path)
+
+        for file in tqdm(os.listdir(r'resources\tmp\train\covid')):
+            src_path = os.path.join(r'resources\tmp\train\covid', file)
+            dest_path = os.path.join(r'resources\data\train\covid', file)
+            copy(src_path, dest_path)
+
+        for file in tqdm(os.listdir(r'resources\tmp\test\normal')):
+            src_path = os.path.join(r'resources\tmp\test\normal', file)
+            dest_path = os.path.join(r'resources\data\test\normal', file)
+            copy(src_path, dest_path)
+
+        for file in tqdm(os.listdir(r'resources\tmp\test\covid')):
+            src_path = os.path.join(r'resources\tmp\test\covid', file)
+            dest_path = os.path.join(r'resources\data\test\covid', file)
+            copy(src_path, dest_path)
+
+        rmtree(r'resources\tmp')
+        logging.info("Data copied")
+
+    def __read(self):
+        for file in tqdm(os.listdir(r'resources\data\train\normal')):
+            path = os.path.join(r'resources\data\train\normal', file)
+            image = cv2.imread(path)
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            self.X_train.append(np.asarray(image).flatten())
+            self.y_train.append(0)
+            self.data_size[0][0] += 1
+
+        for file in tqdm(os.listdir(r'resources\data\train\covid')):
+            path = os.path.join(r'resources\data\train\covid', file)
+            image = cv2.imread(path)
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            self.X_train.append(np.asarray(image).flatten())
+            self.y_train.append(1)
+            self.data_size[0][1] += 1
+
+        for file in tqdm(os.listdir(r'resources\data\test\normal')):
+            path = os.path.join(r'resources\data\test\normal', file)
+            image = cv2.imread(path)
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            self.X_test.append(np.asarray(image).flatten())
+            self.y_test.append(0)
+            self.data_size[1][0] += 1
+
+        for file in tqdm(os.listdir(r'resources\data\test\covid')):
+            path = os.path.join(r'resources\data\test\covid', file)
+            image = cv2.imread(path)
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            self.X_test.append(np.asarray(image).flatten())
+            self.y_test.append(1)
+            self.data_size[1][1] += 1
+
+        logging.info("Data prepared for algorithms")
+
+    def __preprocess(self, batch_size):
+        self.dataset_train = tf.keras.preprocessing.image_dataset_from_directory(
+            r'resources\data\train',
+            labels="inferred",
+            label_mode="categorical",
+            class_names=self.class_names,
+            batch_size=batch_size,
+            image_size=(224, 224)
+        )
+        self.dataset_test = tf.keras.preprocessing.image_dataset_from_directory(
+            r'resources\data\test',
+            labels="inferred",
+            label_mode="categorical",
+            class_names=self.class_names,
+            batch_size=batch_size,
+            image_size=(224, 224)
+        )
+        logging.info("Data prepared for neural networks")
+
+    def __pca_one(self, X, num_components):
         X_meaned = X - np.mean(X, axis=0)
         cov_mat = np.cov(X_meaned, rowvar=False)
         eigen_values, eigen_vectors = np.linalg.eigh(cov_mat)
@@ -50,169 +193,15 @@ class Data(object):
         X_reduced = np.dot(eigenvector_subset.transpose(), X_meaned.transpose()).transpose()
         return X_reduced
 
-    def pca(self):
-        self.X_train = self.__pca(np.array(self.X_train), len(self.X_train[0]))
-        self.X_test = self.__pca(np.array(self.X_test), len(self.X_test[0]))
+    def __pca(self):
+        self.X_train = self.__pca_one(np.array(self.X_train), len(self.X_train[0]))
+        self.X_test = self.__pca_one(np.array(self.X_test), len(self.X_test[0]))
+        logging.info("Data processed by PCA")
 
-    def make_data(self, normal_size=0, covid_size=0, split_factor=0, augmentation_factor=0):
-        normal_counter = 0
-        covid_counter = 0
-        rmtree(r'resources\prepared_data')
-        os.mkdir(r'resources\prepared_data')
-        os.mkdir(r'resources\prepared_data\test')
-        os.mkdir(r'resources\prepared_data\train')
-        os.mkdir(r'resources\prepared_data\test\normal')
-        os.mkdir(r'resources\prepared_data\train\normal')
-        os.mkdir(r'resources\prepared_data\test\covid')
-        os.mkdir(r'resources\prepared_data\train\covid')
-        for file in tqdm(os.listdir(r'resources\raw_data\normal')):
-            if normal_counter < normal_size or normal_size==0:
-                src_path = os.path.join(r'resources\raw_data\normal', file)
-                if normal_counter < normal_size*split_factor:
-                    dest_path = os.path.join(r'resources\prepared_data\test\normal', file)
-                    copy(src_path,dest_path)
-                    image = cv2.imread(src_path)
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    self.X_test.append(np.asarray(image).flatten())
-                    self.y_test.append(0)
-                else:
-                    dest_path = os.path.join(r'resources\prepared_data\train\normal', file)
-                    copy(src_path,dest_path)
-                    image = cv2.imread(src_path)
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    self.X_train.append(np.asarray(image).flatten())
-                    self.y_train.append(0)
-            normal_counter += 1
-        for file in tqdm(os.listdir(r'resources\raw_data\covid')):
-            if covid_counter < covid_size or covid_size==0:
-                src_path = os.path.join(r'resources\raw_data\covid', file)
-                if covid_counter < covid_size*split_factor:
-                    dest_path = os.path.join(r'resources\prepared_data\test\covid', file)
-                    copy(src_path,dest_path)
-                    image = cv2.imread(src_path)
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    self.X_test.append(np.asarray(image).flatten())
-                    self.y_test.append(1)
-                else:
-                    dest_path = os.path.join(r'resources\prepared_data\train\covid', file)
-                    copy(src_path,dest_path)
-                    image = cv2.imread(src_path)
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    self.X_train.append(np.asarray(image).flatten())
-                    self.y_train.append(1)
-            covid_counter += 1
-        self.train_size = len(self.X_train)
-        self.test_size = len(self.X_test)
-        self.data_size = self.train_size + self.test_size
-        self.augmented_size = self.data_size
-
-    def preprocess_data(self, batch_size):
-
-        self.dataset_train = tf.keras.preprocessing.image_dataset_from_directory(
-            r'resources\prepared_data\train',
-            labels="inferred",
-            label_mode="categorical",
-            class_names=self.class_names,
-            batch_size=batch_size,
-            image_size=(224, 224),
-            shuffle=True,
-            seed=123
-        )
-        self.dataset_test = tf.keras.preprocessing.image_dataset_from_directory(
-            r'resources\prepared_data\test',
-            labels="inferred",
-            label_mode="categorical",
-            class_names=self.class_names,
-            batch_size=batch_size,
-            image_size=(224, 224),
-            shuffle=True,
-            seed=123
-        )
-
-    def import_data(self, size=0):
-        """
-        Odczyt prosto z plików png.
-        """
-        normal_counter = 0
-        covid_counter = 0
-        for file in tqdm(os.listdir(r'resources\raw_data\normal')):
-            if normal_counter < size or size == 0:
-                img_path = os.path.join(r'resources\raw_data\normal', file)
-                image = cv2.imread(img_path)
-                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                self.images.append(image)
-                self.labels.append(0)
-                normal_counter += 1
-        for file in tqdm(os.listdir(r'resources\raw_data\covid')):
-            if covid_counter < size or size == 0:
-                img_path = os.path.join(r'resources\raw_data\covid', file)
-                image = cv2.imread(img_path)
-                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                self.images.append(image)
-                self.labels.append(1)
-                covid_counter += 1
-
-    def dump_data(self, size=0):
-        """
-        Zapis skompresowanych danych.
-        """
-        if self.images != [] and self.labels != []:
-            file_images = open('resources\pickled_data\images'+str(size)+'.pickled', 'wb')
-            file_labels = open('resources\pickled_data\labels'+str(size)+'.pickled', 'wb')
-            pkl.dump(self.images, file_images, protocol=pkl.HIGHEST_PROTOCOL)
-            pkl.dump(self.labels, file_labels, protocol=pkl.HIGHEST_PROTOCOL)
-            file_images.close()
-            file_labels.close()
-
-    def load_data(self, size=0):
-        """
-        Odczyt skompresowanych danych.
-        """
-        file_images = open('resources\pickled_data\images'+str(size)+'.pickled', 'rb')
-        file_labels = open('resources\pickled_data\labels'+str(size)+'.pickled', 'rb')
-        self.images = pkl.load(file_images)
-        self.labels = pkl.load(file_labels)
-        self.data_size = len(self.images)
-        file_images.close()
-        file_labels.close()
-
-    def resize_data(self, height, width):
-        """
-        Przeskalowanie danych.
-        """
-        for i in range(len(self.images)):
-            self.images[i] = cv2.resize(self.images[i], (height, width))
-
-    def augment_data(self, augmentation_factor=0.25):
-        """
-        Rozszerzenie danych.
-        """
-        N = len(self.images)
-        n = int(augmentation_factor * N)
-        for _ in range(n):
-            i = randint(0, N)
-            label = self.labels[i]
-            image = self.images[i]
-            for _ in range(4):
-                # self.images.append(cv2.GaussianBlur(image,(5,5),0))
-                # self.labels.append(label)
-                self.images.append(cv2.flip(image, 0))
-                self.labels.append(label)
-                self.images.append(cv2.flip(image, 1))
-                self.labels.append(label)
-                self.images.append(cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE))
-                self.labels.append(label)
-                image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
-        self.augmented_size = len(self.images)
-
-    def split_data(self, test_size=0.25, random_state=0):
-        """
-        Podział zbioru danych na podzbiory: uczący i testowy.
-        """
-        tmp = []
-        for image in self.images:
-            tmp.append(np.asarray(image).flatten())
-        self.images = np.array(tmp)
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.images, self.labels, test_size=test_size, random_state=random_state)
-
-
+    def load(self, normal_size=2, covid_size=2, batch_size=1, split_factor=0.5, augmentation_factor=0.5):
+        self.__prepare(normal_size,covid_size,split_factor)
+        self.__augment(augmentation_factor)
+        self.__copy()
+        self.__read()
+        self.__preprocess(batch_size)
+        # self.__pca()
