@@ -1,33 +1,33 @@
-from sklearn.ensemble import GradientBoostingClassifier
 from time import time
+import tensorflow.keras.applications as models
+from algorithms.neural_networks.cnn import CNN
 from measuring_quality import MeasuringQuality
 import logging
 
 
-class GradientBoost(object):
+class Xception(object):
 
 	def __init__(self, data):
-		self.data = data
-		self.classifier = GradientBoostingClassifier()
-		self.name = "GradientBoostingClassifier"
-		self.description = "An GradientBoost classifier"
+		self.name = "Xception"
+		self.description = ""
+		self.cnn = CNN(models.Xception, data, 32, 32, self.name)
 		logging.info("Algorithm initialized")
 
 	def start(self):
 		logging.info("Training started")
 		train_time_start = time()
-		self.classifier.fit(self.data.X_train, self.data.y_train)
+		history = self.cnn.fit()
 		train_time_stop = time()
 		logging.info("Training completed")
+		logging.info("Training results: " + str(history.params) + str(history.history))
 
 		logging.info("Prediction started")
 		predict_time_start = time()
-		y_pred = self.classifier.predict(self.data.X_test)
+		y_true, y_pred = self.cnn.predict()
 		predict_time_stop = time()
 		logging.info("Prediction completed")
-		y_score = self.classifier.predict_proba(self.data.X_test)
 
 		mq = MeasuringQuality(self.name, self.description, train_time_stop-train_time_start, predict_time_stop-predict_time_start)
-		mq.calculate_algorithm(self.data.y_test, y_pred, y_score)
+		mq.calculate_neural_network(y_true, y_pred)
 		logging.info("Prediction results: " + str(mq))
 		return mq

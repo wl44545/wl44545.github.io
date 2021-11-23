@@ -89,6 +89,10 @@ class MeasuringQuality:
 
 		self.__draw_confusion(self.confusion_matrix)
 
+
+		self.roc_curve = metrics.roc_curve(y_true, y_pred)
+		self.__draw_roc(self.roc_curve)
+
 		#aa = tf.math.confusion_matrix(labels=labels, predictions=predictions).numpy()
 
 	def __draw_confusion(self, confusion):
@@ -100,6 +104,7 @@ class MeasuringQuality:
 		filename = str(uuid.uuid1())+".png"
 		plt.savefig("resources/results/images/"+filename)
 		self.confusion_matrix = "<a href=\"./images/" + filename + "\"><img src=\"./images/" + filename + "\" width=200 height=200 /></a>"
+		plt.close()
 		plt.figure()
 		df = pd.DataFrame(confusion/np.sum(confusion), columns=["Normal", "COVID-19"],index=["Normal", "COVID-19"])
 		sn.heatmap(df, annot=True, cmap="YlGnBu")
@@ -108,6 +113,7 @@ class MeasuringQuality:
 		filename = str(uuid.uuid1())+".png"
 		plt.savefig("resources/results/images/"+filename)
 		self.confusion_matrix_percentage = "<a href=\"./images/" + filename + "\"><img src=\"./images/" + filename + "\" width=200 height=200 /></a>"
+		plt.close()
 
 	def __draw_roc(self, roc):
 		plt.figure()
@@ -117,8 +123,9 @@ class MeasuringQuality:
 		plt.ylim([0.0, 1.05])
 		plt.xlabel('False Positive Rate')
 		plt.ylabel('True Positive Rate')
-		plt.title('Receiver operating characteristic example')
+		plt.title('Receiver operating characteristic')
 		plt.legend(loc="lower right")
 		filename = str(uuid.uuid1())+".png"
 		plt.savefig("resources/results/images/"+filename)
 		self.roc_curve = "<a href=\"./images/" + filename + "\"><img src=\"./images/" + filename + "\" width=200 height=200 /></a>"
+		plt.close()

@@ -15,6 +15,8 @@ from tensorflow.keras.metrics import *
 class CNN:
 
 	def __init__(self, model, data, batch_size, epochs, log_subdir):
+
+		epochs = 8
 		self.data = data
 		self.train_steps = int(data.train_size / batch_size)
 		self.epochs = epochs

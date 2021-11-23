@@ -2,6 +2,7 @@ from time import time
 from measuring_quality import MeasuringQuality
 from sklearn.base import BaseEstimator, ClassifierMixin
 import numpy as np
+import logging
 
 
 class DiscreteNBC:
@@ -11,25 +12,46 @@ class DiscreteNBC:
 	def __init__(self, data):
 		self.data = data
 		self.classifier = DiscreteNBCImpl()
+		self.name = "DiscreteNBC"
+		self.description = "DiscreteNBC"
+		logging.info("Algorithm initialized")
 
 	def start(self):
 
-		m, n = self.data.X_train.shape
 		B = 256
+		X_train = discretize(self.data.X_train, B)
+		X_test = discretize(self.data.X_test, B)
+		m, n = X_train.shape
+
 		self.classifier.config(domain_sizes=np.ones(n).astype("int32") * B, laplace=True, logarithm=True)
 
+		logging.info("Training started")
 		train_time_start = time()
-		self.classifier.fit(self.data.X_train, self.data.y_train)
+		self.classifier.fit(X_train, self.data.y_train)
 		train_time_stop = time()
+		logging.info("Training completed")
 
+		logging.info("Prediction started")
 		predict_time_start = time()
-		y_pred = self.classifier.predict(self.data.X_test)
-		y_score = self.classifier.predict_proba(self.data.X_test)
+		y_pred = self.classifier.predict(X_test)
 		predict_time_stop = time()
+		logging.info("Prediction completed")
+		y_score = self.classifier.predict_proba(X_test)
 
-		mq = MeasuringQuality("DiscreteNBC","DiscreteNBC", train_time_stop-train_time_start,predict_time_stop-predict_time_start)
-		mq.calculate_algorithm(self.data.y_test,y_pred,y_score)
+		mq = MeasuringQuality(self.name, self.description, train_time_stop-train_time_start, predict_time_stop-predict_time_start)
+		mq.calculate_algorithm(self.data.y_test, y_pred, y_score)
+		logging.info("Prediction results: " + str(mq))
 		return mq
+
+
+def discretize(X, B, X_train_ref=None):
+	if X_train_ref is None:
+		X_train_ref = X
+	mins = np.min(X_train_ref, axis=0)
+	maxes = np.max(X_train_ref, axis=0)
+	X = np.floor(((X - mins) / (maxes - mins)) * B).astype("int32")
+	X = np.clip(X, 0, B - 1)
+	return X
 
 
 class DiscreteNBCImpl(BaseEstimator, ClassifierMixin):

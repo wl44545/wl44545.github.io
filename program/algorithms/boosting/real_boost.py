@@ -1,16 +1,14 @@
-from sklearn.ensemble import GradientBoostingClassifier
 from time import time
 from measuring_quality import MeasuringQuality
 import logging
 
-
-class GradientBoost(object):
+class RealBoost(object):
 
 	def __init__(self, data):
 		self.data = data
-		self.classifier = GradientBoostingClassifier()
-		self.name = "GradientBoostingClassifier"
-		self.description = "An GradientBoost classifier"
+		self.classifier = RealBoostImpl()
+		self.name = "RealBoost"
+		self.description = "An RealBoost classifier"
 		logging.info("Algorithm initialized")
 
 	def start(self):
@@ -31,3 +29,17 @@ class GradientBoost(object):
 		mq.calculate_algorithm(self.data.y_test, y_pred, y_score)
 		logging.info("Prediction results: " + str(mq))
 		return mq
+
+
+class RealBoostImpl(object):
+	def __init__(self):
+		pass
+
+	def fit(self, X, y):
+		pass
+
+	def predict_proba(self, X):
+		pass
+
+	def predict(self, X):
+		pass

@@ -39,6 +39,21 @@ class Data(object):
         self.dataset_train = None
         self.dataset_test = None
 
+    def __pca(self, X, num_components):
+        X_meaned = X - np.mean(X, axis=0)
+        cov_mat = np.cov(X_meaned, rowvar=False)
+        eigen_values, eigen_vectors = np.linalg.eigh(cov_mat)
+        sorted_index = np.argsort(eigen_values)[::-1]
+        sorted_eigenvalue = eigen_values[sorted_index]
+        sorted_eigenvectors = eigen_vectors[:, sorted_index]
+        eigenvector_subset = sorted_eigenvectors[:, 0:num_components]
+        X_reduced = np.dot(eigenvector_subset.transpose(), X_meaned.transpose()).transpose()
+        return X_reduced
+
+    def pca(self):
+        self.X_train = self.__pca(np.array(self.X_train), len(self.X_train[0]))
+        self.X_test = self.__pca(np.array(self.X_test), len(self.X_test[0]))
+
     def make_data(self, normal_size=0, covid_size=0, split_factor=0, augmentation_factor=0):
         normal_counter = 0
         covid_counter = 0
@@ -199,3 +214,5 @@ class Data(object):
             tmp.append(np.asarray(image).flatten())
         self.images = np.array(tmp)
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.images, self.labels, test_size=test_size, random_state=random_state)
+
+

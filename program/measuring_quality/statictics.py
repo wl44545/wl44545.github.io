@@ -34,13 +34,14 @@ class Statistics:
 		                  measuring_quality.f1, measuring_quality.confusion_matrix, measuring_quality.confusion_matrix_percentage, measuring_quality.roc_curve])
 
 	def create_statistics(self):
-		self.dataframe = pd.DataFrame(self.data,
+		dataframe = pd.DataFrame(self.data,
 		                              columns=['method', 'description', 'train_time', 'predict_time', 'true_positive',
 		                                       'true_negative', 'false_positive',
 		                                       'false_negative',
 		                                       'sensitivity', 'specificity', 'precision',
 		                                       'accuracy', 'error',
 		                                       'f1', 'confusion_matrix', 'confusion_matrix_percentage', 'roc_curve'])
+		self.dataframe = dataframe.sort_values("f1", ascending=False)
 
 	def update_data(self, data:Data):
 		self.data_info = data.data_size, data.augmented_size, len(data.X_train), len(data.X_test)
