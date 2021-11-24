@@ -72,7 +72,7 @@ class MeasuringQuality:
 		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
 		self.f1 = metrics.f1_score(y_true, y_pred)
 
-		self.my_score = self.f1/(self.train_time+self.predict_time)
+		self.my_score = 0.1*self.accuracy+0.1*self.precision+0.1*self.specificity+0.1*self.sensitivity+0.5*self.f1+0.1*(1/self.error)
 
 		self.__draw_roc(self.roc_curve)
 		self.__draw_confusion(self.confusion_matrix)
@@ -91,7 +91,7 @@ class MeasuringQuality:
 		self.sensitivity = self.true_positive / (self.true_positive + self.false_negative)
 		self.f1 = metrics.f1_score(y_true, y_pred)
 
-		self.my_score = self.f1 / (self.train_time + self.predict_time)
+		self.my_score = 0.1*self.accuracy+0.1*self.precision+0.1*self.specificity+0.1*self.sensitivity+0.5*self.f1+0.1*(1/self.error)
 
 		self.__draw_confusion(self.confusion_matrix)
 

@@ -21,7 +21,7 @@ class CNN:
 		self.train_steps = int((data.data_size[0][0]+data.data_size[0][1]) / batch_size)
 		self.epochs = epochs
 
-		self.tensorboard = tf.keras.callbacks.TensorBoard(log_dir="resources/logs/"+log_subdir, histogram_freq=1)
+		# self.tensorboard = tf.keras.callbacks.TensorBoard(log_dir="resources/logs/"+log_subdir, histogram_freq=1)
 
 		self.pre_trained_model = model(include_top=False, pooling='avg', input_shape=(224, 224, 3))
 		self.pre_trained_model.trainable = False
@@ -31,8 +31,12 @@ class CNN:
 		self.trainable_model.compile(loss='categorical_crossentropy', metrics=['accuracy'])
 
 	def fit(self):
-		return self.trainable_model.fit(self.data.dataset_train, epochs=self.epochs, validation_data=self.data.dataset_test,
-		                                steps_per_epoch=self.train_steps, callbacks=[self.tensorboard])
+		return self.trainable_model.fit(self.data.dataset_train,
+		                                epochs=self.epochs,
+		                                validation_data=self.data.dataset_test,
+		                                steps_per_epoch=self.train_steps,
+		                                # callbacks=[self.tensorboard]
+		                                )
 
 	def predict(self):
 		y_pred = np.array([])
