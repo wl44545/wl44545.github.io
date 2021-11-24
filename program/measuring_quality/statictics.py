@@ -52,7 +52,7 @@ class Statistics:
 		print(self.dataframe)
 
 	def export_csv(self):
-		self.dataframe.to_csv(r'resources\results\result.csv', index=False, header=True)
+		self.dataframe.to_csv(r'resources\results\results.csv', index=False, header=True)
 
 	def export_html(self):
 		datainfo = """
@@ -88,7 +88,7 @@ class Statistics:
 		)
 
 		html = str(self.dataframe.to_html()).replace("&lt;","<").replace("&gt;",">")
-		text_file = open(r'resources\results\result.html', "w", encoding="utf-8")
+		text_file = open(r'resources\results\results.html', "w", encoding="utf-8")
 		text_file.write(datainfo)
 		text_file.write(html)
 		text_file.close()

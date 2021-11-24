@@ -18,7 +18,7 @@ class ResNet50(object):
 		train_time_start = time()
 		history = self.cnn.fit()
 		train_time_stop = time()
-		logging.info("Training completed"),
+		logging.info("Training completed")
 		logging.info("Training results: " + str(history.params) + str(history.history))
 
 		logging.info("Prediction started")
