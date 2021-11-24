@@ -103,4 +103,9 @@ def run(normal_size, covid_size, batch_size, split_factor, augmentation_factor, 
 		file.write('')
 	with open("resources/history/history.html", "a") as file:
 		file.write(
-			"<b>{dt} </b>\n<a href=\"{dt}/results.html\">[HTML]</a>\n<a href=\"{dt}/results.csv\">[CSV]</a>\n<a href=\"{dt}/info.log\">[LOG]</a>\n<br>\n".format(dt=dt))
+			"{dt} => ({normal_size}, {covid_size}, {batch_size}, {split_factor}, {augmentation_factor}, {augmentation_count_factor}) => \n"
+			"<a href=\"{dt}/results.html\">[HTML]</a>\n"
+			"<a href=\"{dt}/results.csv\">[CSV]</a>\n"
+			"<a href=\"{dt}/info.log\">[LOG]</a>\n<br>\n".format(dt=dt,normal_size=normal_size, covid_size=covid_size, batch_size=batch_size,
+			                                                     split_factor=split_factor, augmentation_factor=augmentation_factor,
+			                                                     augmentation_count_factor=augmentation_count_factor))
