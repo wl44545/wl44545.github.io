@@ -1,0 +1,273 @@
+2021-11-24 18:19:46,007 INFO - data.__prepare() : Data prepared
+2021-11-24 18:19:46,168 INFO - data.__augment() : Data augmented
+2021-11-24 18:19:53,915 INFO - data.__copy() : Data copied
+2021-11-24 18:20:09,230 INFO - data.__read() : Data prepared for algorithms
+2021-11-24 18:20:09,551 INFO - data.__preprocess() : Data prepared for neural networks
+2021-11-24 18:20:09,560 INFO - discrete_nbc.__init__() : Algorithm initialized
+2021-11-24 18:21:02,823 INFO - discrete_nbc.start() : Training started
+2021-11-24 18:39:56,152 INFO - discrete_nbc.start() : Training completed
+2021-11-24 18:39:56,153 INFO - discrete_nbc.start() : Prediction started
+2021-11-24 18:47:11,965 INFO - discrete_nbc.start() : Prediction completed
+2021-11-24 18:54:32,221 INFO - discrete_nbc.start() : Prediction results: method: DiscreteNBC, description: DiscreteNBC,  train_time: 1133.3114941120148, predict_time: 435.81183648109436,  true_positive: 283, true_negative: 319, false_positive: 56, false_negative: 92, sensitivity: 0.7546666666666667,  specificity: 0.8506666666666667, precision: 0.8348082595870207,  accuracy: 0.8026666666666666,  error: 0.19733333333333336, f1: 0.792717086834734
+2021-11-24 18:54:33,245 INFO - bernoulli_nbc.__init__() : Algorithm initialized
+2021-11-24 18:54:33,246 INFO - bernoulli_nbc.start() : Training started
+2021-11-24 18:54:56,219 INFO - bernoulli_nbc.start() : Training completed
+2021-11-24 18:54:56,220 INFO - bernoulli_nbc.start() : Prediction started
+2021-11-24 18:54:58,849 INFO - bernoulli_nbc.start() : Prediction completed
+2021-11-24 18:55:02,687 INFO - bernoulli_nbc.start() : Prediction results: method: BernoulliNBC, description: Naive Bayes classifier for multivariate Bernoulli models,  train_time: 22.97365403175354, predict_time: 2.628286600112915,  true_positive: 307, true_negative: 210, false_positive: 165, false_negative: 68, sensitivity: 0.8186666666666667,  specificity: 0.56, precision: 0.6504237288135594,  accuracy: 0.6893333333333334,  error: 0.31066666666666665, f1: 0.7249114521841795
+2021-11-24 18:55:02,688 INFO - complement_nbc.__init__() : Algorithm initialized
+2021-11-24 18:55:02,689 INFO - complement_nbc.start() : Training started
+2021-11-24 18:55:18,251 INFO - complement_nbc.start() : Training completed
+2021-11-24 18:55:18,252 INFO - complement_nbc.start() : Prediction started
+2021-11-24 18:55:20,087 INFO - complement_nbc.start() : Prediction completed
+2021-11-24 18:55:22,743 INFO - complement_nbc.start() : Prediction results: method: ComplementNBC, description: The Complement Naive Bayes classifier described in Rennie et al,  train_time: 15.561882257461548, predict_time: 1.8346402645111084,  true_positive: 288, true_negative: 298, false_positive: 77, false_negative: 87, sensitivity: 0.768,  specificity: 0.7946666666666666, precision: 0.7890410958904109,  accuracy: 0.7813333333333333,  error: 0.21866666666666668, f1: 0.7783783783783783
+2021-11-24 18:55:22,743 INFO - gaussian_nbc.__init__() : Algorithm initialized
+2021-11-24 18:55:22,744 INFO - gaussian_nbc.start() : Training started
+2021-11-24 18:55:38,724 INFO - gaussian_nbc.start() : Training completed
+2021-11-24 18:55:38,724 INFO - gaussian_nbc.start() : Prediction started
+2021-11-24 18:55:49,207 INFO - gaussian_nbc.start() : Prediction completed
+2021-11-24 18:55:59,712 INFO - gaussian_nbc.start() : Prediction results: method: GaussianNBC, description: Gaussian Naive Bayes (GaussianNB),  train_time: 15.979291439056396, predict_time: 10.482917547225952,  true_positive: 274, true_negative: 297, false_positive: 78, false_negative: 101, sensitivity: 0.7306666666666667,  specificity: 0.792, precision: 0.7784090909090909,  accuracy: 0.7613333333333333,  error: 0.2386666666666667, f1: 0.7537826685006878
+2021-11-24 18:55:59,713 INFO - multinomial_nbc.__init__() : Algorithm initialized
+2021-11-24 18:55:59,713 INFO - multinomial_nbc.start() : Training started
+2021-11-24 18:56:14,403 INFO - multinomial_nbc.start() : Training completed
+2021-11-24 18:56:14,404 INFO - multinomial_nbc.start() : Prediction started
+2021-11-24 18:56:16,287 INFO - multinomial_nbc.start() : Prediction completed
+2021-11-24 18:56:18,682 INFO - multinomial_nbc.start() : Prediction results: method: MultinomialNBC, description: Naive Bayes classifier for multinomial models,  train_time: 14.689199686050415, predict_time: 1.883408546447754,  true_positive: 288, true_negative: 298, false_positive: 77, false_negative: 87, sensitivity: 0.768,  specificity: 0.7946666666666666, precision: 0.7890410958904109,  accuracy: 0.7813333333333333,  error: 0.21866666666666668, f1: 0.7783783783783783
+2021-11-24 18:56:18,682 INFO - k_neighbors.__init__() : Algorithm initialized
+2021-11-24 18:56:18,683 INFO - k_neighbors.start() : Training started
+2021-11-24 18:56:19,053 INFO - k_neighbors.start() : Training completed
+2021-11-24 18:56:19,053 INFO - k_neighbors.start() : Prediction started
+2021-11-24 18:56:48,382 INFO - k_neighbors.start() : Prediction completed
+2021-11-24 18:57:17,747 INFO - k_neighbors.start() : Prediction results: method: KNeighborsClassifier, description: Classifier implementing the k-nearest neighbors vote,  train_time: 0.36931395530700684, predict_time: 29.328982830047607,  true_positive: 328, true_negative: 322, false_positive: 53, false_negative: 47, sensitivity: 0.8746666666666667,  specificity: 0.8586666666666667, precision: 0.8608923884514436,  accuracy: 0.8666666666666667,  error: 0.1333333333333333, f1: 0.8677248677248677
+2021-11-24 18:57:17,865 INFO - linear_svm.__init__() : Algorithm initialized
+2021-11-24 18:57:17,865 INFO - linear_svm.start() : Training started
+2021-11-24 19:25:33,810 INFO - linear_svm.start() : Training completed
+2021-11-24 19:25:33,823 INFO - linear_svm.start() : Prediction started
+2021-11-24 19:25:37,350 INFO - linear_svm.start() : Prediction completed
+2021-11-24 19:25:40,923 INFO - linear_svm.start() : Prediction results: method: LinearSVM, description: Linear Support Vector Classification,  train_time: 1695.9367730617523, predict_time: 3.5265636444091797,  true_positive: 310, true_negative: 330, false_positive: 45, false_negative: 65, sensitivity: 0.8266666666666667,  specificity: 0.88, precision: 0.8732394366197183,  accuracy: 0.8533333333333334,  error: 0.1466666666666666, f1: 0.8493150684931506
+2021-11-24 19:25:40,930 INFO - nonlinear_svm.__init__() : Algorithm initialized
+2021-11-24 19:25:40,931 INFO - nonlinear_svm.start() : Training started
+2021-11-24 19:38:41,196 INFO - nonlinear_svm.start() : Training completed
+2021-11-24 19:38:41,197 INFO - nonlinear_svm.start() : Prediction started
+2021-11-24 19:47:17,955 INFO - nonlinear_svm.start() : Prediction completed
+2021-11-24 19:55:05,005 INFO - nonlinear_svm.start() : Prediction results: method: NonLinearSVM, description: Non Linear Support Vector Classification,  train_time: 780.2652637958527, predict_time: 516.7576303482056,  true_positive: 318, true_negative: 343, false_positive: 32, false_negative: 57, sensitivity: 0.848,  specificity: 0.9146666666666666, precision: 0.9085714285714286,  accuracy: 0.8813333333333333,  error: 0.1186666666666667, f1: 0.8772413793103447
+2021-11-24 19:55:05,252 INFO - ada_boost.__init__() : Algorithm initialized
+2021-11-24 19:55:05,252 INFO - ada_boost.start() : Training started
+2021-11-24 20:49:57,867 INFO - ada_boost.start() : Training completed
+2021-11-24 20:49:57,868 INFO - ada_boost.start() : Prediction started
+2021-11-24 20:50:42,695 INFO - ada_boost.start() : Prediction completed
+2021-11-24 20:51:27,443 INFO - ada_boost.start() : Prediction results: method: AdaBoostClassifier, description: An AdaBoost classifier,  train_time: 3292.6147305965424, predict_time: 44.8258216381073,  true_positive: 322, true_negative: 344, false_positive: 31, false_negative: 53, sensitivity: 0.8586666666666667,  specificity: 0.9173333333333333, precision: 0.9121813031161473,  accuracy: 0.888,  error: 0.11199999999999999, f1: 0.8846153846153847
+2021-11-24 20:51:27,447 INFO - gradient_boost.__init__() : Algorithm initialized
+2021-11-24 20:51:27,448 INFO - gradient_boost.start() : Training started
+2021-11-25 01:24:13,089 INFO - gradient_boost.start() : Training completed
+2021-11-25 01:24:13,090 INFO - gradient_boost.start() : Prediction started
+2021-11-25 01:24:14,268 INFO - gradient_boost.start() : Prediction completed
+2021-11-25 01:24:15,837 INFO - gradient_boost.start() : Prediction results: method: GradientBoostingClassifier, description: An GradientBoost classifier,  train_time: 16365.6407828331, predict_time: 1.177229404449463,  true_positive: 327, true_negative: 349, false_positive: 26, false_negative: 48, sensitivity: 0.872,  specificity: 0.9306666666666666, precision: 0.9263456090651558,  accuracy: 0.9013333333333333,  error: 0.09866666666666668, f1: 0.8983516483516483
+2021-11-25 01:24:21,786 INFO - densenet121.__init__() : Algorithm initialized
+2021-11-25 01:24:21,786 INFO - densenet121.start() : Training started
+2021-11-25 01:30:10,441 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 01:31:36,629 INFO - densenet121.start() : Training completed
+2021-11-25 01:31:36,629 INFO - densenet121.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.7318493723869324, 0.22674021124839783], 'accuracy': [0.7388392686843872, 1.0], 'val_loss': [0.706098735332489, 0.5036875605583191], 'val_accuracy': [0.7213333249092102, 0.7879999876022339]}
+2021-11-25 01:31:36,630 INFO - densenet121.start() : Prediction started
+2021-11-25 01:33:06,650 INFO - densenet121.start() : Prediction completed
+2021-11-25 01:33:07,186 INFO - densenet121.start() : Prediction results: method: DenseNet121, description: ,  train_time: 434.8425304889679, predict_time: 90.02003836631775,  true_positive: 295, true_negative: 296, false_positive: 79, false_negative: 80, sensitivity: 0.7866666666666666,  specificity: 0.7893333333333333, precision: 0.7887700534759359,  accuracy: 0.788,  error: 0.21199999999999997, f1: 0.787716955941255
+2021-11-25 01:33:14,047 INFO - densenet169.__init__() : Algorithm initialized
+2021-11-25 01:33:14,047 INFO - densenet169.start() : Training started
+2021-11-25 01:40:13,370 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 01:41:55,456 INFO - densenet169.start() : Training completed
+2021-11-25 01:41:55,456 INFO - densenet169.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [1.0179742574691772, 1.6959447860717773], 'accuracy': [0.6598214507102966, 0.6000000238418579], 'val_loss': [0.8143416047096252, 2.4409310817718506], 'val_accuracy': [0.7226666808128357, 0.5013333559036255]}
+2021-11-25 01:41:55,456 INFO - densenet169.start() : Prediction started
+2021-11-25 01:43:44,015 INFO - densenet169.start() : Prediction completed
+2021-11-25 01:43:44,574 INFO - densenet169.start() : Prediction results: method: DenseNet169, description: ,  train_time: 521.4076442718506, predict_time: 108.55736541748047,  true_positive: 1, true_negative: 375, false_positive: 0, false_negative: 374, sensitivity: 0.0026666666666666666,  specificity: 1.0, precision: 1.0,  accuracy: 0.5013333333333333,  error: 0.4986666666666667, f1: 0.005319148936170213
+2021-11-25 01:43:51,761 INFO - densenet201.__init__() : Algorithm initialized
+2021-11-25 01:43:51,762 INFO - densenet201.start() : Training started
+2021-11-25 01:52:58,322 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 01:55:08,308 INFO - densenet201.start() : Training completed
+2021-11-25 01:55:08,308 INFO - densenet201.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.5585673451423645, 0.9439940452575684], 'accuracy': [0.7459821701049805, 0.4000000059604645], 'val_loss': [0.3867563009262085, 1.3932102918624878], 'val_accuracy': [0.8213333487510681, 0.5293333530426025]}
+2021-11-25 01:55:08,308 INFO - densenet201.start() : Prediction started
+2021-11-25 01:57:35,343 INFO - densenet201.start() : Prediction completed
+2021-11-25 01:57:35,906 INFO - densenet201.start() : Prediction results: method: DenseNet201, description: ,  train_time: 676.545741558075, predict_time: 147.03502535820007,  true_positive: 22, true_negative: 375, false_positive: 0, false_negative: 353, sensitivity: 0.058666666666666666,  specificity: 1.0, precision: 1.0,  accuracy: 0.5293333333333333,  error: 0.4706666666666667, f1: 0.11083123425692695
+2021-11-25 01:57:39,796 INFO - efficientnetb0.__init__() : Algorithm initialized
+2021-11-25 01:57:39,796 INFO - efficientnetb0.start() : Training started
+2021-11-25 02:00:23,072 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 02:01:02,649 INFO - efficientnetb0.start() : Training completed
+2021-11-25 02:01:02,649 INFO - efficientnetb0.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.3656908869743347, 0.3759320378303528], 'accuracy': [0.8433035612106323, 0.8999999761581421], 'val_loss': [0.2804998457431793, 0.27614596486091614], 'val_accuracy': [0.8880000114440918, 0.8893333077430725]}
+2021-11-25 02:01:02,649 INFO - efficientnetb0.start() : Prediction started
+2021-11-25 02:01:45,165 INFO - efficientnetb0.start() : Prediction completed
+2021-11-25 02:01:46,072 INFO - efficientnetb0.start() : Prediction results: method: EfficientNetB0, description: ,  train_time: 202.85216188430786, predict_time: 42.51566767692566,  true_positive: 338, true_negative: 329, false_positive: 46, false_negative: 37, sensitivity: 0.9013333333333333,  specificity: 0.8773333333333333, precision: 0.8802083333333334,  accuracy: 0.8893333333333333,  error: 0.11066666666666669, f1: 0.8906455862977604
+2021-11-25 02:01:50,170 INFO - efficientnetb1.__init__() : Algorithm initialized
+2021-11-25 02:01:50,171 INFO - efficientnetb1.start() : Training started
+2021-11-25 02:05:37,247 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 02:06:31,172 INFO - efficientnetb1.start() : Training completed
+2021-11-25 02:06:31,173 INFO - efficientnetb1.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.3498532772064209, 0.30568811297416687], 'accuracy': [0.8504464030265808, 0.800000011920929], 'val_loss': [0.2557002007961273, 0.30820512771606445], 'val_accuracy': [0.909333348274231, 0.8666666746139526]}
+2021-11-25 02:06:31,173 INFO - efficientnetb1.start() : Prediction started
+2021-11-25 02:07:29,851 INFO - efficientnetb1.start() : Prediction completed
+2021-11-25 02:07:30,384 INFO - efficientnetb1.start() : Prediction results: method: EfficientNetB1, description: ,  train_time: 281.0016486644745, predict_time: 58.67682981491089,  true_positive: 283, true_negative: 367, false_positive: 8, false_negative: 92, sensitivity: 0.7546666666666667,  specificity: 0.9786666666666667, precision: 0.9725085910652921,  accuracy: 0.8666666666666667,  error: 0.1333333333333333, f1: 0.8498498498498499
+2021-11-25 02:07:34,564 INFO - efficientnetb2.__init__() : Algorithm initialized
+2021-11-25 02:07:34,565 INFO - efficientnetb2.start() : Training started
+2021-11-25 02:11:36,448 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 02:12:33,462 INFO - efficientnetb2.start() : Training completed
+2021-11-25 02:12:33,463 INFO - efficientnetb2.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.3599284589290619, 0.33834919333457947], 'accuracy': [0.8361607193946838, 0.800000011920929], 'val_loss': [0.27213674783706665, 0.3063638210296631], 'val_accuracy': [0.8933333158493042, 0.8759999871253967]}
+2021-11-25 02:12:33,463 INFO - efficientnetb2.start() : Prediction started
+2021-11-25 02:13:36,375 INFO - efficientnetb2.start() : Prediction completed
+2021-11-25 02:13:36,891 INFO - efficientnetb2.start() : Prediction results: method: EfficientNetB2, description: ,  train_time: 298.8975281715393, predict_time: 62.911256074905396,  true_positive: 291, true_negative: 366, false_positive: 9, false_negative: 84, sensitivity: 0.776,  specificity: 0.976, precision: 0.97,  accuracy: 0.876,  error: 0.124, f1: 0.8622222222222223
+2021-11-25 02:13:41,730 INFO - efficientnetb3.__init__() : Algorithm initialized
+2021-11-25 02:13:41,730 INFO - efficientnetb3.start() : Training started
+2021-11-25 02:19:03,131 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 02:20:20,257 INFO - efficientnetb3.start() : Training completed
+2021-11-25 02:20:20,257 INFO - efficientnetb3.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.37053510546684265, 0.07307449728250504], 'accuracy': [0.8357142806053162, 1.0], 'val_loss': [0.27802038192749023, 0.285230815410614], 'val_accuracy': [0.8826666474342346, 0.8759999871253967]}
+2021-11-25 02:20:20,258 INFO - efficientnetb3.start() : Prediction started
+2021-11-25 02:21:44,329 INFO - efficientnetb3.start() : Prediction completed
+2021-11-25 02:21:44,888 INFO - efficientnetb3.start() : Prediction results: method: EfficientNetB3, description: ,  train_time: 398.52655816078186, predict_time: 84.07035636901855,  true_positive: 301, true_negative: 356, false_positive: 19, false_negative: 74, sensitivity: 0.8026666666666666,  specificity: 0.9493333333333334, precision: 0.940625,  accuracy: 0.876,  error: 0.124, f1: 0.8661870503597123
+2021-11-25 02:21:51,010 INFO - efficientnetb4.__init__() : Algorithm initialized
+2021-11-25 02:21:51,010 INFO - efficientnetb4.start() : Training started
+2021-11-25 02:29:08,296 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 02:30:54,309 INFO - efficientnetb4.start() : Training completed
+2021-11-25 02:30:54,310 INFO - efficientnetb4.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.38661661744117737, 0.10230913013219833], 'accuracy': [0.8339285850524902, 1.0], 'val_loss': [0.2678283751010895, 0.2676887512207031], 'val_accuracy': [0.8946666717529297, 0.8920000195503235]}
+2021-11-25 02:30:54,310 INFO - efficientnetb4.start() : Prediction started
+2021-11-25 02:32:45,857 INFO - efficientnetb4.start() : Prediction completed
+2021-11-25 02:32:46,465 INFO - efficientnetb4.start() : Prediction results: method: EfficientNetB4, description: ,  train_time: 543.2985095977783, predict_time: 111.54711747169495,  true_positive: 326, true_negative: 343, false_positive: 32, false_negative: 49, sensitivity: 0.8693333333333333,  specificity: 0.9146666666666666, precision: 0.9106145251396648,  accuracy: 0.892,  error: 0.10799999999999998, f1: 0.8894952251023193
+2021-11-25 02:32:54,453 INFO - efficientnetb5.__init__() : Algorithm initialized
+2021-11-25 02:32:54,453 INFO - efficientnetb5.start() : Training started
+2021-11-25 02:43:04,756 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 02:45:31,829 INFO - efficientnetb5.start() : Training completed
+2021-11-25 02:45:31,830 INFO - efficientnetb5.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.3867564797401428, 0.2666931748390198], 'accuracy': [0.8299106955528259, 0.8999999761581421], 'val_loss': [0.287062406539917, 0.3230018615722656], 'val_accuracy': [0.871999979019165, 0.8613333106040955]}
+2021-11-25 02:45:31,830 INFO - efficientnetb5.start() : Prediction started
+2021-11-25 02:48:06,777 INFO - efficientnetb5.start() : Prediction completed
+2021-11-25 02:48:07,351 INFO - efficientnetb5.start() : Prediction results: method: EfficientNetB5, description: ,  train_time: 757.375424861908, predict_time: 154.94588136672974,  true_positive: 284, true_negative: 362, false_positive: 13, false_negative: 91, sensitivity: 0.7573333333333333,  specificity: 0.9653333333333334, precision: 0.9562289562289562,  accuracy: 0.8613333333333333,  error: 0.13866666666666672, f1: 0.8452380952380952
+2021-11-25 02:48:18,070 INFO - efficientnetb6.__init__() : Algorithm initialized
+2021-11-25 02:48:18,070 INFO - efficientnetb6.start() : Training started
+2021-11-25 03:02:24,593 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 03:05:34,882 INFO - efficientnetb6.start() : Training completed
+2021-11-25 03:05:34,882 INFO - efficientnetb6.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.3849918842315674, 0.3638618290424347], 'accuracy': [0.8357142806053162, 1.0], 'val_loss': [0.3113023638725281, 0.307202011346817], 'val_accuracy': [0.8653333187103271, 0.874666690826416]}
+2021-11-25 03:05:34,882 INFO - efficientnetb6.start() : Prediction started
+2021-11-25 03:08:55,349 INFO - efficientnetb6.start() : Prediction completed
+2021-11-25 03:08:55,898 INFO - efficientnetb6.start() : Prediction results: method: EfficientNetB6, description: ,  train_time: 1036.8110735416412, predict_time: 200.46547055244446,  true_positive: 323, true_negative: 333, false_positive: 42, false_negative: 52, sensitivity: 0.8613333333333333,  specificity: 0.888, precision: 0.8849315068493151,  accuracy: 0.8746666666666667,  error: 0.1253333333333333, f1: 0.8729729729729729
+2021-11-25 03:09:08,160 INFO - efficientnetb7.__init__() : Algorithm initialized
+2021-11-25 03:09:08,161 INFO - efficientnetb7.start() : Training started
+2021-11-25 03:27:50,175 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 03:32:16,514 INFO - efficientnetb7.start() : Training completed
+2021-11-25 03:32:16,515 INFO - efficientnetb7.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.35245373845100403, 0.13991586863994598], 'accuracy': [0.8517857193946838, 1.0], 'val_loss': [0.2928868234157562, 0.2911226749420166], 'val_accuracy': [0.8813333511352539, 0.8866666555404663]}
+2021-11-25 03:32:16,516 INFO - efficientnetb7.start() : Prediction started
+2021-11-25 03:36:52,866 INFO - efficientnetb7.start() : Prediction completed
+2021-11-25 03:36:53,412 INFO - efficientnetb7.start() : Prediction results: method: EfficientNetB7, description: ,  train_time: 1388.3533058166504, predict_time: 276.35075521469116,  true_positive: 336, true_negative: 329, false_positive: 46, false_negative: 39, sensitivity: 0.896,  specificity: 0.8773333333333333, precision: 0.8795811518324608,  accuracy: 0.8866666666666667,  error: 0.11333333333333329, f1: 0.8877146631439895
+2021-11-25 03:37:02,705 INFO - inceptionresnetv2.__init__() : Algorithm initialized
+2021-11-25 03:37:02,705 INFO - inceptionresnetv2.start() : Training started
+2021-11-25 03:44:26,261 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 03:46:12,097 INFO - inceptionresnetv2.start() : Training completed
+2021-11-25 03:46:12,097 INFO - inceptionresnetv2.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [146.79568481445312, 183.89535522460938], 'accuracy': [0.5169642567634583, 0.699999988079071], 'val_loss': [248.0540008544922, 122.54103088378906], 'val_accuracy': [0.5, 0.5013333559036255]}
+2021-11-25 03:46:12,098 INFO - inceptionresnetv2.start() : Prediction started
+2021-11-25 03:48:06,205 INFO - inceptionresnetv2.start() : Prediction completed
+2021-11-25 03:48:06,740 INFO - inceptionresnetv2.start() : Prediction results: method: InceptionResNetV2, description: ,  train_time: 549.391773223877, predict_time: 114.1076488494873,  true_positive: 375, true_negative: 1, false_positive: 374, false_negative: 0, sensitivity: 1.0,  specificity: 0.0026666666666666666, precision: 0.5006675567423231,  accuracy: 0.5013333333333333,  error: 0.4986666666666667, f1: 0.6672597864768683
+2021-11-25 03:48:11,737 INFO - inceptionv3.__init__() : Algorithm initialized
+2021-11-25 03:48:11,738 INFO - inceptionv3.start() : Training started
+2021-11-25 03:51:33,469 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 03:52:22,256 INFO - inceptionv3.start() : Training completed
+2021-11-25 03:52:22,257 INFO - inceptionv3.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [6.647300720214844, 9.761629104614258], 'accuracy': [0.6473214030265808, 0.4000000059604645], 'val_loss': [8.032710075378418, 22.262224197387695], 'val_accuracy': [0.5600000023841858, 0.5]}
+2021-11-25 03:52:22,257 INFO - inceptionv3.start() : Prediction started
+2021-11-25 03:53:14,874 INFO - inceptionv3.start() : Prediction completed
+2021-11-25 03:53:15,426 INFO - inceptionv3.start() : Prediction results: method: InceptionV3, description: ,  train_time: 250.51868724822998, predict_time: 52.61631441116333,  true_positive: 0, true_negative: 375, false_positive: 0, false_negative: 375, sensitivity: 0.0,  specificity: 1.0, precision: 0.0,  accuracy: 0.5,  error: 0.5, f1: 0.0
+2021-11-25 03:53:16,442 INFO - mobilenet.__init__() : Algorithm initialized
+2021-11-25 03:53:16,442 INFO - mobilenet.start() : Training started
+2021-11-25 03:54:49,229 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 03:55:11,734 INFO - mobilenet.start() : Training completed
+2021-11-25 03:55:11,734 INFO - mobilenet.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.49431076645851135, 0.2696686089038849], 'accuracy': [0.7589285969734192, 0.8999999761581421], 'val_loss': [0.4055805206298828, 0.5198366641998291], 'val_accuracy': [0.8266666531562805, 0.765333354473114]}
+2021-11-25 03:55:11,735 INFO - mobilenet.start() : Prediction started
+2021-11-25 03:55:36,376 INFO - mobilenet.start() : Prediction completed
+2021-11-25 03:55:36,900 INFO - mobilenet.start() : Prediction results: method: MobileNet, description: ,  train_time: 115.2924530506134, predict_time: 24.640477418899536,  true_positive: 363, true_negative: 211, false_positive: 164, false_negative: 12, sensitivity: 0.968,  specificity: 0.5626666666666666, precision: 0.6888045540796964,  accuracy: 0.7653333333333333,  error: 0.2346666666666667, f1: 0.8048780487804877
+2021-11-25 03:55:38,675 INFO - mobilenetv2.__init__() : Algorithm initialized
+2021-11-25 03:55:38,676 INFO - mobilenetv2.start() : Training started
+2021-11-25 03:57:15,234 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 03:57:39,259 INFO - mobilenetv2.start() : Training completed
+2021-11-25 03:57:39,259 INFO - mobilenetv2.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.5205774903297424, 0.3157106041908264], 'accuracy': [0.7392857074737549, 0.800000011920929], 'val_loss': [0.40768545866012573, 0.41933658719062805], 'val_accuracy': [0.8173333406448364, 0.8080000281333923]}
+2021-11-25 03:57:39,259 INFO - mobilenetv2.start() : Prediction started
+2021-11-25 03:58:04,989 INFO - mobilenetv2.start() : Prediction completed
+2021-11-25 03:58:05,527 INFO - mobilenetv2.start() : Prediction results: method: MobileNetV2, description: ,  train_time: 120.58296632766724, predict_time: 25.729511260986328,  true_positive: 329, true_negative: 277, false_positive: 98, false_negative: 46, sensitivity: 0.8773333333333333,  specificity: 0.7386666666666667, precision: 0.7704918032786885,  accuracy: 0.808,  error: 0.19199999999999995, f1: 0.8204488778054863
+2021-11-25 03:58:07,964 INFO - mobilenetv3large.__init__() : Algorithm initialized
+2021-11-25 03:58:07,965 INFO - mobilenetv3large.start() : Training started
+2021-11-25 03:59:39,139 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 04:00:00,534 INFO - mobilenetv3large.start() : Training completed
+2021-11-25 04:00:00,535 INFO - mobilenetv3large.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.504963219165802, 0.2757645547389984], 'accuracy': [0.7633928656578064, 0.8999999761581421], 'val_loss': [0.3476836681365967, 0.3485371768474579], 'val_accuracy': [0.862666666507721, 0.8293333053588867]}
+2021-11-25 04:00:00,535 INFO - mobilenetv3large.start() : Prediction started
+2021-11-25 04:00:26,067 INFO - mobilenetv3large.start() : Prediction completed
+2021-11-25 04:00:27,308 INFO - mobilenetv3large.start() : Prediction results: method: MobileNetV3Large, description: ,  train_time: 112.56924200057983, predict_time: 25.532535552978516,  true_positive: 352, true_negative: 270, false_positive: 105, false_negative: 23, sensitivity: 0.9386666666666666,  specificity: 0.72, precision: 0.7702407002188184,  accuracy: 0.8293333333333334,  error: 0.17066666666666663, f1: 0.8461538461538461
+2021-11-25 04:00:29,665 INFO - mobilenetv3small.__init__() : Algorithm initialized
+2021-11-25 04:00:29,665 INFO - mobilenetv3small.start() : Training started
+2021-11-25 04:01:07,699 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 04:01:16,016 INFO - mobilenetv3small.start() : Training completed
+2021-11-25 04:01:16,016 INFO - mobilenetv3small.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.5572259426116943, 0.65242999792099], 'accuracy': [0.721875011920929, 0.6000000238418579], 'val_loss': [0.4519523084163666, 0.4715343415737152], 'val_accuracy': [0.7906666398048401, 0.7720000147819519]}
+2021-11-25 04:01:16,017 INFO - mobilenetv3small.start() : Prediction started
+2021-11-25 04:01:27,465 INFO - mobilenetv3small.start() : Prediction completed
+2021-11-25 04:01:27,971 INFO - mobilenetv3small.start() : Prediction results: method: MobileNetV3Small, description: ,  train_time: 46.35059404373169, predict_time: 11.448500156402588,  true_positive: 212, true_negative: 367, false_positive: 8, false_negative: 163, sensitivity: 0.5653333333333334,  specificity: 0.9786666666666667, precision: 0.9636363636363636,  accuracy: 0.772,  error: 0.22799999999999998, f1: 0.7126050420168066
+2021-11-25 04:01:34,369 INFO - resnet101.__init__() : Algorithm initialized
+2021-11-25 04:01:34,369 INFO - resnet101.start() : Training started
+2021-11-25 04:11:20,843 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 04:13:44,352 INFO - resnet101.start() : Training completed
+2021-11-25 04:13:44,353 INFO - resnet101.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.4041288197040558, 0.1926513910293579], 'accuracy': [0.8165178298950195, 0.800000011920929], 'val_loss': [0.26225945353507996, 0.2657100558280945], 'val_accuracy': [0.9053333401679993, 0.8986666798591614]}
+2021-11-25 04:13:44,353 INFO - resnet101.start() : Prediction started
+2021-11-25 04:16:12,598 INFO - resnet101.start() : Prediction completed
+2021-11-25 04:16:13,147 INFO - resnet101.start() : Prediction results: method: ResNet101, description: ,  train_time: 729.9828448295593, predict_time: 148.2445650100708,  true_positive: 344, true_negative: 330, false_positive: 45, false_negative: 31, sensitivity: 0.9173333333333333,  specificity: 0.88, precision: 0.884318766066838,  accuracy: 0.8986666666666666,  error: 0.10133333333333339, f1: 0.900523560209424
+2021-11-25 04:16:19,282 INFO - resnet101v2.__init__() : Algorithm initialized
+2021-11-25 04:16:19,283 INFO - resnet101v2.start() : Training started
+2021-11-25 04:25:06,876 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 04:27:16,212 INFO - resnet101v2.start() : Training completed
+2021-11-25 04:27:16,213 INFO - resnet101v2.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [49.14805603027344, 20.454694747924805], 'accuracy': [0.5424107313156128, 0.6000000238418579], 'val_loss': [15.273536682128906, 82.3332748413086], 'val_accuracy': [0.5799999833106995, 0.5]}
+2021-11-25 04:27:16,213 INFO - resnet101v2.start() : Prediction started
+2021-11-25 04:29:29,655 INFO - resnet101v2.start() : Prediction completed
+2021-11-25 04:29:30,191 INFO - resnet101v2.start() : Prediction results: method: ResNet101V2, description: ,  train_time: 656.9290771484375, predict_time: 133.44249629974365,  true_positive: 0, true_negative: 375, false_positive: 0, false_negative: 375, sensitivity: 0.0,  specificity: 1.0, precision: 0.0,  accuracy: 0.5,  error: 0.5, f1: 0.0
+2021-11-25 04:29:37,931 INFO - resnet152.__init__() : Algorithm initialized
+2021-11-25 04:29:37,932 INFO - resnet152.start() : Training started
+2021-11-25 04:43:49,491 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 04:47:19,709 INFO - resnet152.start() : Training completed
+2021-11-25 04:47:19,710 INFO - resnet152.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.3707846403121948, 0.15265300869941711], 'accuracy': [0.8321428298950195, 0.8999999761581421], 'val_loss': [0.23573535680770874, 0.24982383847236633], 'val_accuracy': [0.9039999842643738, 0.8933333158493042]}
+2021-11-25 04:47:19,710 INFO - resnet152.start() : Prediction started
+2021-11-25 04:50:56,404 INFO - resnet152.start() : Prediction completed
+2021-11-25 04:50:56,962 INFO - resnet152.start() : Prediction results: method: ResNet152, description: ,  train_time: 1061.7773394584656, predict_time: 216.69342017173767,  true_positive: 351, true_negative: 319, false_positive: 56, false_negative: 24, sensitivity: 0.936,  specificity: 0.8506666666666667, precision: 0.8624078624078624,  accuracy: 0.8933333333333333,  error: 0.10666666666666669, f1: 0.8976982097186701
+2021-11-25 04:51:05,436 INFO - resnet152v2.__init__() : Algorithm initialized
+2021-11-25 04:51:05,436 INFO - resnet152v2.start() : Training started
+2021-11-25 05:04:17,930 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 05:07:30,770 INFO - resnet152v2.start() : Training completed
+2021-11-25 05:07:30,771 INFO - resnet152v2.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [135.66941833496094, 86.34260559082031], 'accuracy': [0.5321428775787354, 0.699999988079071], 'val_loss': [147.64414978027344, 33.124595642089844], 'val_accuracy': [0.5, 0.5093333125114441]}
+2021-11-25 05:07:30,771 INFO - resnet152v2.start() : Prediction started
+2021-11-25 05:10:51,593 INFO - resnet152v2.start() : Prediction completed
+2021-11-25 05:10:52,106 INFO - resnet152v2.start() : Prediction results: method: ResNet152V2, description: ,  train_time: 985.3327000141144, predict_time: 200.82183384895325,  true_positive: 365, true_negative: 17, false_positive: 358, false_negative: 10, sensitivity: 0.9733333333333334,  specificity: 0.04533333333333334, precision: 0.5048409405255878,  accuracy: 0.5093333333333333,  error: 0.4906666666666667, f1: 0.6648451730418944
+2021-11-25 05:10:55,920 INFO - resnet50.__init__() : Algorithm initialized
+2021-11-25 05:10:55,921 INFO - resnet50.start() : Training started
+2021-11-25 05:16:35,673 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 05:17:59,631 INFO - resnet50.start() : Training completed
+2021-11-25 05:17:59,632 INFO - resnet50.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.4533556401729584, 0.38296645879745483], 'accuracy': [0.7959821224212646, 0.8999999761581421], 'val_loss': [0.34347498416900635, 0.2826077342033386], 'val_accuracy': [0.8533333539962769, 0.890666663646698]}
+2021-11-25 05:17:59,632 INFO - resnet50.start() : Prediction started
+2021-11-25 05:19:26,720 INFO - resnet50.start() : Prediction completed
+2021-11-25 05:19:27,247 INFO - resnet50.start() : Prediction results: method: ResNet50, description: ,  train_time: 423.710435628891, predict_time: 87.08687448501587,  true_positive: 332, true_negative: 336, false_positive: 39, false_negative: 43, sensitivity: 0.8853333333333333,  specificity: 0.896, precision: 0.894878706199461,  accuracy: 0.8906666666666667,  error: 0.10933333333333328, f1: 0.8900804289544236
+2021-11-25 05:19:29,998 INFO - resnet50v2.__init__() : Algorithm initialized
+2021-11-25 05:19:29,998 INFO - resnet50v2.start() : Training started
+2021-11-25 05:24:17,169 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 05:25:27,589 INFO - resnet50v2.start() : Training completed
+2021-11-25 05:25:27,589 INFO - resnet50v2.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [16.173858642578125, 6.7751359939575195], 'accuracy': [0.6053571701049805, 0.6000000238418579], 'val_loss': [10.417994499206543, 27.530635833740234], 'val_accuracy': [0.5879999995231628, 0.5040000081062317]}
+2021-11-25 05:25:27,589 INFO - resnet50v2.start() : Prediction started
+2021-11-25 05:26:41,088 INFO - resnet50v2.start() : Prediction completed
+2021-11-25 05:26:41,603 INFO - resnet50v2.start() : Prediction results: method: ResNet50V2, description: ,  train_time: 357.58969259262085, predict_time: 73.49817085266113,  true_positive: 374, true_negative: 4, false_positive: 371, false_negative: 1, sensitivity: 0.9973333333333333,  specificity: 0.010666666666666666, precision: 0.5020134228187919,  accuracy: 0.504,  error: 0.496, f1: 0.6678571428571428
+2021-11-25 05:26:42,415 INFO - vgg16.__init__() : Algorithm initialized
+2021-11-25 05:26:42,415 INFO - vgg16.start() : Training started
+2021-11-25 05:41:33,312 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 05:45:14,369 INFO - vgg16.start() : Training completed
+2021-11-25 05:45:14,370 INFO - vgg16.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.6732280254364014, 0.3337652385234833], 'accuracy': [0.7526785731315613, 0.8999999761581421], 'val_loss': [0.46501338481903076, 0.749113917350769], 'val_accuracy': [0.8346666693687439, 0.7680000066757202]}
+2021-11-25 05:45:14,370 INFO - vgg16.start() : Prediction started
+2021-11-25 05:48:56,295 INFO - vgg16.start() : Prediction completed
+2021-11-25 05:48:57,440 INFO - vgg16.start() : Prediction results: method: VGG16, description: ,  train_time: 1111.9536299705505, predict_time: 221.92488503456116,  true_positive: 212, true_negative: 364, false_positive: 11, false_negative: 163, sensitivity: 0.5653333333333334,  specificity: 0.9706666666666667, precision: 0.9506726457399103,  accuracy: 0.768,  error: 0.23199999999999998, f1: 0.7090301003344481
+2021-11-25 05:48:58,520 INFO - vgg19.__init__() : Algorithm initialized
+2021-11-25 05:48:58,520 INFO - vgg19.start() : Training started
+2021-11-25 06:07:19,742 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 06:11:53,126 INFO - vgg19.start() : Training completed
+2021-11-25 06:11:53,126 INFO - vgg19.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [0.6459439992904663, 0.4008359909057617], 'accuracy': [0.7915178537368774, 0.8999999761581421], 'val_loss': [0.5882469415664673, 0.813060462474823], 'val_accuracy': [0.8040000200271606, 0.7519999742507935]}
+2021-11-25 06:11:53,126 INFO - vgg19.start() : Prediction started
+2021-11-25 06:16:27,322 INFO - vgg19.start() : Prediction completed
+2021-11-25 06:16:27,877 INFO - vgg19.start() : Prediction results: method: VGG19, description: ,  train_time: 1374.6045973300934, predict_time: 274.1957778930664,  true_positive: 212, true_negative: 352, false_positive: 23, false_negative: 163, sensitivity: 0.5653333333333334,  specificity: 0.9386666666666666, precision: 0.902127659574468,  accuracy: 0.752,  error: 0.248, f1: 0.6950819672131148
+2021-11-25 06:16:30,282 INFO - xception.__init__() : Algorithm initialized
+2021-11-25 06:16:30,283 INFO - xception.start() : Training started
+2021-11-25 06:22:50,259 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 560 batches). You may need to use the repeat() function when building your dataset.
+2021-11-25 06:24:23,578 INFO - xception.start() : Training completed
+2021-11-25 06:24:23,579 INFO - xception.start() : Training results: {'verbose': 1, 'epochs': 8, 'steps': 70}{'loss': [5.1097493171691895, 8.681699752807617], 'accuracy': [0.6415178775787354, 0.4000000059604645], 'val_loss': [7.875265598297119, 10.459990501403809], 'val_accuracy': [0.5266666412353516, 0.5026666522026062]}
+2021-11-25 06:24:23,579 INFO - xception.start() : Prediction started
+2021-11-25 06:25:59,621 INFO - xception.start() : Prediction completed
+2021-11-25 06:26:00,190 INFO - xception.start() : Prediction results: method: Xception, description: ,  train_time: 473.29520893096924, predict_time: 96.04252338409424,  true_positive: 375, true_negative: 2, false_positive: 373, false_negative: 0, sensitivity: 1.0,  specificity: 0.005333333333333333, precision: 0.5013368983957219,  accuracy: 0.5026666666666667,  error: 0.4973333333333333, f1: 0.667853962600178

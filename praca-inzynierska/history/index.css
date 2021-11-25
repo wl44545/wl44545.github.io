@@ -1,0 +1,28 @@
+body{
+    background-color: lightgray;
+    font-size: 4vh;
+    color: black;
+}
+.title{
+    font-size: 8vh;
+    color: darkblue;
+}
+.subtitle{
+    font-size: 6vh;
+    color: darkred;
+}
+a{
+    font-size: 4vh;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: black;
+}
+a:active {
+    color: black;
+}
