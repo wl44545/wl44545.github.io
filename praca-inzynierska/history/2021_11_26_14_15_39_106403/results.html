@@ -1,0 +1,800 @@
+
+		<p2><b>Original data size:</b></p2><br>
+		<p2>Train Normal: 1500</p2><br>
+		<p2>Train COVID: 1500</p2><br>
+		<p2>Train SUM: 3000</p2><br>
+		<p2>Test Normal: 500</p2><br>
+		<p2>Test COVID: 500</p2><br>
+		<p2>Test SUM: 1000</p2><br>
+
+		<p2><b>Augmented data size:</b></p2><br>
+		<p2>Train Normal: 1500</p2><br>
+		<p2>Train COVID: 1500</p2><br>
+		<p2>Train SUM: 3000</p2><br>
+		<p2>Test Normal: 500</p2><br>
+		<p2>Test COVID: 500</p2><br>
+		<p2>Test SUM: 1000</p2><br>	
+		
+		<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>method</th>
+      <th>description</th>
+      <th>train_time</th>
+      <th>predict_time</th>
+      <th>true_positive</th>
+      <th>true_negative</th>
+      <th>false_positive</th>
+      <th>false_negative</th>
+      <th>sensitivity</th>
+      <th>specificity</th>
+      <th>precision</th>
+      <th>accuracy</th>
+      <th>error</th>
+      <th>f1</th>
+      <th>my_score</th>
+      <th>confusion_matrix</th>
+      <th>confusion_matrix_percentage</th>
+      <th>roc_curve</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>29</th>
+      <td>ResNet152</td>
+      <td></td>
+      <td>1420.808328</td>
+      <td>288.326016</td>
+      <td>449</td>
+      <td>475</td>
+      <td>25</td>
+      <td>51</td>
+      <td>0.898</td>
+      <td>0.950</td>
+      <td>0.947257</td>
+      <td>0.924</td>
+      <td>0.076</td>
+      <td>0.921971</td>
+      <td>2.148701</td>
+      <td><a href="./images/22dbdaea-4ea9-11ec-ac08-68f728e1134a.png"><img src="./images/22dbdaea-4ea9-11ec-ac08-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/22fab91c-4ea9-11ec-be65-68f728e1134a.png"><img src="./images/22fab91c-4ea9-11ec-be65-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/230ca1e7-4ea9-11ec-ac9d-68f728e1134a.png"><img src="./images/230ca1e7-4ea9-11ec-ac9d-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>EfficientNetB1</td>
+      <td></td>
+      <td>373.528001</td>
+      <td>77.847991</td>
+      <td>471</td>
+      <td>451</td>
+      <td>49</td>
+      <td>29</td>
+      <td>0.942</td>
+      <td>0.902</td>
+      <td>0.905769</td>
+      <td>0.922</td>
+      <td>0.078</td>
+      <td>0.923529</td>
+      <td>2.110993</td>
+      <td><a href="./images/f6e54f95-4e8a-11ec-bbe5-68f728e1134a.png"><img src="./images/f6e54f95-4e8a-11ec-bbe5-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/f7048fb9-4e8a-11ec-a2c3-68f728e1134a.png"><img src="./images/f7048fb9-4e8a-11ec-a2c3-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/f716d9cc-4e8a-11ec-9482-68f728e1134a.png"><img src="./images/f716d9cc-4e8a-11ec-9482-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>GradientBoostingClassifier</td>
+      <td>An GradientBoost classifier</td>
+      <td>19030.745787</td>
+      <td>1.520791</td>
+      <td>438</td>
+      <td>480</td>
+      <td>20</td>
+      <td>62</td>
+      <td>0.876</td>
+      <td>0.960</td>
+      <td>0.956332</td>
+      <td>0.918</td>
+      <td>0.082</td>
+      <td>0.914405</td>
+      <td>2.047748</td>
+      <td><a href="./images/9b00a42b-4e82-11ec-8453-68f728e1134a.png"><img src="./images/9b00a42b-4e82-11ec-8453-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/9b2d1c79-4e82-11ec-80e1-68f728e1134a.png"><img src="./images/9b2d1c79-4e82-11ec-80e1-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/9ad91c5d-4e82-11ec-97f7-68f728e1134a.png"><img src="./images/9ad91c5d-4e82-11ec-97f7-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>EfficientNetB3</td>
+      <td></td>
+      <td>532.928918</td>
+      <td>111.926195</td>
+      <td>442</td>
+      <td>468</td>
+      <td>32</td>
+      <td>58</td>
+      <td>0.884</td>
+      <td>0.936</td>
+      <td>0.932489</td>
+      <td>0.910</td>
+      <td>0.090</td>
+      <td>0.907598</td>
+      <td>1.931159</td>
+      <td><a href="./images/9a052401-4e8d-11ec-99a2-68f728e1134a.png"><img src="./images/9a052401-4e8d-11ec-99a2-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/9a2484c9-4e8d-11ec-9ddc-68f728e1134a.png"><img src="./images/9a2484c9-4e8d-11ec-9ddc-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/9a36cf9a-4e8d-11ec-b134-68f728e1134a.png"><img src="./images/9a36cf9a-4e8d-11ec-b134-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>EfficientNetB7</td>
+      <td></td>
+      <td>1814.919068</td>
+      <td>365.955025</td>
+      <td>452</td>
+      <td>456</td>
+      <td>44</td>
+      <td>48</td>
+      <td>0.904</td>
+      <td>0.912</td>
+      <td>0.911290</td>
+      <td>0.908</td>
+      <td>0.092</td>
+      <td>0.907631</td>
+      <td>1.904301</td>
+      <td><a href="./images/52bcf3c5-4e9b-11ec-83f9-68f728e1134a.png"><img src="./images/52bcf3c5-4e9b-11ec-83f9-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/52dbd1ed-4e9b-11ec-aa37-68f728e1134a.png"><img src="./images/52dbd1ed-4e9b-11ec-aa37-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/52ee3325-4e9b-11ec-a2d5-68f728e1134a.png"><img src="./images/52ee3325-4e9b-11ec-a2d5-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>EfficientNetB4</td>
+      <td></td>
+      <td>720.311975</td>
+      <td>147.778493</td>
+      <td>436</td>
+      <td>470</td>
+      <td>30</td>
+      <td>64</td>
+      <td>0.872</td>
+      <td>0.940</td>
+      <td>0.935622</td>
+      <td>0.906</td>
+      <td>0.094</td>
+      <td>0.902692</td>
+      <td>1.880538</td>
+      <td><a href="./images/a3ab00bc-4e8f-11ec-8459-68f728e1134a.png"><img src="./images/a3ab00bc-4e8f-11ec-8459-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a3cbb413-4e8f-11ec-9104-68f728e1134a.png"><img src="./images/a3cbb413-4e8f-11ec-9104-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a3de38f7-4e8f-11ec-86ed-68f728e1134a.png"><img src="./images/a3de38f7-4e8f-11ec-86ed-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>EfficientNetB0</td>
+      <td></td>
+      <td>268.896470</td>
+      <td>55.782894</td>
+      <td>430</td>
+      <td>473</td>
+      <td>27</td>
+      <td>70</td>
+      <td>0.860</td>
+      <td>0.946</td>
+      <td>0.940919</td>
+      <td>0.903</td>
+      <td>0.097</td>
+      <td>0.898642</td>
+      <td>1.845241</td>
+      <td><a href="./images/e6b9c047-4e89-11ec-a959-68f728e1134a.png"><img src="./images/e6b9c047-4e89-11ec-a959-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/e6d926e0-4e89-11ec-ad89-68f728e1134a.png"><img src="./images/e6d926e0-4e89-11ec-ad89-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/e7264dac-4e89-11ec-b5ed-68f728e1134a.png"><img src="./images/e7264dac-4e89-11ec-b5ed-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>EfficientNetB2</td>
+      <td></td>
+      <td>394.933746</td>
+      <td>82.412726</td>
+      <td>418</td>
+      <td>484</td>
+      <td>16</td>
+      <td>82</td>
+      <td>0.836</td>
+      <td>0.968</td>
+      <td>0.963134</td>
+      <td>0.902</td>
+      <td>0.098</td>
+      <td>0.895075</td>
+      <td>1.834859</td>
+      <td><a href="./images/16594259-4e8c-11ec-8f25-68f728e1134a.png"><img src="./images/16594259-4e8c-11ec-8f25-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/16733617-4e8c-11ec-a19b-68f728e1134a.png"><img src="./images/16733617-4e8c-11ec-a19b-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/1683385d-4e8c-11ec-bbe3-68f728e1134a.png"><img src="./images/1683385d-4e8c-11ec-bbe3-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>ResNet50</td>
+      <td></td>
+      <td>571.771502</td>
+      <td>116.062969</td>
+      <td>425</td>
+      <td>477</td>
+      <td>23</td>
+      <td>75</td>
+      <td>0.850</td>
+      <td>0.954</td>
+      <td>0.948661</td>
+      <td>0.902</td>
+      <td>0.098</td>
+      <td>0.896624</td>
+      <td>1.834186</td>
+      <td><a href="./images/714a4173-4eae-11ec-9d43-68f728e1134a.png"><img src="./images/714a4173-4eae-11ec-9d43-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/7163a7ee-4eae-11ec-8f70-68f728e1134a.png"><img src="./images/7163a7ee-4eae-11ec-8f70-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/7173e3d9-4eae-11ec-886f-68f728e1134a.png"><img src="./images/7173e3d9-4eae-11ec-886f-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NonLinearSVM</td>
+      <td>Non Linear Support Vector Classification</td>
+      <td>837.064381</td>
+      <td>763.942957</td>
+      <td>440</td>
+      <td>462</td>
+      <td>38</td>
+      <td>60</td>
+      <td>0.880</td>
+      <td>0.924</td>
+      <td>0.920502</td>
+      <td>0.902</td>
+      <td>0.098</td>
+      <td>0.899796</td>
+      <td>1.832956</td>
+      <td><a href="./images/a594e191-4e4d-11ec-8098-68f728e1134a.png"><img src="./images/a594e191-4e4d-11ec-8098-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a5beb8c6-4e4d-11ec-87e4-68f728e1134a.png"><img src="./images/a5beb8c6-4e4d-11ec-87e4-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a55d1654-4e4d-11ec-9d6e-68f728e1134a.png"><img src="./images/a55d1654-4e4d-11ec-9d6e-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>ResNet101</td>
+      <td></td>
+      <td>980.068423</td>
+      <td>200.804837</td>
+      <td>472</td>
+      <td>430</td>
+      <td>70</td>
+      <td>28</td>
+      <td>0.944</td>
+      <td>0.860</td>
+      <td>0.870849</td>
+      <td>0.902</td>
+      <td>0.098</td>
+      <td>0.905950</td>
+      <td>1.831068</td>
+      <td><a href="./images/a7c032b6-4ea2-11ec-b10a-68f728e1134a.png"><img src="./images/a7c032b6-4ea2-11ec-b10a-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a7df4e29-4ea2-11ec-b4f2-68f728e1134a.png"><img src="./images/a7df4e29-4ea2-11ec-b4f2-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a7f22213-4ea2-11ec-b249-68f728e1134a.png"><img src="./images/a7f22213-4ea2-11ec-b249-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>EfficientNetB6</td>
+      <td></td>
+      <td>1317.643435</td>
+      <td>270.628046</td>
+      <td>414</td>
+      <td>483</td>
+      <td>17</td>
+      <td>86</td>
+      <td>0.828</td>
+      <td>0.966</td>
+      <td>0.960557</td>
+      <td>0.897</td>
+      <td>0.103</td>
+      <td>0.889366</td>
+      <td>1.780713</td>
+      <td><a href="./images/367654ab-4e96-11ec-9119-68f728e1134a.png"><img src="./images/367654ab-4e96-11ec-9119-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/368f72f6-4e96-11ec-ab05-68f728e1134a.png"><img src="./images/368f72f6-4e96-11ec-ab05-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/369f3aa4-4e96-11ec-86c4-68f728e1134a.png"><img src="./images/369f3aa4-4e96-11ec-86c4-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>MobileNetV3Large</td>
+      <td></td>
+      <td>149.562094</td>
+      <td>33.747717</td>
+      <td>459</td>
+      <td>432</td>
+      <td>68</td>
+      <td>41</td>
+      <td>0.918</td>
+      <td>0.864</td>
+      <td>0.870968</td>
+      <td>0.891</td>
+      <td>0.109</td>
+      <td>0.893866</td>
+      <td>1.718761</td>
+      <td><a href="./images/b5323214-4e9f-11ec-9535-68f728e1134a.png"><img src="./images/b5323214-4e9f-11ec-9535-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b5514b92-4e9f-11ec-acf3-68f728e1134a.png"><img src="./images/b5514b92-4e9f-11ec-acf3-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b565970a-4e9f-11ec-a35b-68f728e1134a.png"><img src="./images/b565970a-4e9f-11ec-a35b-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>KNeighborsClassifier</td>
+      <td>Classifier implementing the k-nearest neighbors vote</td>
+      <td>0.440158</td>
+      <td>30.369194</td>
+      <td>434</td>
+      <td>449</td>
+      <td>51</td>
+      <td>66</td>
+      <td>0.868</td>
+      <td>0.898</td>
+      <td>0.894845</td>
+      <td>0.883</td>
+      <td>0.117</td>
+      <td>0.881218</td>
+      <td>1.649695</td>
+      <td><a href="./images/b500868d-4e43-11ec-8ffc-68f728e1134a.png"><img src="./images/b500868d-4e43-11ec-8ffc-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b521855e-4e43-11ec-bdfa-68f728e1134a.png"><img src="./images/b521855e-4e43-11ec-bdfa-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/b4dac06f-4e43-11ec-9502-68f728e1134a.png"><img src="./images/b4dac06f-4e43-11ec-9502-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AdaBoostClassifier</td>
+      <td>An AdaBoost classifier</td>
+      <td>3609.089578</td>
+      <td>50.559423</td>
+      <td>425</td>
+      <td>449</td>
+      <td>51</td>
+      <td>75</td>
+      <td>0.850</td>
+      <td>0.898</td>
+      <td>0.892857</td>
+      <td>0.874</td>
+      <td>0.126</td>
+      <td>0.870902</td>
+      <td>1.580587</td>
+      <td><a href="./images/49b0b9a7-4e56-11ec-897b-68f728e1134a.png"><img src="./images/49b0b9a7-4e56-11ec-897b-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/49cd6e3a-4e56-11ec-af80-68f728e1134a.png"><img src="./images/49cd6e3a-4e56-11ec-af80-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/498cf145-4e56-11ec-a7cb-68f728e1134a.png"><img src="./images/498cf145-4e56-11ec-a7cb-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>EfficientNetB5</td>
+      <td></td>
+      <td>1009.226701</td>
+      <td>204.870101</td>
+      <td>381</td>
+      <td>489</td>
+      <td>11</td>
+      <td>119</td>
+      <td>0.762</td>
+      <td>0.978</td>
+      <td>0.971939</td>
+      <td>0.870</td>
+      <td>0.130</td>
+      <td>0.854260</td>
+      <td>1.554555</td>
+      <td><a href="./images/7cb15195-4e92-11ec-9900-68f728e1134a.png"><img src="./images/7cb15195-4e92-11ec-9900-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/7ccc1d11-4e92-11ec-8331-68f728e1134a.png"><img src="./images/7ccc1d11-4e92-11ec-8331-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/7cdbf733-4e92-11ec-8eff-68f728e1134a.png"><img src="./images/7cdbf733-4e92-11ec-8eff-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>MobileNetV2</td>
+      <td></td>
+      <td>157.735030</td>
+      <td>34.474013</td>
+      <td>430</td>
+      <td>440</td>
+      <td>60</td>
+      <td>70</td>
+      <td>0.860</td>
+      <td>0.880</td>
+      <td>0.877551</td>
+      <td>0.870</td>
+      <td>0.130</td>
+      <td>0.868687</td>
+      <td>1.552329</td>
+      <td><a href="./images/4617d6c1-4e9f-11ec-ba27-68f728e1134a.png"><img src="./images/4617d6c1-4e9f-11ec-ba27-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/4634e2e1-4e9f-11ec-904f-68f728e1134a.png"><img src="./images/4634e2e1-4e9f-11ec-904f-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/4648208b-4e9f-11ec-8ac6-68f728e1134a.png"><img src="./images/4648208b-4e9f-11ec-8ac6-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>MobileNetV3Small</td>
+      <td></td>
+      <td>61.064012</td>
+      <td>14.656091</td>
+      <td>478</td>
+      <td>390</td>
+      <td>110</td>
+      <td>22</td>
+      <td>0.956</td>
+      <td>0.780</td>
+      <td>0.812925</td>
+      <td>0.868</td>
+      <td>0.132</td>
+      <td>0.878676</td>
+      <td>1.538607</td>
+      <td><a href="./images/e3e7cc8f-4e9f-11ec-acae-68f728e1134a.png"><img src="./images/e3e7cc8f-4e9f-11ec-acae-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/e4010a0e-4e9f-11ec-932e-68f728e1134a.png"><img src="./images/e4010a0e-4e9f-11ec-932e-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/e4116296-4e9f-11ec-b82b-68f728e1134a.png"><img src="./images/e4116296-4e9f-11ec-b82b-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>DenseNet121</td>
+      <td></td>
+      <td>726.301543</td>
+      <td>134.389168</td>
+      <td>431</td>
+      <td>426</td>
+      <td>74</td>
+      <td>69</td>
+      <td>0.862</td>
+      <td>0.852</td>
+      <td>0.853465</td>
+      <td>0.857</td>
+      <td>0.143</td>
+      <td>0.857711</td>
+      <td>1.470603</td>
+      <td><a href="./images/a0c82664-4e84-11ec-8a17-68f728e1134a.png"><img src="./images/a0c82664-4e84-11ec-8a17-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a0e4f517-4e84-11ec-a2ef-68f728e1134a.png"><img src="./images/a0e4f517-4e84-11ec-a2ef-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/a0f61b20-4e84-11ec-a236-68f728e1134a.png"><img src="./images/a0f61b20-4e84-11ec-a236-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>VGG16</td>
+      <td></td>
+      <td>1480.071132</td>
+      <td>296.548475</td>
+      <td>434</td>
+      <td>416</td>
+      <td>84</td>
+      <td>66</td>
+      <td>0.868</td>
+      <td>0.832</td>
+      <td>0.837838</td>
+      <td>0.850</td>
+      <td>0.150</td>
+      <td>0.852652</td>
+      <td>1.431777</td>
+      <td><a href="./images/f84ff67b-4eb3-11ec-9f37-68f728e1134a.png"><img src="./images/f84ff67b-4eb3-11ec-9f37-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/f86d51b0-4eb3-11ec-99e7-68f728e1134a.png"><img src="./images/f86d51b0-4eb3-11ec-99e7-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/f87ee3bc-4eb3-11ec-abe4-68f728e1134a.png"><img src="./images/f87ee3bc-4eb3-11ec-abe4-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>LinearSVM</td>
+      <td>Linear Support Vector Classification</td>
+      <td>1897.505529</td>
+      <td>3.722119</td>
+      <td>425</td>
+      <td>424</td>
+      <td>76</td>
+      <td>75</td>
+      <td>0.850</td>
+      <td>0.848</td>
+      <td>0.848303</td>
+      <td>0.849</td>
+      <td>0.151</td>
+      <td>0.849151</td>
+      <td>1.426357</td>
+      <td><a href="./images/24102447-4e48-11ec-947b-68f728e1134a.png"><img src="./images/24102447-4e48-11ec-947b-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/242f922f-4e48-11ec-be05-68f728e1134a.png"><img src="./images/242f922f-4e48-11ec-be05-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/23c90a0c-4e48-11ec-907d-68f728e1134a.png"><img src="./images/23c90a0c-4e48-11ec-907d-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>MobileNet</td>
+      <td></td>
+      <td>155.542649</td>
+      <td>33.559743</td>
+      <td>430</td>
+      <td>404</td>
+      <td>96</td>
+      <td>70</td>
+      <td>0.860</td>
+      <td>0.808</td>
+      <td>0.817490</td>
+      <td>0.834</td>
+      <td>0.166</td>
+      <td>0.838207</td>
+      <td>1.353462</td>
+      <td><a href="./images/d221e505-4e9e-11ec-b912-68f728e1134a.png"><img src="./images/d221e505-4e9e-11ec-b912-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/d23f159c-4e9e-11ec-89b2-68f728e1134a.png"><img src="./images/d23f159c-4e9e-11ec-89b2-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/d250ca96-4e9e-11ec-b96f-68f728e1134a.png"><img src="./images/d250ca96-4e9e-11ec-b96f-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>VGG19</td>
+      <td></td>
+      <td>1847.455191</td>
+      <td>371.082659</td>
+      <td>374</td>
+      <td>459</td>
+      <td>41</td>
+      <td>126</td>
+      <td>0.748</td>
+      <td>0.918</td>
+      <td>0.901205</td>
+      <td>0.833</td>
+      <td>0.167</td>
+      <td>0.817486</td>
+      <td>1.347566</td>
+      <td><a href="./images/23db0fe2-4eb9-11ec-931a-68f728e1134a.png"><img src="./images/23db0fe2-4eb9-11ec-931a-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/23f9f51e-4eb9-11ec-a702-68f728e1134a.png"><img src="./images/23f9f51e-4eb9-11ec-a702-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/240d8db2-4eb9-11ec-bcf7-68f728e1134a.png"><img src="./images/240d8db2-4eb9-11ec-bcf7-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>DenseNet201</td>
+      <td></td>
+      <td>895.776783</td>
+      <td>182.899194</td>
+      <td>494</td>
+      <td>322</td>
+      <td>178</td>
+      <td>6</td>
+      <td>0.988</td>
+      <td>0.644</td>
+      <td>0.735119</td>
+      <td>0.816</td>
+      <td>0.184</td>
+      <td>0.843003</td>
+      <td>1.283292</td>
+      <td><a href="./images/231cb682-4e89-11ec-be78-68f728e1134a.png"><img src="./images/231cb682-4e89-11ec-be78-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/2335dd63-4e89-11ec-bbb3-68f728e1134a.png"><img src="./images/2335dd63-4e89-11ec-bbb3-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/2345a528-4e89-11ec-b335-68f728e1134a.png"><img src="./images/2345a528-4e89-11ec-b335-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>DiscreteNBC</td>
+      <td>DiscreteNBC</td>
+      <td>950.394438</td>
+      <td>527.670386</td>
+      <td>389</td>
+      <td>424</td>
+      <td>76</td>
+      <td>111</td>
+      <td>0.778</td>
+      <td>0.848</td>
+      <td>0.836559</td>
+      <td>0.813</td>
+      <td>0.187</td>
+      <td>0.806218</td>
+      <td>1.265424</td>
+      <td><a href="./images/469df51c-4e43-11ec-a7de-68f728e1134a.png"><img src="./images/469df51c-4e43-11ec-a7de-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/46bb462b-4e43-11ec-8647-68f728e1134a.png"><img src="./images/46bb462b-4e43-11ec-8647-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/46592de5-4e43-11ec-bb3f-68f728e1134a.png"><img src="./images/46592de5-4e43-11ec-bb3f-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>DenseNet169</td>
+      <td></td>
+      <td>696.821136</td>
+      <td>145.097219</td>
+      <td>337</td>
+      <td>471</td>
+      <td>29</td>
+      <td>163</td>
+      <td>0.674</td>
+      <td>0.942</td>
+      <td>0.920765</td>
+      <td>0.808</td>
+      <td>0.192</td>
+      <td>0.778291</td>
+      <td>1.244455</td>
+      <td><a href="./images/9b33ca03-4e86-11ec-9534-68f728e1134a.png"><img src="./images/9b33ca03-4e86-11ec-9534-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/9b531e24-4e86-11ec-b0a5-68f728e1134a.png"><img src="./images/9b531e24-4e86-11ec-b0a5-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/9b652d8f-4e86-11ec-a0d5-68f728e1134a.png"><img src="./images/9b652d8f-4e86-11ec-a0d5-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MultinomialNBC</td>
+      <td>Naive Bayes classifier for multinomial models</td>
+      <td>19.295500</td>
+      <td>1.693762</td>
+      <td>391</td>
+      <td>397</td>
+      <td>103</td>
+      <td>109</td>
+      <td>0.782</td>
+      <td>0.794</td>
+      <td>0.791498</td>
+      <td>0.788</td>
+      <td>0.212</td>
+      <td>0.786720</td>
+      <td>1.180608</td>
+      <td><a href="./images/8ed99657-4e43-11ec-ae03-68f728e1134a.png"><img src="./images/8ed99657-4e43-11ec-ae03-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/8f00e22d-4e43-11ec-b673-68f728e1134a.png"><img src="./images/8f00e22d-4e43-11ec-b673-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/8eb2af19-4e43-11ec-8dd5-68f728e1134a.png"><img src="./images/8eb2af19-4e43-11ec-8dd5-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ComplementNBC</td>
+      <td>The Complement Naive Bayes classifier described in Rennie et al</td>
+      <td>19.378092</td>
+      <td>1.764908</td>
+      <td>391</td>
+      <td>397</td>
+      <td>103</td>
+      <td>109</td>
+      <td>0.782</td>
+      <td>0.794</td>
+      <td>0.791498</td>
+      <td>0.788</td>
+      <td>0.212</td>
+      <td>0.786720</td>
+      <td>1.180608</td>
+      <td><a href="./images/6a3222e2-4e43-11ec-96bc-68f728e1134a.png"><img src="./images/6a3222e2-4e43-11ec-96bc-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/6a4c506a-4e43-11ec-b2b1-68f728e1134a.png"><img src="./images/6a4c506a-4e43-11ec-b2b1-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/6a0f9b40-4e43-11ec-b094-68f728e1134a.png"><img src="./images/6a0f9b40-4e43-11ec-b094-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>GaussianNBC</td>
+      <td>Gaussian Naive Bayes (GaussianNB)</td>
+      <td>18.046813</td>
+      <td>9.955468</td>
+      <td>374</td>
+      <td>412</td>
+      <td>88</td>
+      <td>126</td>
+      <td>0.748</td>
+      <td>0.824</td>
+      <td>0.809524</td>
+      <td>0.786</td>
+      <td>0.214</td>
+      <td>0.777547</td>
+      <td>1.172815</td>
+      <td><a href="./images/81018e04-4e43-11ec-b35c-68f728e1134a.png"><img src="./images/81018e04-4e43-11ec-b35c-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/811f2a59-4e43-11ec-83bf-68f728e1134a.png"><img src="./images/811f2a59-4e43-11ec-83bf-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/80dbb68a-4e43-11ec-9286-68f728e1134a.png"><img src="./images/80dbb68a-4e43-11ec-9286-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Xception</td>
+      <td></td>
+      <td>643.225933</td>
+      <td>130.029994</td>
+      <td>371</td>
+      <td>413</td>
+      <td>87</td>
+      <td>129</td>
+      <td>0.742</td>
+      <td>0.826</td>
+      <td>0.810044</td>
+      <td>0.784</td>
+      <td>0.216</td>
+      <td>0.774530</td>
+      <td>1.166432</td>
+      <td><a href="./images/f2cd8662-4eba-11ec-b986-68f728e1134a.png"><img src="./images/f2cd8662-4eba-11ec-b986-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/f2ea8f8b-4eba-11ec-8466-68f728e1134a.png"><img src="./images/f2ea8f8b-4eba-11ec-8466-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/f2fc2056-4eba-11ec-a4a1-68f728e1134a.png"><img src="./images/f2fc2056-4eba-11ec-a4a1-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BernoulliNBC</td>
+      <td>Naive Bayes classifier for multivariate Bernoulli models</td>
+      <td>28.253479</td>
+      <td>2.853844</td>
+      <td>418</td>
+      <td>349</td>
+      <td>151</td>
+      <td>82</td>
+      <td>0.836</td>
+      <td>0.698</td>
+      <td>0.734622</td>
+      <td>0.767</td>
+      <td>0.233</td>
+      <td>0.782039</td>
+      <td>1.123766</td>
+      <td><a href="./images/5c2c15c4-4e43-11ec-af44-68f728e1134a.png"><img src="./images/5c2c15c4-4e43-11ec-af44-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/5c57a72c-4e43-11ec-b892-68f728e1134a.png"><img src="./images/5c57a72c-4e43-11ec-b892-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/5c0323ae-4e43-11ec-bff4-68f728e1134a.png"><img src="./images/5c0323ae-4e43-11ec-bff4-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>ResNet50V2</td>
+      <td></td>
+      <td>492.477555</td>
+      <td>99.672667</td>
+      <td>430</td>
+      <td>336</td>
+      <td>164</td>
+      <td>70</td>
+      <td>0.860</td>
+      <td>0.672</td>
+      <td>0.723906</td>
+      <td>0.766</td>
+      <td>0.234</td>
+      <td>0.786106</td>
+      <td>1.122594</td>
+      <td><a href="./images/d467aebc-4eaf-11ec-b69c-68f728e1134a.png"><img src="./images/d467aebc-4eaf-11ec-b69c-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/d48a52ac-4eaf-11ec-8487-68f728e1134a.png"><img src="./images/d48a52ac-4eaf-11ec-8487-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/d49d8796-4eaf-11ec-b5ff-68f728e1134a.png"><img src="./images/d49d8796-4eaf-11ec-b5ff-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>ResNet152V2</td>
+      <td></td>
+      <td>1310.368800</td>
+      <td>267.236882</td>
+      <td>295</td>
+      <td>431</td>
+      <td>69</td>
+      <td>205</td>
+      <td>0.590</td>
+      <td>0.862</td>
+      <td>0.810440</td>
+      <td>0.726</td>
+      <td>0.274</td>
+      <td>0.682870</td>
+      <td>1.005243</td>
+      <td><a href="./images/d484bf24-4eac-11ec-a446-68f728e1134a.png"><img src="./images/d484bf24-4eac-11ec-a446-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/d4a1714a-4eac-11ec-a4c4-68f728e1134a.png"><img src="./images/d4a1714a-4eac-11ec-a4c4-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/d4b2976a-4eac-11ec-b06a-68f728e1134a.png"><img src="./images/d4b2976a-4eac-11ec-b06a-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>InceptionV3</td>
+      <td></td>
+      <td>337.708625</td>
+      <td>70.971229</td>
+      <td>207</td>
+      <td>474</td>
+      <td>26</td>
+      <td>293</td>
+      <td>0.414</td>
+      <td>0.948</td>
+      <td>0.888412</td>
+      <td>0.681</td>
+      <td>0.319</td>
+      <td>0.564802</td>
+      <td>0.889022</td>
+      <td><a href="./images/606dc566-4e9e-11ec-8a18-68f728e1134a.png"><img src="./images/606dc566-4e9e-11ec-8a18-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/608d2ba8-4e9e-11ec-96d3-68f728e1134a.png"><img src="./images/608d2ba8-4e9e-11ec-96d3-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/609f6d9b-4e9e-11ec-8735-68f728e1134a.png"><img src="./images/609f6d9b-4e9e-11ec-8735-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>ResNet101V2</td>
+      <td></td>
+      <td>878.883173</td>
+      <td>178.609038</td>
+      <td>6</td>
+      <td>500</td>
+      <td>0</td>
+      <td>494</td>
+      <td>0.012</td>
+      <td>1.000</td>
+      <td>1.000000</td>
+      <td>0.506</td>
+      <td>0.494</td>
+      <td>0.023715</td>
+      <td>0.466087</td>
+      <td><a href="./images/22079e16-4ea5-11ec-a893-68f728e1134a.png"><img src="./images/22079e16-4ea5-11ec-a893-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/2223a170-4ea5-11ec-a27a-68f728e1134a.png"><img src="./images/2223a170-4ea5-11ec-a27a-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/22348d05-4ea5-11ec-8c96-68f728e1134a.png"><img src="./images/22348d05-4ea5-11ec-8c96-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>InceptionResNetV2</td>
+      <td></td>
+      <td>735.537032</td>
+      <td>151.825751</td>
+      <td>0</td>
+      <td>500</td>
+      <td>0</td>
+      <td>500</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000000</td>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>0.000000</td>
+      <td>0.350000</td>
+      <td><a href="./images/6a10e695-4e9d-11ec-80df-68f728e1134a.png"><img src="./images/6a10e695-4e9d-11ec-80df-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/6a2d87ac-4e9d-11ec-9b58-68f728e1134a.png"><img src="./images/6a2d87ac-4e9d-11ec-9b58-68f728e1134a.png" width=200 height=200 /></a></td>
+      <td><a href="./images/6a3ea1be-4e9d-11ec-af0d-68f728e1134a.png"><img src="./images/6a3ea1be-4e9d-11ec-af0d-68f728e1134a.png" width=200 height=200 /></a></td>
+    </tr>
+  </tbody>
+</table>
