@@ -39,3 +39,9 @@
 2021-11-27 15:49:32,645 INFO - k_neighbors.start() : Prediction started
 2021-11-27 15:49:32,729 INFO - k_neighbors.start() : Prediction completed
 2021-11-27 15:49:33,533 INFO - k_neighbors.start() : Prediction results: method: KNeighborsClassifier, description: Classifier implementing the k-nearest neighbors vote,  train_time: 0.004495143890380859, predict_time: 0.08493876457214355,  true_positive: 2, true_negative: 2, false_positive: 0, false_negative: 0, sensitivity: 1.0,  specificity: 1.0, precision: 1.0,  accuracy: 1.0,  error: 0.0, f1: 1.0
+2021-11-27 15:49:36,794 INFO - ada_boost.__init__() : Algorithm initialized
+2021-11-27 15:49:36,794 INFO - ada_boost.start() : Training started
+2021-11-27 15:49:37,477 INFO - ada_boost.start() : Training completed
+2021-11-27 15:49:37,478 INFO - ada_boost.start() : Prediction started
+2021-11-27 15:49:37,489 INFO - ada_boost.start() : Prediction completed
+2021-11-27 15:49:38,272 INFO - ada_boost.start() : Prediction results: method: AdaBoostClassifier, description: An AdaBoost classifier,  train_time: 0.6831004619598389, predict_time: 0.011240482330322266,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
