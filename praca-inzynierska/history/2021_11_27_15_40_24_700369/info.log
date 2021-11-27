@@ -1,0 +1,41 @@
+2021-11-27 15:40:26,486 INFO - data.__prepare() : Data prepared
+2021-11-27 15:40:33,875 INFO - data.__augment() : Data augmented
+2021-11-27 15:40:35,213 INFO - data.__copy() : Data copied
+2021-11-27 15:40:35,472 INFO - data.__read() : Data prepared for algorithms
+2021-11-27 15:40:35,981 INFO - data.__preprocess() : Data prepared for neural networks
+2021-11-27 15:40:35,982 INFO - discrete_nbc.__init__() : Algorithm initialized
+2021-11-27 15:40:37,053 INFO - discrete_nbc.start() : Training started
+2021-11-27 15:41:09,334 INFO - discrete_nbc.start() : Training completed
+2021-11-27 15:41:09,334 INFO - discrete_nbc.start() : Prediction started
+2021-11-27 15:41:12,791 INFO - discrete_nbc.start() : Prediction completed
+2021-11-27 15:41:16,794 INFO - discrete_nbc.start() : Prediction results: method: DiscreteNBC, description: DiscreteNBC,  train_time: 32.26695728302002, predict_time: 3.4568281173706055,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
+2021-11-27 15:41:17,233 INFO - bernoulli_nbc.__init__() : Algorithm initialized
+2021-11-27 15:41:17,234 INFO - bernoulli_nbc.start() : Training started
+2021-11-27 15:41:17,361 INFO - bernoulli_nbc.start() : Training completed
+2021-11-27 15:41:17,361 INFO - bernoulli_nbc.start() : Prediction started
+2021-11-27 15:41:17,412 INFO - bernoulli_nbc.start() : Prediction completed
+2021-11-27 15:41:18,258 INFO - bernoulli_nbc.start() : Prediction results: method: BernoulliNBC, description: Naive Bayes classifier for multivariate Bernoulli models,  train_time: 0.12662315368652344, predict_time: 0.05019998550415039,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
+2021-11-27 15:41:18,344 INFO - complement_nbc.__init__() : Algorithm initialized
+2021-11-27 15:41:18,345 INFO - complement_nbc.start() : Training started
+2021-11-27 15:41:18,417 INFO - complement_nbc.start() : Training completed
+2021-11-27 15:41:18,418 INFO - complement_nbc.start() : Prediction started
+2021-11-27 15:41:18,429 INFO - complement_nbc.start() : Prediction completed
+2021-11-27 15:41:19,345 INFO - complement_nbc.start() : Prediction results: method: ComplementNBC, description: The Complement Naive Bayes classifier described in Rennie et al,  train_time: 0.07192850112915039, predict_time: 0.011237621307373047,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
+2021-11-27 15:41:19,448 INFO - gaussian_nbc.__init__() : Algorithm initialized
+2021-11-27 15:41:19,449 INFO - gaussian_nbc.start() : Training started
+2021-11-27 15:41:19,601 INFO - gaussian_nbc.start() : Training completed
+2021-11-27 15:41:19,602 INFO - gaussian_nbc.start() : Prediction started
+2021-11-27 15:41:19,661 INFO - gaussian_nbc.start() : Prediction completed
+2021-11-27 15:41:20,447 INFO - gaussian_nbc.start() : Prediction results: method: GaussianNBC, description: Gaussian Naive Bayes (GaussianNB),  train_time: 0.1521015167236328, predict_time: 0.05872178077697754,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
+2021-11-27 15:41:20,560 INFO - multinomial_nbc.__init__() : Algorithm initialized
+2021-11-27 15:41:20,561 INFO - multinomial_nbc.start() : Training started
+2021-11-27 15:41:20,633 INFO - multinomial_nbc.start() : Training completed
+2021-11-27 15:41:20,634 INFO - multinomial_nbc.start() : Prediction started
+2021-11-27 15:41:20,645 INFO - multinomial_nbc.start() : Prediction completed
+2021-11-27 15:41:21,408 INFO - multinomial_nbc.start() : Prediction results: method: MultinomialNBC, description: Naive Bayes classifier for multinomial models,  train_time: 0.07192778587341309, predict_time: 0.010492801666259766,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
+2021-11-27 15:41:21,532 INFO - k_neighbors.__init__() : Algorithm initialized
+2021-11-27 15:41:21,532 INFO - k_neighbors.start() : Training started
+2021-11-27 15:41:21,538 INFO - k_neighbors.start() : Training completed
+2021-11-27 15:41:21,538 INFO - k_neighbors.start() : Prediction started
+2021-11-27 15:41:21,624 INFO - k_neighbors.start() : Prediction completed
+2021-11-27 15:41:22,845 INFO - k_neighbors.start() : Prediction results: method: KNeighborsClassifier, description: Classifier implementing the k-nearest neighbors vote,  train_time: 0.003535032272338867, predict_time: 0.08616328239440918,  true_positive: 2, true_negative: 2, false_positive: 0, false_negative: 0, sensitivity: 1.0,  specificity: 1.0, precision: 1.0,  accuracy: 1.0,  error: 0.0, f1: 1.0

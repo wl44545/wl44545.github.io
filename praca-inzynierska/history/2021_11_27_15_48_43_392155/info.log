@@ -1,0 +1,11 @@
+2021-11-27 15:48:43,470 INFO - data.__prepare() : Data prepared
+2021-11-27 15:48:43,530 INFO - data.__augment() : Data augmented
+2021-11-27 15:48:43,575 INFO - data.__copy() : Data copied
+2021-11-27 15:48:43,647 INFO - data.__read() : Data prepared for algorithms
+2021-11-27 15:48:43,741 INFO - data.__preprocess() : Data prepared for neural networks
+2021-11-27 15:48:43,741 INFO - discrete_nbc.__init__() : Algorithm initialized
+2021-11-27 15:48:43,967 INFO - discrete_nbc.start() : Training started
+2021-11-27 15:49:00,977 INFO - discrete_nbc.start() : Training completed
+2021-11-27 15:49:00,978 INFO - discrete_nbc.start() : Prediction started
+2021-11-27 15:49:03,612 INFO - discrete_nbc.start() : Prediction completed
+2021-11-27 15:49:07,149 INFO - discrete_nbc.start() : Prediction results: method: DiscreteNBC, description: DiscreteNBC,  train_time: 17.010122299194336, predict_time: 2.634516477584839,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
