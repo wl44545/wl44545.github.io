@@ -1,4 +1,5 @@
 import datetime
+import logging
 import os
 import shutil
 from data import Data
@@ -40,32 +41,29 @@ from algorithms.neural_networks.resnet50v2 import ResNet50V2
 from algorithms.neural_networks.vgg16 import VGG16
 from algorithms.neural_networks.vgg19 import VGG19
 from algorithms.neural_networks.xception import Xception
+from git import Repo
 
 
 def run(normal_size, covid_size, batch_size, split_factor, augmentation_factor, augmentation_count_factor):
 
+	dt = str(datetime.datetime.now()).replace('-', '_').replace(' ', '_').replace(':', '_').replace('.', '_')
+	statistics = Statistics(dt, True, normal_size, covid_size, batch_size, split_factor, augmentation_factor, augmentation_count_factor)
+
 	data = Data()
 	data.load(normal_size, covid_size, batch_size, split_factor, augmentation_factor, augmentation_count_factor)
-
-	statistics = Statistics()
 	statistics.update_data(data)
 
 	statistics.insert(DiscreteNBC(data).start())
 	# statistics.insert(RealBoost(data).start())
-
 	statistics.insert(BernoulliNBC(data).start())
 	statistics.insert(ComplementNBC(data).start())
 	statistics.insert(GaussianNBC(data).start())
 	statistics.insert(MultinomialNBC(data).start())
-
 	statistics.insert(KNeighbors(data).start())
-
-	statistics.insert(LinearSVM(data).start())
-	statistics.insert(NonLinearSVM(data).start())
-
+	# statistics.insert(LinearSVM(data).start())
+	# statistics.insert(NonLinearSVM(data).start())
 	statistics.insert(AdaBoost(data).start())
 	statistics.insert(GradientBoost(data).start())
-
 	statistics.insert(DenseNet121(data).start())
 	statistics.insert(DenseNet169(data).start())
 	statistics.insert(DenseNet201(data).start())
@@ -97,15 +95,3 @@ def run(normal_size, covid_size, batch_size, split_factor, augmentation_factor, 
 	statistics.export_csv()
 	statistics.export_html()
 
-	dt = str(datetime.datetime.now()).replace('-', '_').replace(' ', '_').replace(':', '_').replace('.', '_')
-	shutil.copytree('resources/results', 'resources/history/' + dt)
-	with open('resources/results/info.log', "w") as file:
-		file.write('')
-	with open("resources/history/history.html", "a") as file:
-		file.write(
-			"{dt} => ({normal_size}, {covid_size}, {batch_size}, {split_factor}, {augmentation_factor}, {augmentation_count_factor}) => \n"
-			"<a href=\"{dt}/results.html\">[HTML]</a>\n"
-			"<a href=\"{dt}/results.csv\">[CSV]</a>\n"
-			"<a href=\"{dt}/info.log\">[LOG]</a>\n<br>\n".format(dt=dt,normal_size=normal_size, covid_size=covid_size, batch_size=batch_size,
-			                                                     split_factor=split_factor, augmentation_factor=augmentation_factor,
-			                                                     augmentation_count_factor=augmentation_count_factor))

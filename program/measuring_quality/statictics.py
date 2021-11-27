@@ -14,15 +14,35 @@ class Statistics:
 	Miary jakości klasyfikacji.
 	"""
 
-	def __init__(self):
+	def __init__(self, dt, git, normal_size, covid_size, batch_size, split_factor, augmentation_factor, augmentation_count_factor):
 		"""
 		Konstruktor.
 		"""
 		self.data_info = None
 		self.data = []
 		self.dataframe = None
+		self.datetime = dt
+		self.git = git
+		with open('resources/results/info.log', "w") as file:
+			file.write('')
+		os.mkdir('resources/history/' + dt)
+		with open("resources/history/history.html", "a") as file:
+			file.write(
+				"{dt} => ({normal_size}, {covid_size}, {batch_size}, {split_factor}, {augmentation_factor}, {augmentation_count_factor}) => \n"
+				"<a href=\"{dt}/results.html\">[HTML]</a>\n"
+				"<a href=\"{dt}/results.csv\">[CSV]</a>\n"
+				"<a href=\"{dt}/info.log\">[LOG]</a>\n<br>\n".format(dt=dt, normal_size=normal_size,
+				                                                     covid_size=covid_size,
+				                                                     batch_size=batch_size,
+				                                                     split_factor=split_factor,
+				                                                     augmentation_factor=augmentation_factor,
+				                                                     augmentation_count_factor=augmentation_count_factor))
 		shutil.rmtree("resources/results/images")
 		os.mkdir("resources/results/images")
+		if self.git:
+			os.mkdir('C:/Users/lukasz/Documents/GitHub/wl44545.github.io/praca-inzynierska/history/' + self.datetime)
+			shutil.copyfile('resources/history/history.html',
+			                'C:/Users/lukasz/Documents/GitHub/wl44545.github.io/praca-inzynierska/history/history.html')
 
 	def insert(self, measuring_quality: MeasuringQuality):
 		self.data.append([measuring_quality.method, measuring_quality.description, measuring_quality.train_time,
@@ -33,6 +53,15 @@ class Statistics:
 		                  measuring_quality.precision, measuring_quality.accuracy, measuring_quality.error,
 		                  measuring_quality.f1, measuring_quality.my_score, measuring_quality.confusion_matrix,
 		                  measuring_quality.confusion_matrix_percentage, measuring_quality.roc_curve])
+		self.create_statistics()
+		self.export_csv()
+		self.export_html()
+		shutil.rmtree('resources/history/' + self.datetime)
+		shutil.copytree('resources/results', 'resources/history/' + self.datetime)
+		if self.git:
+			shutil.rmtree('C:/Users/lukasz/Documents/GitHub/wl44545.github.io/praca-inzynierska/history/' + self.datetime)
+			shutil.copytree('resources/results', 'C:/Users/lukasz/Documents/GitHub/wl44545.github.io/praca-inzynierska/history/' + self.datetime)
+			os.system("sh C:/Users/lukasz/Documents/GitHub/git.sh")
 
 	def create_statistics(self):
 		dataframe = pd.DataFrame(self.data,
