@@ -34,3 +34,12 @@
 2021-11-27 21:22:57,753 WARNING - def_function.called_with_tracing() : 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000029AB6A07550> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
 2021-11-27 21:22:57,756 INFO - densenet201.start() : Prediction completed
 2021-11-27 21:22:58,441 INFO - densenet201.start() : Prediction results: method: DenseNet201, description: ,  train_time: 59.89784526824951, predict_time: 19.797409057617188,  true_positive: 0, true_negative: 24, false_positive: 1, false_negative: 25, sensitivity: 0.0,  specificity: 0.96, precision: 0.0,  accuracy: 0.48,  error: 0.52, f1: 0.0, myScore1: 0.3363076923076923, myScore2: 0.0, myScore3: 0.0
+2021-11-27 21:23:01,528 INFO - statictics.insert() : History send to GIT
+2021-11-27 21:23:05,345 INFO - efficientnetb0.__init__() : Algorithm initialized
+2021-11-27 21:23:05,346 INFO - efficientnetb0.start() : Training started
+2021-11-27 21:23:27,629 INFO - efficientnetb0.start() : Training completed
+2021-11-27 21:23:27,630 INFO - efficientnetb0.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 4}{'loss': [0.645028829574585], 'accuracy': [0.5859375], 'val_loss': [0.5162320137023926], 'val_accuracy': [0.7799999713897705]}
+2021-11-27 21:23:28,175 INFO - efficientnetb0.start() : Model saved
+2021-11-27 21:23:28,176 INFO - efficientnetb0.start() : Prediction started
+2021-11-27 21:23:35,419 INFO - efficientnetb0.start() : Prediction completed
+2021-11-27 21:23:36,052 INFO - efficientnetb0.start() : Prediction results: method: EfficientNetB0, description: ,  train_time: 22.28289222717285, predict_time: 7.243022203445435,  true_positive: 17, true_negative: 22, false_positive: 3, false_negative: 8, sensitivity: 0.68,  specificity: 0.88, precision: 0.85,  accuracy: 0.78,  error: 0.21999999999999997, f1: 0.7555555555555556, myScore1: 1.1513232323232325, myScore2: 0.03390742762890511, myScore3: 0.10431495780810189
