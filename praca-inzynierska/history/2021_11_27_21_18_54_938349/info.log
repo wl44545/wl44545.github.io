@@ -53,3 +53,13 @@
 2021-11-27 21:24:17,617 INFO - efficientnetb1.start() : Prediction started
 2021-11-27 21:24:27,104 INFO - efficientnetb1.start() : Prediction completed
 2021-11-27 21:24:27,785 INFO - efficientnetb1.start() : Prediction results: method: EfficientNetB1, description: ,  train_time: 31.714603900909424, predict_time: 9.4875168800354,  true_positive: 14, true_negative: 23, false_positive: 2, false_negative: 11, sensitivity: 0.56,  specificity: 0.92, precision: 0.875,  accuracy: 0.74,  error: 0.26, f1: 0.6829268292682927, myScore1: 1.035578799249531, myScore2: 0.02153351280697249, myScore3: 0.07198161941670712
+2021-11-27 21:24:30,827 INFO - statictics.insert() : History send to GIT
+2021-11-27 21:24:36,915 INFO - efficientnetb2.__init__() : Algorithm initialized
+2021-11-27 21:24:36,915 INFO - efficientnetb2.start() : Training started
+2021-11-27 21:25:08,783 WARNING - def_function.called_with_tracing() : 6 out of the last 11 calls to <function Model.make_test_function.<locals>.test_function at 0x0000029AA62DBE50> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2021-11-27 21:25:11,282 INFO - efficientnetb2.start() : Training completed
+2021-11-27 21:25:11,283 INFO - efficientnetb2.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 4}{'loss': [0.6765271425247192], 'accuracy': [0.546875], 'val_loss': [0.5134264230728149], 'val_accuracy': [0.8399999737739563]}
+2021-11-27 21:25:12,091 INFO - efficientnetb2.start() : Model saved
+2021-11-27 21:25:12,091 INFO - efficientnetb2.start() : Prediction started
+2021-11-27 21:25:24,707 INFO - efficientnetb2.start() : Prediction completed
+2021-11-27 21:25:25,892 INFO - efficientnetb2.start() : Prediction results: method: EfficientNetB2, description: ,  train_time: 34.36646366119385, predict_time: 12.61555290222168,  true_positive: 18, true_negative: 24, false_positive: 1, false_negative: 7, sensitivity: 0.72,  specificity: 0.96, precision: 0.9473684210526315,  accuracy: 0.84,  error: 0.16000000000000003, f1: 0.8181818181818181, myScore1: 1.3808277511961722, myScore2: 0.02380756502175981, myScore3: 0.06485501067794905
