@@ -1,0 +1,16 @@
+2021-11-27 21:18:54,938 INFO - statictics.__init__() : Statistics initialized
+2021-11-27 21:18:54,951 INFO - statictics.__init__() : Added link to history
+2021-11-27 21:18:54,954 INFO - statictics.__init__() : History send to GIT
+2021-11-27 21:18:55,352 INFO - data.__prepare() : Data prepared
+2021-11-27 21:18:55,405 INFO - data.__augment() : Data augmented
+2021-11-27 21:18:55,857 INFO - data.__copy() : Data copied
+2021-11-27 21:18:56,405 INFO - data.__read() : Data prepared for algorithms
+2021-11-27 21:18:56,506 INFO - data.__preprocess() : Data prepared for neural networks
+2021-11-27 21:19:01,779 INFO - densenet121.__init__() : Algorithm initialized
+2021-11-27 21:19:01,779 INFO - densenet121.start() : Training started
+2021-11-27 21:19:37,971 INFO - densenet121.start() : Training completed
+2021-11-27 21:19:37,972 INFO - densenet121.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 4}{'loss': [2.1913301944732666], 'accuracy': [0.4921875], 'val_loss': [1.4081348180770874], 'val_accuracy': [0.46000000834465027]}
+2021-11-27 21:19:38,887 INFO - densenet121.start() : Model saved
+2021-11-27 21:19:38,887 INFO - densenet121.start() : Prediction started
+2021-11-27 21:19:51,135 INFO - densenet121.start() : Prediction completed
+2021-11-27 21:19:51,832 INFO - densenet121.start() : Prediction results: method: DenseNet121, description: ,  train_time: 36.19130778312683, predict_time: 12.247246503829956,  true_positive: 1, true_negative: 22, false_positive: 3, false_negative: 24, sensitivity: 0.04,  specificity: 0.88, precision: 0.25,  accuracy: 0.46,  error: 0.54, f1: 0.06896551724137932, myScore1: 0.3826679438058749, myScore2: 0.0019055823474147164, myScore3: 0.0056311038746392865
