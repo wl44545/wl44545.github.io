@@ -81,3 +81,12 @@
 2021-11-27 21:29:56,187 INFO - efficientnetb4.start() : Prediction started
 2021-11-27 21:30:28,669 INFO - efficientnetb4.start() : Prediction completed
 2021-11-27 21:30:30,871 INFO - efficientnetb4.start() : Prediction results: method: EfficientNetB4, description: ,  train_time: 156.38384461402893, predict_time: 32.48181200027466,  true_positive: 18, true_negative: 20, false_positive: 5, false_negative: 7, sensitivity: 0.72,  specificity: 0.8, precision: 0.782608695652174,  accuracy: 0.76,  error: 0.24, f1: 0.7499999999999999, myScore1: 1.097927536231884, myScore2: 0.004795891812553115, myScore3: 0.02308984486437081
+2021-11-27 21:30:35,770 INFO - statictics.insert() : History send to GIT
+2021-11-27 21:31:09,022 INFO - efficientnetb5.__init__() : Algorithm initialized
+2021-11-27 21:31:09,022 INFO - efficientnetb5.start() : Training started
+2021-11-27 21:33:30,326 INFO - efficientnetb5.start() : Training completed
+2021-11-27 21:33:30,326 INFO - efficientnetb5.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 4}{'loss': [0.6225184202194214], 'accuracy': [0.6640625], 'val_loss': [0.5538294315338135], 'val_accuracy': [0.7400000095367432]}
+2021-11-27 21:33:32,616 INFO - efficientnetb5.start() : Model saved
+2021-11-27 21:33:32,617 INFO - efficientnetb5.start() : Prediction started
+2021-11-27 21:33:58,450 INFO - efficientnetb5.start() : Prediction completed
+2021-11-27 21:33:59,651 INFO - efficientnetb5.start() : Prediction results: method: EfficientNetB5, description: ,  train_time: 141.30286526679993, predict_time: 25.83247971534729,  true_positive: 14, true_negative: 23, false_positive: 2, false_negative: 11, sensitivity: 0.56,  specificity: 0.92, precision: 0.875,  accuracy: 0.74,  error: 0.26, f1: 0.6829268292682927, myScore1: 1.035578799249531, myScore2: 0.0048330713462804145, myScore3: 0.02643675081887552
