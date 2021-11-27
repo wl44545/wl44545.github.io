@@ -9,3 +9,9 @@
 2021-11-27 15:49:00,978 INFO - discrete_nbc.start() : Prediction started
 2021-11-27 15:49:03,612 INFO - discrete_nbc.start() : Prediction completed
 2021-11-27 15:49:07,149 INFO - discrete_nbc.start() : Prediction results: method: DiscreteNBC, description: DiscreteNBC,  train_time: 17.010122299194336, predict_time: 2.634516477584839,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
+2021-11-27 15:49:10,640 INFO - bernoulli_nbc.__init__() : Algorithm initialized
+2021-11-27 15:49:10,641 INFO - bernoulli_nbc.start() : Training started
+2021-11-27 15:49:10,757 INFO - bernoulli_nbc.start() : Training completed
+2021-11-27 15:49:10,757 INFO - bernoulli_nbc.start() : Prediction started
+2021-11-27 15:49:10,791 INFO - bernoulli_nbc.start() : Prediction completed
+2021-11-27 15:49:13,528 INFO - bernoulli_nbc.start() : Prediction results: method: BernoulliNBC, description: Naive Bayes classifier for multivariate Bernoulli models,  train_time: 0.1161336898803711, predict_time: 0.03446459770202637,  true_positive: 2, true_negative: 1, false_positive: 1, false_negative: 0, sensitivity: 1.0,  specificity: 0.5, precision: 0.6666666666666666,  accuracy: 0.75,  error: 0.25, f1: 0.8
