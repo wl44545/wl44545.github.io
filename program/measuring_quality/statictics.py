@@ -61,7 +61,7 @@ class Statistics:
 		if self.git:
 			shutil.rmtree('C:/Users/lukasz/Documents/GitHub/wl44545.github.io/praca-inzynierska/history/' + self.datetime)
 			shutil.copytree('resources/results', 'C:/Users/lukasz/Documents/GitHub/wl44545.github.io/praca-inzynierska/history/' + self.datetime)
-			os.system("sh C:/Users/lukasz/Documents/GitHub/git.sh")
+			os.system("C:/Users/lukasz/Documents/GitHub/git.sh")
 
 	def create_statistics(self):
 		dataframe = pd.DataFrame(self.data,
