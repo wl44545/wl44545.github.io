@@ -47,3 +47,10 @@
 2021-11-28 23:20:35,728 INFO - multinomial_nbc.start() : Prediction started
 2021-11-28 23:20:37,173 INFO - multinomial_nbc.start() : Prediction completed
 2021-11-28 23:20:39,487 INFO - multinomial_nbc.start() : Prediction results: method: MultinomialNBC, description: Naive Bayes classifier for multinomial models,  train_time: 5.293262243270874, predict_time: 1.4457125663757324,  true_positive: 192, true_negative: 136, false_positive: 114, false_negative: 58, sensitivity: 0.768,  specificity: 0.544, precision: 0.6274509803921569,  accuracy: 0.656,  error: 0.344, f1: 0.6906474820143885, myScore1: 0.8955665134650146, myScore2: 0.13047671743306932, myScore3: 0.4777211584635927
+2021-11-28 23:20:42,984 INFO - statictics.insert() : History send to GIT
+2021-11-28 23:20:42,995 INFO - k_neighbors.__init__() : Algorithm initialized
+2021-11-28 23:20:42,995 INFO - k_neighbors.start() : Training started
+2021-11-28 23:20:43,288 INFO - k_neighbors.start() : Training completed
+2021-11-28 23:20:43,288 INFO - k_neighbors.start() : Prediction started
+2021-11-28 23:20:54,716 INFO - k_neighbors.start() : Prediction completed
+2021-11-28 23:21:10,194 INFO - k_neighbors.start() : Prediction results: method: KNeighborsClassifier, description: Classifier implementing the k-nearest neighbors vote,  train_time: 0.2926332950592041, predict_time: 11.427538871765137,  true_positive: 211, true_negative: 193, false_positive: 57, false_negative: 39, sensitivity: 0.844,  specificity: 0.772, precision: 0.7873134328358209,  accuracy: 0.808,  error: 0.19199999999999995, f1: 0.8146718146718146, myScore1: 1.2493005839528228, myScore2: 2.7839341196872156, myScore3: 0.071290224764379
