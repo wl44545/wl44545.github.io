@@ -54,3 +54,10 @@
 2021-11-29 07:59:40,875 INFO - k_neighbors.start() : Prediction started
 2021-11-29 07:59:53,058 INFO - k_neighbors.start() : Prediction completed
 2021-11-29 08:00:05,660 INFO - k_neighbors.start() : Prediction results: method: KNeighborsClassifier, description: Classifier implementing the k-nearest neighbors vote,  train_time: 0.3274211883544922, predict_time: 12.1827712059021,  true_positive: 214, true_negative: 186, false_positive: 64, false_negative: 36, sensitivity: 0.856,  specificity: 0.744, precision: 0.7697841726618705,  accuracy: 0.8,  error: 0.19999999999999996, f1: 0.8106060606060607, myScore1: 1.2222814475692174, myScore2: 2.4757287843217837, myScore3: 0.06653708314027536
+2021-11-29 08:00:08,716 INFO - statictics.insert() : History send to GIT
+2021-11-29 08:00:08,716 INFO - linear_svm.__init__() : Algorithm initialized
+2021-11-29 08:00:08,717 INFO - linear_svm.start() : Training started
+2021-11-29 08:10:58,808 INFO - linear_svm.start() : Training completed
+2021-11-29 08:10:58,818 INFO - linear_svm.start() : Prediction started
+2021-11-29 08:11:00,111 INFO - linear_svm.start() : Prediction completed
+2021-11-29 08:11:01,860 INFO - linear_svm.start() : Prediction results: method: LinearSVM, description: Linear Support Vector Classification,  train_time: 650.0855538845062, predict_time: 1.2924134731292725,  true_positive: 205, true_negative: 200, false_positive: 50, false_negative: 45, sensitivity: 0.82,  specificity: 0.8, precision: 0.803921568627451,  accuracy: 0.81,  error: 0.18999999999999995, f1: 0.8118811881188118, myScore1: 1.2556485403958355, myScore2: 0.0012488836019621044, myScore3: 0.6281899755757221
