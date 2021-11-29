@@ -102,3 +102,13 @@
 2021-11-29 02:55:23,144 INFO - densenet169.start() : Prediction started
 2021-11-29 02:56:37,385 INFO - densenet169.start() : Prediction completed
 2021-11-29 02:56:37,931 INFO - densenet169.start() : Prediction results: method: DenseNet169, description: ,  train_time: 355.5417947769165, predict_time: 74.24145197868347,  true_positive: 222, true_negative: 120, false_positive: 130, false_negative: 28, sensitivity: 0.888,  specificity: 0.48, precision: 0.6306818181818182,  accuracy: 0.684,  error: 0.31599999999999995, f1: 0.7375415282392027, myScore1: 0.953494642140315, myScore2: 0.002074415832608289, myScore3: 0.009934362927747815
+2021-11-29 02:57:00,837 INFO - statictics.insert() : History send to GIT
+2021-11-29 02:57:09,034 INFO - densenet201.__init__() : Algorithm initialized
+2021-11-29 02:57:09,035 INFO - densenet201.start() : Training started
+2021-11-29 03:03:19,370 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1472 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 03:04:47,858 INFO - densenet201.start() : Training completed
+2021-11-29 03:04:47,859 INFO - densenet201.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 46}{'loss': [0.6666520833969116, 0.51600182056427], 'accuracy': [0.703125, 0.7857142686843872], 'val_loss': [0.5328953266143799, 0.5335100293159485], 'val_accuracy': [0.7440000176429749, 0.7300000190734863]}
+2021-11-29 03:04:49,147 INFO - densenet201.start() : Model saved
+2021-11-29 03:04:49,147 INFO - densenet201.start() : Prediction started
+2021-11-29 03:06:24,950 INFO - densenet201.start() : Prediction completed
+2021-11-29 03:06:25,517 INFO - densenet201.start() : Prediction results: method: DenseNet201, description: ,  train_time: 458.8231530189514, predict_time: 95.80235028266907,  true_positive: 202, true_negative: 163, false_positive: 87, false_negative: 48, sensitivity: 0.808,  specificity: 0.652, precision: 0.698961937716263,  accuracy: 0.73,  error: 0.27, f1: 0.7495361781076066, myScore1: 1.0340346531958, myScore2: 0.001633605830864964, myScore3: 0.007823776513791854
