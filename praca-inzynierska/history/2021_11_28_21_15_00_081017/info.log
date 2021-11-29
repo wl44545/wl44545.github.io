@@ -92,3 +92,13 @@
 2021-11-29 02:47:53,869 INFO - densenet121.start() : Prediction started
 2021-11-29 02:48:55,953 INFO - densenet121.start() : Prediction completed
 2021-11-29 02:48:56,545 INFO - densenet121.start() : Prediction results: method: DenseNet121, description: ,  train_time: 296.7114107608795, predict_time: 62.083518505096436,  true_positive: 214, true_negative: 167, false_positive: 83, false_negative: 36, sensitivity: 0.856,  specificity: 0.668, precision: 0.7205387205387206,  accuracy: 0.762,  error: 0.238, f1: 0.7824497257769653, myScore1: 1.1120468021692456, myScore2: 0.002637073255020662, myScore3: 0.01260317946884299
+2021-11-29 02:49:19,496 INFO - statictics.insert() : History send to GIT
+2021-11-29 02:49:26,583 INFO - densenet169.__init__() : Algorithm initialized
+2021-11-29 02:49:26,584 INFO - densenet169.start() : Training started
+2021-11-29 02:54:12,600 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1472 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 02:55:22,126 INFO - densenet169.start() : Training completed
+2021-11-29 02:55:22,126 INFO - densenet169.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 46}{'loss': [1.019485354423523, 0.5502199530601501], 'accuracy': [0.6875, 0.8214285969734192], 'val_loss': [0.6374809741973877, 0.814854621887207], 'val_accuracy': [0.7319999933242798, 0.6840000152587891]}
+2021-11-29 02:55:23,143 INFO - densenet169.start() : Model saved
+2021-11-29 02:55:23,144 INFO - densenet169.start() : Prediction started
+2021-11-29 02:56:37,385 INFO - densenet169.start() : Prediction completed
+2021-11-29 02:56:37,931 INFO - densenet169.start() : Prediction results: method: DenseNet169, description: ,  train_time: 355.5417947769165, predict_time: 74.24145197868347,  true_positive: 222, true_negative: 120, false_positive: 130, false_negative: 28, sensitivity: 0.888,  specificity: 0.48, precision: 0.6306818181818182,  accuracy: 0.684,  error: 0.31599999999999995, f1: 0.7375415282392027, myScore1: 0.953494642140315, myScore2: 0.002074415832608289, myScore3: 0.009934362927747815
