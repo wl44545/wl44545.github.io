@@ -1,0 +1,17 @@
+2021-11-29 18:54:35,282 INFO - statictics.__init__() : Statistics initialized
+2021-11-29 18:54:35,284 INFO - statictics.__init__() : Added link to history
+2021-11-29 18:54:35,291 INFO - statictics.__init__() : History send to GIT
+2021-11-29 18:54:37,943 INFO - data.__prepare() : Data prepared
+2021-11-29 18:54:38,076 INFO - data.__augment() : Data augmented
+2021-11-29 18:54:40,583 INFO - data.__copy() : Data copied
+2021-11-29 18:54:43,355 INFO - data.__read() : Data prepared for algorithms
+2021-11-29 18:54:43,521 INFO - data.__preprocess() : Data prepared for neural networks
+2021-11-29 18:54:49,297 INFO - densenet121.__init__() : Algorithm initialized
+2021-11-29 18:54:49,297 INFO - densenet121.start() : Training started
+2021-11-29 18:58:10,211 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 736 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 18:58:57,195 INFO - densenet121.start() : Training completed
+2021-11-29 18:58:57,196 INFO - densenet121.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 23}{'loss': [1.3993556499481201, 0.5159524083137512], 'accuracy': [0.6086956262588501, 0.7857142686843872], 'val_loss': [1.147615909576416, 1.7269846200942993], 'val_accuracy': [0.5640000104904175, 0.5559999942779541]}
+2021-11-29 18:58:59,368 INFO - densenet121.start() : Model saved
+2021-11-29 18:58:59,369 INFO - densenet121.start() : Prediction started
+2021-11-29 19:00:04,485 INFO - densenet121.start() : Prediction completed
+2021-11-29 19:00:52,034 INFO - densenet121.start() : Prediction results: method: DenseNet121, description: ,  train_time: 247.89758157730103, predict_time: 65.11618232727051,  true_positive: 117, true_negative: 22, false_positive: 103, false_negative: 8, sensitivity: 0.936,  specificity: 0.176, precision: 0.5318181818181819,  accuracy: 0.556,  error: 0.44399999999999995, f1: 0.6782608695652175, myScore1: 0.7843374781896523, myScore2: 0.00273605278942069, myScore3: 0.010416164543497253
