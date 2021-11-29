@@ -272,3 +272,13 @@
 2021-11-29 04:54:05,845 INFO - resnet101v2.start() : Prediction started
 2021-11-29 04:55:37,662 INFO - resnet101v2.start() : Prediction completed
 2021-11-29 04:55:38,223 INFO - resnet101v2.start() : Prediction results: method: ResNet101V2, description: ,  train_time: 442.97797870635986, predict_time: 91.81592154502869,  true_positive: 0, true_negative: 250, false_positive: 0, false_negative: 250, sensitivity: 0.0,  specificity: 1.0, precision: 0.0,  accuracy: 0.5,  error: 0.5, f1: 0.0, myScore1: 0.35000000000000003, myScore2: 0.0, myScore3: 0.0
+2021-11-29 04:56:01,503 INFO - statictics.insert() : History send to GIT
+2021-11-29 04:56:11,029 INFO - resnet152.__init__() : Algorithm initialized
+2021-11-29 04:56:11,030 INFO - resnet152.start() : Training started
+2021-11-29 05:05:56,468 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1472 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 05:08:20,264 INFO - resnet152.start() : Training completed
+2021-11-29 05:08:20,264 INFO - resnet152.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 46}{'loss': [0.30415791273117065, 0.15265591442584991], 'accuracy': [0.860733687877655, 0.9642857313156128], 'val_loss': [0.3772377669811249, 0.3050382137298584], 'val_accuracy': [0.8379999995231628, 0.8640000224113464]}
+2021-11-29 05:08:22,589 INFO - resnet152.start() : Model saved
+2021-11-29 05:08:22,590 INFO - resnet152.start() : Prediction started
+2021-11-29 05:10:52,535 INFO - resnet152.start() : Prediction completed
+2021-11-29 05:10:53,223 INFO - resnet152.start() : Prediction results: method: ResNet152, description: ,  train_time: 729.2334251403809, predict_time: 149.9452395439148,  true_positive: 230, true_negative: 202, false_positive: 48, false_negative: 20, sensitivity: 0.92,  specificity: 0.808, precision: 0.8273381294964028,  accuracy: 0.864,  error: 0.136, f1: 0.8712121212121212, myScore1: 1.5128339912027597, myScore2: 0.0011946958150531961, myScore3: 0.0058102019368008505
