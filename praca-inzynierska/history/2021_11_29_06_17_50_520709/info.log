@@ -40,3 +40,10 @@
 2021-11-29 07:59:15,712 INFO - gaussian_nbc.start() : Prediction started
 2021-11-29 07:59:20,402 INFO - gaussian_nbc.start() : Prediction completed
 2021-11-29 07:59:25,831 INFO - gaussian_nbc.start() : Prediction results: method: GaussianNBC, description: Gaussian Naive Bayes (GaussianNB),  train_time: 10.640780448913574, predict_time: 4.688637971878052,  true_positive: 206, true_negative: 133, false_positive: 117, false_negative: 44, sensitivity: 0.824,  specificity: 0.532, precision: 0.6377708978328174,  accuracy: 0.678,  error: 0.32199999999999995, f1: 0.719022687609075, myScore1: 0.9372474397989994, myScore2: 0.06757236379992101, myScore3: 0.1533542772808854
+2021-11-29 07:59:28,568 INFO - statictics.insert() : History send to GIT
+2021-11-29 07:59:28,569 INFO - multinomial_nbc.__init__() : Algorithm initialized
+2021-11-29 07:59:28,569 INFO - multinomial_nbc.start() : Training started
+2021-11-29 07:59:35,510 INFO - multinomial_nbc.start() : Training completed
+2021-11-29 07:59:35,511 INFO - multinomial_nbc.start() : Prediction started
+2021-11-29 07:59:36,364 INFO - multinomial_nbc.start() : Prediction completed
+2021-11-29 07:59:37,811 INFO - multinomial_nbc.start() : Prediction results: method: MultinomialNBC, description: Naive Bayes classifier for multinomial models,  train_time: 6.94049072265625, predict_time: 0.8525350093841553,  true_positive: 200, true_negative: 122, false_positive: 128, false_negative: 50, sensitivity: 0.8,  specificity: 0.488, precision: 0.6097560975609756,  accuracy: 0.644,  error: 0.356, f1: 0.6920415224913495, myScore1: 0.8810952474062668, myScore2: 0.09971074815103173, myScore3: 0.8117455762799216
