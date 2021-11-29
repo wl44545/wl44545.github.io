@@ -322,3 +322,13 @@
 2021-11-29 16:21:37,318 INFO - vgg16.start() : Prediction started
 2021-11-29 16:24:07,396 INFO - vgg16.start() : Prediction completed
 2021-11-29 16:24:07,953 INFO - vgg16.start() : Prediction results: method: VGG16, description: ,  train_time: 848.6124691963196, predict_time: 150.07761812210083,  true_positive: 197, true_negative: 195, false_positive: 55, false_negative: 53, sensitivity: 0.788,  specificity: 0.78, precision: 0.7817460317460317,  accuracy: 0.784,  error: 0.21599999999999997, f1: 0.7848605577689243, myScore1: 1.1687678450220285, myScore2: 0.0009248751182176575, myScore3: 0.0052296975897523496
+2021-11-29 16:24:11,286 INFO - statictics.insert() : History send to GIT
+2021-11-29 16:24:12,923 INFO - vgg19.__init__() : Algorithm initialized
+2021-11-29 16:24:12,924 INFO - vgg19.start() : Training started
+2021-11-29 16:38:45,737 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1856 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 16:41:47,969 INFO - vgg19.start() : Training completed
+2021-11-29 16:41:47,970 INFO - vgg19.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 58}{'loss': [0.5522727966308594, 0.17829377949237823], 'accuracy': [0.8130387663841248, 0.8999999761581421], 'val_loss': [0.6894769072532654, 0.7905100584030151], 'val_accuracy': [0.7760000228881836, 0.7580000162124634]}
+2021-11-29 16:41:48,296 INFO - vgg19.start() : Model saved
+2021-11-29 16:41:48,296 INFO - vgg19.start() : Prediction started
+2021-11-29 16:44:53,564 INFO - vgg19.start() : Prediction completed
+2021-11-29 16:44:54,290 INFO - vgg19.start() : Prediction results: method: VGG19, description: ,  train_time: 1055.0447516441345, predict_time: 185.26756715774536,  true_positive: 219, true_negative: 160, false_positive: 90, false_negative: 31, sensitivity: 0.876,  specificity: 0.64, precision: 0.7087378640776699,  accuracy: 0.758,  error: 0.242, f1: 0.7835420393559929, myScore1: 1.1032679465816313, myScore2: 0.0007426623734537857, myScore3: 0.004229245579118816
