@@ -322,3 +322,13 @@
 2021-11-29 05:49:09,386 INFO - vgg16.start() : Prediction started
 2021-11-29 05:51:38,442 INFO - vgg16.start() : Prediction completed
 2021-11-29 05:51:38,985 INFO - vgg16.start() : Prediction results: method: VGG16, description: ,  train_time: 736.6203360557556, predict_time: 149.05576300621033,  true_positive: 224, true_negative: 149, false_positive: 101, false_negative: 26, sensitivity: 0.896,  specificity: 0.596, precision: 0.6892307692307692,  accuracy: 0.746,  error: 0.254, f1: 0.7791304347826087, myScore1: 1.075989081715956, myScore2: 0.00105770964585973, myScore3: 0.005227107084414755
+2021-11-29 05:52:02,319 INFO - statictics.insert() : History send to GIT
+2021-11-29 05:52:03,983 INFO - vgg19.__init__() : Algorithm initialized
+2021-11-29 05:52:03,984 INFO - vgg19.start() : Training started
+2021-11-29 06:04:17,028 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1472 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 06:07:24,467 INFO - vgg19.start() : Training completed
+2021-11-29 06:07:24,467 INFO - vgg19.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 46}{'loss': [1.0785125494003296, 0.4876808226108551], 'accuracy': [0.648777186870575, 0.8571428656578064], 'val_loss': [0.8431967496871948, 0.759735643863678], 'val_accuracy': [0.7059999704360962, 0.7080000042915344]}
+2021-11-29 06:07:32,139 INFO - vgg19.start() : Model saved
+2021-11-29 06:07:32,139 INFO - vgg19.start() : Prediction started
+2021-11-29 06:10:35,140 INFO - vgg19.start() : Prediction completed
+2021-11-29 06:10:35,665 INFO - vgg19.start() : Prediction results: method: VGG19, description: ,  train_time: 920.4827485084534, predict_time: 183.0004289150238,  true_positive: 188, true_negative: 166, false_positive: 84, false_negative: 62, sensitivity: 0.752,  specificity: 0.664, precision: 0.6911764705882353,  accuracy: 0.708,  error: 0.29200000000000004, f1: 0.7203065134099617, myScore1: 0.984136657188462, myScore2: 0.0007825312474102785, myScore3: 0.003936091940770455
