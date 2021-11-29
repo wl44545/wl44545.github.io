@@ -222,3 +222,13 @@
 2021-11-29 14:46:04,886 INFO - mobilenet.start() : Prediction started
 2021-11-29 14:46:23,792 INFO - mobilenet.start() : Prediction completed
 2021-11-29 14:46:24,558 INFO - mobilenet.start() : Prediction results: method: MobileNet, description: ,  train_time: 101.47210097312927, predict_time: 18.90532398223877,  true_positive: 208, true_negative: 163, false_positive: 87, false_negative: 42, sensitivity: 0.832,  specificity: 0.652, precision: 0.7050847457627119,  accuracy: 0.742,  error: 0.258, f1: 0.763302752293578, myScore1: 1.0623567499478663, myScore2: 0.007522291792260293, myScore3: 0.04037501568397812
+2021-11-29 14:46:27,864 INFO - statictics.insert() : History send to GIT
+2021-11-29 14:46:30,015 INFO - mobilenetv2.__init__() : Algorithm initialized
+2021-11-29 14:46:30,016 INFO - mobilenetv2.start() : Training started
+2021-11-29 14:47:58,330 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1856 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 14:48:15,392 INFO - mobilenetv2.start() : Training completed
+2021-11-29 14:48:15,392 INFO - mobilenetv2.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 58}{'loss': [0.3885039687156677, 0.453068345785141], 'accuracy': [0.8259698152542114, 0.75], 'val_loss': [0.4963206946849823, 0.5905555486679077], 'val_accuracy': [0.7260000109672546, 0.7099999785423279]}
+2021-11-29 14:48:15,716 INFO - mobilenetv2.start() : Model saved
+2021-11-29 14:48:15,716 INFO - mobilenetv2.start() : Prediction started
+2021-11-29 14:48:35,565 INFO - mobilenetv2.start() : Prediction completed
+2021-11-29 14:48:37,660 INFO - mobilenetv2.start() : Prediction results: method: MobileNetV2, description: ,  train_time: 105.37607789039612, predict_time: 19.84855628013611,  true_positive: 237, true_negative: 118, false_positive: 132, false_negative: 13, sensitivity: 0.948,  specificity: 0.472, precision: 0.6422764227642277,  accuracy: 0.71,  error: 0.29000000000000004, f1: 0.7657512116316639, myScore1: 1.0049308342991512, myScore2: 0.007266841079700631, myScore3: 0.03857969319400861
