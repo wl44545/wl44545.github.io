@@ -252,3 +252,13 @@
 2021-11-29 14:52:28,146 INFO - mobilenetv3small.start() : Prediction started
 2021-11-29 14:52:39,016 INFO - mobilenetv3small.start() : Prediction completed
 2021-11-29 14:52:39,745 INFO - mobilenetv3small.start() : Prediction results: method: MobileNetV3Small, description: ,  train_time: 63.33831238746643, predict_time: 10.869519472122192,  true_positive: 225, true_negative: 170, false_positive: 80, false_negative: 25, sensitivity: 0.9,  specificity: 0.68, precision: 0.7377049180327869,  accuracy: 0.79,  error: 0.20999999999999996, f1: 0.8108108108108109, myScore1: 1.1923663733991605, myScore2: 0.012801269567315728, myScore3: 0.0745949085320978
+2021-11-29 14:52:43,469 INFO - statictics.insert() : History send to GIT
+2021-11-29 14:52:50,921 INFO - resnet101.__init__() : Algorithm initialized
+2021-11-29 14:52:50,922 INFO - resnet101.start() : Training started
+2021-11-29 15:05:39,414 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1856 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 15:07:40,232 INFO - resnet101.start() : Training completed
+2021-11-29 15:07:40,232 INFO - resnet101.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 58}{'loss': [0.3651774227619171, 0.15605533123016357], 'accuracy': [0.8394396305084229, 0.949999988079071], 'val_loss': [0.3494885563850403, 0.39047127962112427], 'val_accuracy': [0.843999981880188, 0.8220000267028809]}
+2021-11-29 15:07:41,539 INFO - resnet101.start() : Model saved
+2021-11-29 15:07:41,540 INFO - resnet101.start() : Prediction started
+2021-11-29 15:09:47,696 INFO - resnet101.start() : Prediction completed
+2021-11-29 15:09:48,494 INFO - resnet101.start() : Prediction results: method: ResNet101, description: ,  train_time: 889.3101739883423, predict_time: 126.15647625923157,  true_positive: 177, true_negative: 234, false_positive: 16, false_negative: 73, sensitivity: 0.708,  specificity: 0.936, precision: 0.917098445595855,  accuracy: 0.822,  error: 0.17800000000000005, f1: 0.7990970654627539, myScore1: 1.299656130099951, myScore2: 0.0008985583307553941, myScore3: 0.00633417394934792
