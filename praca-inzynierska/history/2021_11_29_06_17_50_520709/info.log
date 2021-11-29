@@ -212,3 +212,13 @@
 2021-11-29 14:43:30,772 INFO - inceptionv3.start() : Prediction started
 2021-11-29 14:44:18,032 INFO - inceptionv3.start() : Prediction completed
 2021-11-29 14:44:18,628 INFO - inceptionv3.start() : Prediction results: method: InceptionV3, description: ,  train_time: 237.6812241077423, predict_time: 47.259721755981445,  true_positive: 247, true_negative: 22, false_positive: 228, false_negative: 3, sensitivity: 0.988,  specificity: 0.088, precision: 0.52,  accuracy: 0.538,  error: 0.46199999999999997, f1: 0.6813793103448276, myScore1: 0.7705398716226303, myScore2: 0.002866778025494998, myScore3: 0.014417759669915715
+2021-11-29 14:44:21,979 INFO - statictics.insert() : History send to GIT
+2021-11-29 14:44:23,193 INFO - mobilenet.__init__() : Algorithm initialized
+2021-11-29 14:44:23,194 INFO - mobilenet.start() : Training started
+2021-11-29 14:45:47,587 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1856 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 14:46:04,666 INFO - mobilenet.start() : Training completed
+2021-11-29 14:46:04,667 INFO - mobilenet.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 58}{'loss': [0.41934898495674133, 0.3722535967826843], 'accuracy': [0.8184267282485962, 0.8500000238418579], 'val_loss': [0.5544435381889343, 0.5594263672828674], 'val_accuracy': [0.734000027179718, 0.7419999837875366]}
+2021-11-29 14:46:04,886 INFO - mobilenet.start() : Model saved
+2021-11-29 14:46:04,886 INFO - mobilenet.start() : Prediction started
+2021-11-29 14:46:23,792 INFO - mobilenet.start() : Prediction completed
+2021-11-29 14:46:24,558 INFO - mobilenet.start() : Prediction results: method: MobileNet, description: ,  train_time: 101.47210097312927, predict_time: 18.90532398223877,  true_positive: 208, true_negative: 163, false_positive: 87, false_negative: 42, sensitivity: 0.832,  specificity: 0.652, precision: 0.7050847457627119,  accuracy: 0.742,  error: 0.258, f1: 0.763302752293578, myScore1: 1.0623567499478663, myScore2: 0.007522291792260293, myScore3: 0.04037501568397812
