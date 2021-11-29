@@ -262,3 +262,13 @@
 2021-11-29 15:07:41,540 INFO - resnet101.start() : Prediction started
 2021-11-29 15:09:47,696 INFO - resnet101.start() : Prediction completed
 2021-11-29 15:09:48,494 INFO - resnet101.start() : Prediction results: method: ResNet101, description: ,  train_time: 889.3101739883423, predict_time: 126.15647625923157,  true_positive: 177, true_negative: 234, false_positive: 16, false_negative: 73, sensitivity: 0.708,  specificity: 0.936, precision: 0.917098445595855,  accuracy: 0.822,  error: 0.17800000000000005, f1: 0.7990970654627539, myScore1: 1.299656130099951, myScore2: 0.0008985583307553941, myScore3: 0.00633417394934792
+2021-11-29 15:09:52,676 INFO - statictics.insert() : History send to GIT
+2021-11-29 15:09:58,959 INFO - resnet101v2.__init__() : Algorithm initialized
+2021-11-29 15:09:58,960 INFO - resnet101v2.start() : Training started
+2021-11-29 15:18:45,857 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1856 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 15:20:38,872 INFO - resnet101v2.start() : Training completed
+2021-11-29 15:20:38,873 INFO - resnet101v2.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 58}{'loss': [50.912322998046875, 14.146100044250488], 'accuracy': [0.5269396305084229, 0.6000000238418579], 'val_loss': [25.91822052001953, 32.681304931640625], 'val_accuracy': [0.5220000147819519, 0.5099999904632568]}
+2021-11-29 15:20:40,363 INFO - resnet101v2.start() : Model saved
+2021-11-29 15:20:40,363 INFO - resnet101v2.start() : Prediction started
+2021-11-29 15:22:37,624 INFO - resnet101v2.start() : Prediction completed
+2021-11-29 15:22:38,250 INFO - resnet101v2.start() : Prediction results: method: ResNet101V2, description: ,  train_time: 639.9117338657379, predict_time: 117.2603747844696,  true_positive: 5, true_negative: 250, false_positive: 0, false_negative: 245, sensitivity: 0.02,  specificity: 1.0, precision: 1.0,  accuracy: 0.51,  error: 0.49, f1: 0.0392156862745098, myScore1: 0.4766894757903161, myScore2: 6.128296169474176e-05, myScore3: 0.0003344325510351658
