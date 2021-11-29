@@ -122,3 +122,13 @@
 2021-11-29 12:54:52,393 INFO - efficientnetb0.start() : Prediction started
 2021-11-29 12:55:23,765 INFO - efficientnetb0.start() : Prediction completed
 2021-11-29 12:55:24,345 INFO - efficientnetb0.start() : Prediction results: method: EfficientNetB0, description: ,  train_time: 160.69119358062744, predict_time: 31.371495485305786,  true_positive: 220, true_negative: 196, false_positive: 54, false_negative: 30, sensitivity: 0.88,  specificity: 0.784, precision: 0.8029197080291971,  accuracy: 0.832,  error: 0.16800000000000004, f1: 0.8396946564885496, myScore1: 1.3449773942852896, myScore2: 0.005225517576775167, myScore3: 0.02676616602105747
+2021-11-29 12:55:27,492 INFO - statictics.insert() : History send to GIT
+2021-11-29 12:55:31,942 INFO - efficientnetb1.__init__() : Algorithm initialized
+2021-11-29 12:55:31,943 INFO - efficientnetb1.start() : Training started
+2021-11-29 12:58:41,664 WARNING - data_adapter.catch_stop_iteration() : Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 1856 batches). You may need to use the repeat() function when building your dataset.
+2021-11-29 12:59:18,371 INFO - efficientnetb1.start() : Training completed
+2021-11-29 12:59:18,371 INFO - efficientnetb1.start() : Training results: {'verbose': 1, 'epochs': 32, 'steps': 58}{'loss': [0.31598472595214844, 0.2265585958957672], 'accuracy': [0.8669180870056152, 0.949999988079071], 'val_loss': [0.38053098320961, 0.35941874980926514], 'val_accuracy': [0.8379999995231628, 0.8420000076293945]}
+2021-11-29 12:59:18,936 INFO - efficientnetb1.start() : Model saved
+2021-11-29 12:59:18,937 INFO - efficientnetb1.start() : Prediction started
+2021-11-29 13:00:00,997 INFO - efficientnetb1.start() : Prediction completed
+2021-11-29 13:00:01,592 INFO - efficientnetb1.start() : Prediction results: method: EfficientNetB1, description: ,  train_time: 226.4276990890503, predict_time: 42.06025409698486,  true_positive: 200, true_negative: 221, false_positive: 29, false_negative: 50, sensitivity: 0.8,  specificity: 0.884, precision: 0.8733624454148472,  accuracy: 0.842,  error: 0.15800000000000003, f1: 0.8350730688935283, myScore1: 1.390384171393312, myScore2: 0.003688034071154465, myScore3: 0.019854208844482264
