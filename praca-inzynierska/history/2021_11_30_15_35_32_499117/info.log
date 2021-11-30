@@ -61,3 +61,10 @@
 2021-11-30 17:32:06,719 INFO - linear_svm.start() : Prediction started
 2021-11-30 17:32:07,329 INFO - linear_svm.start() : Prediction completed
 2021-11-30 17:32:09,062 INFO - linear_svm.start() : Prediction results: method: LinearSVM, description: Linear Support Vector Classification,  train_time: 375.60389828681946, predict_time: 0.6084201335906982,  true_positive: 108, true_negative: 81, false_positive: 44, false_negative: 17, sensitivity: 0.864,  specificity: 0.648, precision: 0.7105263157894737,  accuracy: 0.756,  error: 0.244, f1: 0.779783393501805, myScore1: 1.0975803939036204, myScore2: 0.0020760790744145715, myScore3: 1.281652842255197
+2021-11-30 17:32:12,957 INFO - statictics.insert() : History send to GIT
+2021-11-30 17:32:12,958 INFO - nonlinear_svm.__init__() : Algorithm initialized
+2021-11-30 17:32:12,959 INFO - nonlinear_svm.start() : Training started
+2021-11-30 17:33:24,963 INFO - nonlinear_svm.start() : Training completed
+2021-11-30 17:33:24,965 INFO - nonlinear_svm.start() : Prediction started
+2021-11-30 17:34:23,447 INFO - nonlinear_svm.start() : Prediction completed
+2021-11-30 17:35:21,752 INFO - nonlinear_svm.start() : Prediction results: method: NonLinearSVM, description: Non Linear Support Vector Classification,  train_time: 72.00291514396667, predict_time: 58.48127245903015,  true_positive: 118, true_negative: 66, false_positive: 59, false_negative: 7, sensitivity: 0.944,  specificity: 0.528, precision: 0.6666666666666666,  accuracy: 0.736,  error: 0.264, f1: 0.7814569536423842, myScore1: 1.0569830222757375, myScore2: 0.010853129377885538, myScore3: 0.013362516251503325
