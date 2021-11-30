@@ -68,3 +68,10 @@
 2021-11-30 17:33:24,965 INFO - nonlinear_svm.start() : Prediction started
 2021-11-30 17:34:23,447 INFO - nonlinear_svm.start() : Prediction completed
 2021-11-30 17:35:21,752 INFO - nonlinear_svm.start() : Prediction results: method: NonLinearSVM, description: Non Linear Support Vector Classification,  train_time: 72.00291514396667, predict_time: 58.48127245903015,  true_positive: 118, true_negative: 66, false_positive: 59, false_negative: 7, sensitivity: 0.944,  specificity: 0.528, precision: 0.6666666666666666,  accuracy: 0.736,  error: 0.264, f1: 0.7814569536423842, myScore1: 1.0569830222757375, myScore2: 0.010853129377885538, myScore3: 0.013362516251503325
+2021-11-30 17:35:25,211 INFO - statictics.insert() : History send to GIT
+2021-11-30 17:35:25,211 INFO - ada_boost.__init__() : Algorithm initialized
+2021-11-30 17:35:25,213 INFO - ada_boost.start() : Training started
+2021-11-30 17:55:41,972 INFO - ada_boost.start() : Training completed
+2021-11-30 17:55:41,972 INFO - ada_boost.start() : Prediction started
+2021-11-30 17:55:58,402 INFO - ada_boost.start() : Prediction completed
+2021-11-30 17:56:15,638 INFO - ada_boost.start() : Prediction results: method: AdaBoostClassifier, description: An AdaBoost classifier,  train_time: 1216.7583038806915, predict_time: 16.428894996643066,  true_positive: 106, true_negative: 85, false_positive: 40, false_negative: 19, sensitivity: 0.848,  specificity: 0.68, precision: 0.726027397260274,  accuracy: 0.764,  error: 0.236, f1: 0.7822878228782287, myScore1: 1.1166754647244639, myScore2: 0.0006429278685694801, myScore3: 0.047616581823553834
