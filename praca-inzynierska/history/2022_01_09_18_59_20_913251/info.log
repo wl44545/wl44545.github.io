@@ -26,3 +26,10 @@
 2022-01-09 20:26:15,424 INFO - bernoulli_nbc.start() : Prediction started
 2022-01-09 20:26:15,892 INFO - bernoulli_nbc.start() : Prediction completed
 2022-01-09 20:26:17,147 INFO - bernoulli_nbc.start() : Prediction results: method: BernoulliNBC, description: Naive Bayes classifier for multivariate Bernoulli models,  train_time: 2.582876682281494, predict_time: 0.46871519088745117,  true_positive: 106, true_negative: 23, false_positive: 102, false_negative: 19, sensitivity: 0.848,  specificity: 0.184, precision: 0.5096153846153846,  accuracy: 0.516,  error: 0.484, f1: 0.6366366366366366, myScore1: 0.7306914270277907, myScore2: 0.24648355881794784, myScore3: 1.358259021712627
+2022-01-09 20:26:21,027 INFO - statictics.insert() : History send to GIT
+2022-01-09 20:26:21,027 INFO - complement_nbc.__init__() : Algorithm initialized
+2022-01-09 20:26:21,027 INFO - complement_nbc.start() : Training started
+2022-01-09 20:26:22,937 INFO - complement_nbc.start() : Training completed
+2022-01-09 20:26:22,937 INFO - complement_nbc.start() : Prediction started
+2022-01-09 20:26:23,141 INFO - complement_nbc.start() : Prediction completed
+2022-01-09 20:26:24,208 INFO - complement_nbc.start() : Prediction results: method: ComplementNBC, description: The Complement Naive Bayes classifier described in Rennie et al,  train_time: 1.9107928276062012, predict_time: 0.20314502716064453,  true_positive: 105, true_negative: 47, false_positive: 78, false_negative: 20, sensitivity: 0.84,  specificity: 0.376, precision: 0.5737704918032787,  accuracy: 0.608,  error: 0.392, f1: 0.6818181818181819, myScore1: 0.8357881809057452, myScore2: 0.3568247546084567, myScore3: 3.356312440171172
