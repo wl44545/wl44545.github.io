@@ -34,3 +34,10 @@
 2022-01-09 23:06:18,475 INFO - gaussian_nbc.start() : Prediction started
 2022-01-09 23:06:18,475 INFO - gaussian_nbc.start() : Prediction completed
 2022-01-09 23:06:19,350 INFO - gaussian_nbc.start() : Prediction results: method: GaussianNBC, description: Gaussian Naive Bayes (GaussianNB),  train_time: 0.0, predict_time: 0.0,  true_positive: 108, true_negative: 30, false_positive: 95, false_negative: 17, sensitivity: 0.864,  specificity: 0.24, precision: 0.5320197044334976,  accuracy: 0.552,  error: 0.44799999999999995, f1: 0.6585365853658536, myScore1: 0.7712845488405623, myScore2: inf, myScore3: inf
+2022-01-09 23:06:23,428 INFO - statictics.insert() : History send to GIT
+2022-01-09 23:06:23,428 INFO - k_neighbors.__init__() : Algorithm initialized
+2022-01-09 23:06:23,428 INFO - k_neighbors.start() : Training started
+2022-01-09 23:06:23,428 INFO - k_neighbors.start() : Training completed
+2022-01-09 23:06:23,428 INFO - k_neighbors.start() : Prediction started
+2022-01-09 23:06:23,444 INFO - k_neighbors.start() : Prediction completed
+2022-01-09 23:06:24,256 INFO - k_neighbors.start() : Prediction results: method: KNeighborsClassifier, description: Classifier implementing the k-nearest neighbors vote,  train_time: 0.0, predict_time: 0.015623331069946289,  true_positive: 115, true_negative: 63, false_positive: 62, false_negative: 10, sensitivity: 0.92,  specificity: 0.504, precision: 0.6497175141242938,  accuracy: 0.712,  error: 0.28800000000000003, f1: 0.76158940397351, myScore1: 1.0065886756214066, myScore2: inf, myScore3: 48.74692858801003
