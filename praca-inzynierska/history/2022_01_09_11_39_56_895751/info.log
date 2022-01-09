@@ -1,0 +1,14 @@
+2022-01-09 11:39:56,895 INFO - statictics.__init__() : Statistics initialized
+2022-01-09 11:39:56,895 INFO - statictics.__init__() : Added link to history
+2022-01-09 11:39:56,912 INFO - statictics.__init__() : History send to GIT
+2022-01-09 11:39:57,255 INFO - data.__prepare() : Data prepared
+2022-01-09 11:39:57,333 INFO - data.__augment() : Data augmented
+2022-01-09 11:39:58,442 INFO - data.__copy() : Data copied
+2022-01-09 11:39:59,583 INFO - data.__read() : Data prepared for algorithms
+2022-01-09 11:40:00,052 INFO - data.__preprocess() : Data prepared for neural networks
+2022-01-09 11:40:00,052 INFO - lp.__init__() : Algorithm initialized
+2022-01-09 11:40:00,052 INFO - lp.start() : Training started
+2022-01-09 11:40:02,114 INFO - lp.start() : Training completed
+2022-01-09 11:40:02,114 INFO - lp.start() : Prediction started
+2022-01-09 11:40:02,145 INFO - lp.start() : Prediction completed
+2022-01-09 11:40:03,380 INFO - lp.start() : Prediction results: method: LP, description: Linear perceptron classifier,  train_time: 2.062497138977051, predict_time: 0.03125143051147461,  true_positive: 19, true_negative: 20, false_positive: 5, false_negative: 6, sensitivity: 0.76,  specificity: 0.8, precision: 0.7916666666666666,  accuracy: 0.78,  error: 0.21999999999999997, f1: 0.7755102040816326, myScore1: 1.1554672232529377, myScore2: 0.3760054690142587, myScore3: 24.815190581336363
