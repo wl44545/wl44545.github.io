@@ -27,3 +27,10 @@
 2022-01-10 11:11:55,069 INFO - bernoulli_nbc.start() : Prediction started
 2022-01-10 11:11:55,069 INFO - bernoulli_nbc.start() : Prediction completed
 2022-01-10 11:11:55,897 INFO - bernoulli_nbc.start() : Prediction results: method: BernoulliNBC, description: Naive Bayes classifier for multivariate Bernoulli models,  train_time: 0.0, predict_time: 0.0,  true_positive: 109, true_negative: 61, false_positive: 64, false_negative: 16, sensitivity: 0.872,  specificity: 0.488, precision: 0.630057803468208,  accuracy: 0.68,  error: 0.31999999999999995, f1: 0.7315436241610737, myScore1: 0.9452775924273578, myScore2: inf, myScore3: inf
+2022-01-10 11:11:59,959 INFO - statictics.insert() : History send to GIT
+2022-01-10 11:11:59,959 INFO - gaussian_nbc.__init__() : Algorithm initialized
+2022-01-10 11:11:59,959 INFO - gaussian_nbc.start() : Training started
+2022-01-10 11:11:59,975 INFO - gaussian_nbc.start() : Training completed
+2022-01-10 11:11:59,975 INFO - gaussian_nbc.start() : Prediction started
+2022-01-10 11:11:59,975 INFO - gaussian_nbc.start() : Prediction completed
+2022-01-10 11:12:00,850 INFO - gaussian_nbc.start() : Prediction results: method: GaussianNBC, description: Gaussian Naive Bayes (GaussianNB),  train_time: 0.015613079071044922, predict_time: 0.0,  true_positive: 108, true_negative: 30, false_positive: 95, false_negative: 17, sensitivity: 0.864,  specificity: 0.24, precision: 0.5320197044334976,  accuracy: 0.552,  error: 0.44799999999999995, f1: 0.6585365853658536, myScore1: 0.7712845488405623, myScore2: 42.1785211212525, myScore3: inf
