@@ -13,3 +13,10 @@
 2022-01-10 10:57:43,116 INFO - discrete_nbc.start() : Prediction started
 2022-01-10 10:57:43,194 INFO - discrete_nbc.start() : Prediction completed
 2022-01-10 10:57:44,084 INFO - discrete_nbc.start() : Prediction results: method: DiscreteNBC, description: DiscreteNBC,  train_time: 0.17183184623718262, predict_time: 0.07815337181091309,  true_positive: 56, true_negative: 66, false_positive: 59, false_negative: 69, sensitivity: 0.448,  specificity: 0.528, precision: 0.48695652173913045,  accuracy: 0.488,  error: 0.512, f1: 0.4666666666666667, myScore1: 0.6237414855072464, myScore2: 2.715833396927588, myScore3: 5.971164850004627
+2022-01-10 10:57:48,288 INFO - statictics.insert() : History send to GIT
+2022-01-10 10:57:48,288 INFO - real_boost.__init__() : Algorithm initialized
+2022-01-10 10:57:48,288 INFO - real_boost.start() : Training started
+2022-01-10 10:58:02,319 INFO - real_boost.start() : Training completed
+2022-01-10 10:58:02,319 INFO - real_boost.start() : Prediction started
+2022-01-10 10:58:02,334 INFO - real_boost.start() : Prediction completed
+2022-01-10 10:58:03,084 INFO - real_boost.start() : Prediction results: method: RealBoost, description: An RealBoost classifier,  train_time: 14.03123426437378, predict_time: 0.015620231628417969,  true_positive: 102, true_negative: 62, false_positive: 63, false_negative: 23, sensitivity: 0.816,  specificity: 0.496, precision: 0.6181818181818182,  accuracy: 0.656,  error: 0.344, f1: 0.7034482758620689, myScore1: 0.9010399941678211, myScore2: 0.05013445450398972, myScore3: 45.034433073468755
