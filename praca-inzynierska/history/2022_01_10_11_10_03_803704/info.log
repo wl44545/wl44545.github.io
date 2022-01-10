@@ -20,3 +20,10 @@
 2022-01-10 11:11:50,069 INFO - real_boost.start() : Prediction started
 2022-01-10 11:11:50,069 INFO - real_boost.start() : Prediction completed
 2022-01-10 11:11:50,834 INFO - real_boost.start() : Prediction results: method: RealBoost, description: An RealBoost classifier,  train_time: 27.921649932861328, predict_time: 0.0,  true_positive: 101, true_negative: 60, false_positive: 65, false_negative: 24, sensitivity: 0.808,  specificity: 0.48, precision: 0.608433734939759,  accuracy: 0.644,  error: 0.356, f1: 0.6941580756013745, myScore1: 0.8820212876991576, myScore2: 0.024860926101090162, myScore3: inf
+2022-01-10 11:11:55,069 INFO - statictics.insert() : History send to GIT
+2022-01-10 11:11:55,069 INFO - bernoulli_nbc.__init__() : Algorithm initialized
+2022-01-10 11:11:55,069 INFO - bernoulli_nbc.start() : Training started
+2022-01-10 11:11:55,069 INFO - bernoulli_nbc.start() : Training completed
+2022-01-10 11:11:55,069 INFO - bernoulli_nbc.start() : Prediction started
+2022-01-10 11:11:55,069 INFO - bernoulli_nbc.start() : Prediction completed
+2022-01-10 11:11:55,897 INFO - bernoulli_nbc.start() : Prediction results: method: BernoulliNBC, description: Naive Bayes classifier for multivariate Bernoulli models,  train_time: 0.0, predict_time: 0.0,  true_positive: 109, true_negative: 61, false_positive: 64, false_negative: 16, sensitivity: 0.872,  specificity: 0.488, precision: 0.630057803468208,  accuracy: 0.68,  error: 0.31999999999999995, f1: 0.7315436241610737, myScore1: 0.9452775924273578, myScore2: inf, myScore3: inf
