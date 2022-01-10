@@ -76,3 +76,10 @@
 2022-01-10 14:09:26,408 INFO - ada_boost.start() : Prediction started
 2022-01-10 14:09:26,517 INFO - ada_boost.start() : Prediction completed
 2022-01-10 14:09:27,397 INFO - ada_boost.start() : Prediction results: method: AdaBoostClassifier, description: An AdaBoost classifier,  train_time: 8.280978918075562, predict_time: 0.10936331748962402,  true_positive: 554, true_negative: 1519, false_positive: 231, false_negative: 321, sensitivity: 0.6331428571428571,  specificity: 0.868, precision: 0.7057324840764331,  accuracy: 0.7897142857142857,  error: 0.2102857142857143, f1: 0.6674698795180722, myScore1: 1.1089373807132634, myScore2: 0.08060277487980701, myScore3: 6.103233651277991
+2022-01-10 14:09:31,872 INFO - statictics.insert() : History send to GIT
+2022-01-10 14:09:31,872 INFO - gradient_boost.__init__() : Algorithm initialized
+2022-01-10 14:09:31,872 INFO - gradient_boost.start() : Training started
+2022-01-10 14:09:51,864 INFO - gradient_boost.start() : Training completed
+2022-01-10 14:09:51,864 INFO - gradient_boost.start() : Prediction started
+2022-01-10 14:09:51,864 INFO - gradient_boost.start() : Prediction completed
+2022-01-10 14:09:52,698 INFO - gradient_boost.start() : Prediction results: method: GradientBoostingClassifier, description: An GradientBoost classifier,  train_time: 19.99147391319275, predict_time: 0.0,  true_positive: 600, true_negative: 1640, false_positive: 110, false_negative: 275, sensitivity: 0.6857142857142857,  specificity: 0.9371428571428572, precision: 0.8450704225352113,  accuracy: 0.8533333333333334,  error: 0.1466666666666666, f1: 0.7570977917981073, myScore1: 1.3924931675898045, myScore2: 0.03787103417614868, myScore3: inf
