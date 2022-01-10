@@ -62,3 +62,10 @@
 2022-01-10 14:01:29,397 INFO - lp.start() : Prediction started
 2022-01-10 14:01:29,413 INFO - lp.start() : Prediction completed
 2022-01-10 14:01:30,256 INFO - lp.start() : Prediction results: method: LP, description: Linear perceptron classifier,  train_time: 0.031166553497314453, predict_time: 0.015657424926757812,  true_positive: 639, true_negative: 475, false_positive: 400, false_negative: 236, sensitivity: 0.7302857142857143,  specificity: 0.5428571428571428, precision: 0.615014436958614,  accuracy: 0.6365714285714286,  error: 0.36342857142857143, f1: 0.6677115987460814, myScore1: 0.8614859043447332, myScore2: 21.423979356704184, myScore3: 42.645045521182304
+2022-01-10 14:01:34,803 INFO - statictics.insert() : History send to GIT
+2022-01-10 14:01:34,803 INFO - mlp.__init__() : Algorithm initialized
+2022-01-10 14:01:34,803 INFO - mlp.start() : Training started
+2022-01-10 14:01:40,506 INFO - mlp.start() : Training completed
+2022-01-10 14:01:40,506 INFO - mlp.start() : Prediction started
+2022-01-10 14:01:40,506 INFO - mlp.start() : Prediction completed
+2022-01-10 14:01:41,257 INFO - mlp.start() : Prediction results: method: MLP, description: Multi-layer Perceptron classifier.,  train_time: 5.703088760375977, predict_time: 0.0,  true_positive: 761, true_negative: 766, false_positive: 109, false_negative: 114, sensitivity: 0.8697142857142857,  specificity: 0.8754285714285714, precision: 0.8747126436781609,  accuracy: 0.8725714285714286,  error: 0.12742857142857145, f1: 0.8722063037249284, myScore1: 1.5700992080304084, myScore2: 0.15293577574749653, myScore3: inf
