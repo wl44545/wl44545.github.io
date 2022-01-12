@@ -33,3 +33,10 @@
 2022-01-12 17:04:19,433 INFO - complement_nbc.start() : Prediction started
 2022-01-12 17:04:23,313 INFO - complement_nbc.start() : Prediction completed
 2022-01-12 17:04:28,136 INFO - complement_nbc.start() : Prediction results: method: ComplementNBC, description: The Complement Naive Bayes classifier described in Rennie et al,  train_time: 98.15489268302917, predict_time: 3.8795711994171143,  true_positive: 755, true_negative: 1530, false_positive: 1017, false_negative: 148, sensitivity: 0.8361018826135105,  specificity: 0.6007067137809188, precision: 0.4260722347629797,  accuracy: 0.6623188405797101,  error: 0.33768115942028987, f1: 0.5644859813084111, myScore1: 0.8309002968837115, myScore2: 0.005750971407317425, myScore3: 0.14550215791714874
+2022-01-12 17:04:38,780 INFO - statictics.insert() : History send to GIT
+2022-01-12 17:04:38,780 INFO - gaussian_nbc.__init__() : Algorithm initialized
+2022-01-12 17:04:38,780 INFO - gaussian_nbc.start() : Training started
+2022-01-12 17:05:26,516 INFO - gaussian_nbc.start() : Training completed
+2022-01-12 17:05:26,516 INFO - gaussian_nbc.start() : Prediction started
+2022-01-12 17:05:49,350 INFO - gaussian_nbc.start() : Prediction completed
+2022-01-12 17:06:13,426 INFO - gaussian_nbc.start() : Prediction results: method: GaussianNBC, description: Gaussian Naive Bayes (GaussianNB),  train_time: 47.7364022731781, predict_time: 22.83374261856079,  true_positive: 723, true_negative: 1799, false_positive: 748, false_negative: 180, sensitivity: 0.8006644518272426,  specificity: 0.7063211621515508, precision: 0.49150237933378654,  accuracy: 0.7310144927536232,  error: 0.2689855072463768, f1: 0.6090985678180287, myScore1: 0.949266773894945, myScore2: 0.012759624496466632, myScore3: 0.02667537153208133
