@@ -1,0 +1,15 @@
+2022-01-12 10:10:44,811 INFO - statictics.__init__() : Statistics initialized
+2022-01-12 10:10:44,811 INFO - statictics.__init__() : Added link to history
+2022-01-12 10:10:44,827 INFO - statictics.__init__() : History send to GIT
+2022-01-12 10:12:14,514 INFO - data.__prepare() : Data prepared
+2022-01-12 10:12:19,327 INFO - data.__augment() : Data augmented
+2022-01-12 10:13:42,003 INFO - data.__copy() : Data copied
+2022-01-12 10:15:05,077 INFO - data.__read() : Data prepared for algorithms
+2022-01-12 10:15:07,498 INFO - data.__preprocess() : Data prepared for neural networks
+2022-01-12 10:16:08,202 INFO - data.__pca() : Data processed by PCA
+2022-01-12 10:16:08,217 INFO - discrete_nbc.__init__() : Algorithm initialized
+2022-01-12 10:16:08,311 INFO - discrete_nbc.start() : Training started
+2022-01-12 10:16:12,545 INFO - discrete_nbc.start() : Training completed
+2022-01-12 10:16:12,545 INFO - discrete_nbc.start() : Prediction started
+2022-01-12 10:16:14,889 INFO - discrete_nbc.start() : Prediction completed
+2022-01-12 10:16:18,405 INFO - discrete_nbc.start() : Prediction results: method: DiscreteNBC, description: DiscreteNBC,  train_time: 4.234385013580322, predict_time: 2.343707323074341,  true_positive: 201, true_negative: 2165, false_positive: 382, false_negative: 702, sensitivity: 0.22259136212624583,  specificity: 0.8500196309383589, precision: 0.34476843910806176,  accuracy: 0.6857971014492754,  error: 0.3142028985507246, f1: 0.27052489905787347, myScore1: 0.6638457855479576, myScore2: 0.06388764795602163, myScore3: 0.11542605870387196
