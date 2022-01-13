@@ -61,3 +61,10 @@
 2022-01-13 01:47:29,906 INFO - nonlinear_svm.start() : Prediction started
 2022-01-13 08:12:04,079 INFO - nonlinear_svm.start() : Prediction completed
 2022-01-13 14:40:31,105 INFO - nonlinear_svm.start() : Prediction results: method: NonLinearSVM, description: Non Linear Support Vector Classification,  train_time: 31012.602252960205, predict_time: 23074.172699689865,  true_positive: 743, true_negative: 2473, false_positive: 74, false_negative: 160, sensitivity: 0.82281284606866,  specificity: 0.9709462112288968, precision: 0.9094247246022031,  accuracy: 0.9321739130434783,  error: 0.0678260869565217, f1: 0.8639534883720931, myScore1: 2.269871488039346, myScore2: 2.785814235532677e-05, myScore3: 3.7442446999788006e-05
+2022-01-13 14:40:40,253 INFO - statictics.insert() : History send to GIT
+2022-01-13 14:40:40,253 INFO - lp.__init__() : Algorithm initialized
+2022-01-13 14:40:40,253 INFO - lp.start() : Training started
+2022-01-13 14:43:46,293 INFO - lp.start() : Training completed
+2022-01-13 14:43:46,293 INFO - lp.start() : Prediction started
+2022-01-13 14:43:49,423 INFO - lp.start() : Prediction completed
+2022-01-13 14:43:54,013 INFO - lp.start() : Prediction results: method: LP, description: Linear perceptron classifier,  train_time: 186.03978872299194, predict_time: 3.1307766437530518,  true_positive: 873, true_negative: 1535, false_positive: 1012, false_negative: 30, sensitivity: 0.9667774086378738,  specificity: 0.6026698076168041, precision: 0.46312997347480106,  accuracy: 0.6979710144927537,  error: 0.30202898550724633, f1: 0.6262553802008608, myScore1: 0.9172765604266845, myScore2: 0.0033662443098843634, myScore3: 0.20003195739001378
