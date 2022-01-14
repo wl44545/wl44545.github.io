@@ -113,3 +113,12 @@
 2022-01-14 15:22:02,249 INFO - inceptionresnetv2.start() : Prediction started
 2022-01-14 15:54:15,950 INFO - inceptionresnetv2.start() : Prediction completed
 2022-01-14 15:54:17,084 INFO - inceptionresnetv2.start() : Prediction results: method: InceptionResNetV2, description: ,  train_time: 9494.617270708084, predict_time: 1933.7007133960724,  true_positive: 0, true_negative: 2547, false_positive: 0, false_negative: 903, sensitivity: 0.0,  specificity: 1.0, precision: 0.0,  accuracy: 0.7382608695652174,  error: 0.2617391304347826, f1: 0.0, myScore1: 0.5558858876209736, myScore2: 0.0, myScore3: 0.0
+2022-01-14 15:54:23,105 INFO - statictics.insert() : History send to GIT
+2022-01-14 15:57:12,879 INFO - inceptionv3.__init__() : Algorithm initialized
+2022-01-14 15:57:12,879 INFO - inceptionv3.start() : Training started
+2022-01-14 17:07:32,697 INFO - inceptionv3.start() : Training completed
+2022-01-14 17:07:32,697 INFO - inceptionv3.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 323}{'loss': [5.131878852844238], 'accuracy': [0.7007546424865723], 'val_loss': [2.309034824371338], 'val_accuracy': [0.7330434918403625]}
+2022-01-14 17:07:33,217 INFO - inceptionv3.start() : Model saved
+2022-01-14 17:07:33,217 INFO - inceptionv3.start() : Prediction started
+2022-01-14 17:22:11,280 INFO - inceptionv3.start() : Prediction completed
+2022-01-14 17:22:12,131 INFO - inceptionv3.start() : Prediction results: method: InceptionV3, description: ,  train_time: 4219.8176300525665, predict_time: 878.0627028942108,  true_positive: 784, true_negative: 1745, false_positive: 802, false_negative: 119, sensitivity: 0.8682170542635659,  specificity: 0.685119748723989, precision: 0.4943253467843632,  accuracy: 0.7330434782608696,  error: 0.2669565217391304, f1: 0.6299718762555243, myScore1: 0.9676493348072625, myScore2: 0.00014928888674453847, myScore3: 0.0007174565941350813
