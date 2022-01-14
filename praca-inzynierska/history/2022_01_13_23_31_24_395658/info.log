@@ -131,3 +131,12 @@
 2022-01-14 17:31:32,377 INFO - mobilenet.start() : Prediction started
 2022-01-14 17:33:22,726 INFO - mobilenet.start() : Prediction completed
 2022-01-14 17:33:23,562 INFO - mobilenet.start() : Prediction results: method: MobileNet, description: ,  train_time: 552.3360469341278, predict_time: 110.34887957572937,  true_positive: 502, true_negative: 2477, false_positive: 70, false_negative: 401, sensitivity: 0.5559246954595792,  specificity: 0.972516686297605, precision: 0.8776223776223776,  accuracy: 0.8634782608695653,  error: 0.13652173913043475, f1: 0.680677966101695, myScore1: 1.3997772615088815, myScore2: 0.0012323620192452754, myScore3: 0.006168417556379126
+2022-01-14 17:33:28,323 INFO - statictics.insert() : History send to GIT
+2022-01-14 17:34:06,705 INFO - mobilenetv2.__init__() : Algorithm initialized
+2022-01-14 17:34:06,705 INFO - mobilenetv2.start() : Training started
+2022-01-14 17:40:03,793 INFO - mobilenetv2.start() : Training completed
+2022-01-14 17:40:03,794 INFO - mobilenetv2.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 323}{'loss': [0.43070676922798157], 'accuracy': [0.8013738393783569], 'val_loss': [0.2762143313884735], 'val_accuracy': [0.8927536010742188]}
+2022-01-14 17:40:04,064 INFO - mobilenetv2.start() : Model saved
+2022-01-14 17:40:04,065 INFO - mobilenetv2.start() : Prediction started
+2022-01-14 17:41:32,762 INFO - mobilenetv2.start() : Prediction completed
+2022-01-14 17:41:33,613 INFO - mobilenetv2.start() : Prediction results: method: MobileNetV2, description: ,  train_time: 357.08772802352905, predict_time: 88.6972324848175,  true_positive: 642, true_negative: 2438, false_positive: 109, false_negative: 261, sensitivity: 0.7109634551495017,  specificity: 0.9572045543776992, precision: 0.8548601864181092,  accuracy: 0.8927536231884058,  error: 0.10724637681159421, f1: 0.7762998790810157, myScore1: 1.662160553886312, myScore2: 0.0021739752395799616, myScore3: 0.008752244656719099
