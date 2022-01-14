@@ -122,3 +122,12 @@
 2022-01-14 17:07:33,217 INFO - inceptionv3.start() : Prediction started
 2022-01-14 17:22:11,280 INFO - inceptionv3.start() : Prediction completed
 2022-01-14 17:22:12,131 INFO - inceptionv3.start() : Prediction results: method: InceptionV3, description: ,  train_time: 4219.8176300525665, predict_time: 878.0627028942108,  true_positive: 784, true_negative: 1745, false_positive: 802, false_negative: 119, sensitivity: 0.8682170542635659,  specificity: 0.685119748723989, precision: 0.4943253467843632,  accuracy: 0.7330434782608696,  error: 0.2669565217391304, f1: 0.6299718762555243, myScore1: 0.9676493348072625, myScore2: 0.00014928888674453847, myScore3: 0.0007174565941350813
+2022-01-14 17:22:17,004 INFO - statictics.insert() : History send to GIT
+2022-01-14 17:22:19,886 INFO - mobilenet.__init__() : Algorithm initialized
+2022-01-14 17:22:19,886 INFO - mobilenet.start() : Training started
+2022-01-14 17:31:32,222 INFO - mobilenet.start() : Training completed
+2022-01-14 17:31:32,222 INFO - mobilenet.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 323}{'loss': [0.443995863199234], 'accuracy': [0.7909249067306519], 'val_loss': [0.31794482469558716], 'val_accuracy': [0.8634782433509827]}
+2022-01-14 17:31:32,377 INFO - mobilenet.start() : Model saved
+2022-01-14 17:31:32,377 INFO - mobilenet.start() : Prediction started
+2022-01-14 17:33:22,726 INFO - mobilenet.start() : Prediction completed
+2022-01-14 17:33:23,562 INFO - mobilenet.start() : Prediction results: method: MobileNet, description: ,  train_time: 552.3360469341278, predict_time: 110.34887957572937,  true_positive: 502, true_negative: 2477, false_positive: 70, false_negative: 401, sensitivity: 0.5559246954595792,  specificity: 0.972516686297605, precision: 0.8776223776223776,  accuracy: 0.8634782608695653,  error: 0.13652173913043475, f1: 0.680677966101695, myScore1: 1.3997772615088815, myScore2: 0.0012323620192452754, myScore3: 0.006168417556379126
