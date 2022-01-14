@@ -149,3 +149,12 @@
 2022-01-14 17:48:05,058 INFO - mobilenetv3large.start() : Prediction started
 2022-01-14 17:49:42,303 INFO - mobilenetv3large.start() : Prediction completed
 2022-01-14 17:49:43,156 INFO - mobilenetv3large.start() : Prediction results: method: MobileNetV3Large, description: ,  train_time: 381.1130540370941, predict_time: 97.24538159370422,  true_positive: 758, true_negative: 2527, false_positive: 20, false_negative: 145, sensitivity: 0.8394241417497231,  specificity: 0.9921476246564586, precision: 0.974293059125964,  accuracy: 0.9521739130434783,  error: 0.047826086956521685, f1: 0.9018441403926234, myScore1: 2.9176350349629674, myScore2: 0.0023663428235781345, myScore3: 0.009273902015836296
+2022-01-14 17:49:47,998 INFO - statictics.insert() : History send to GIT
+2022-01-14 17:49:50,846 INFO - mobilenetv3small.__init__() : Algorithm initialized
+2022-01-14 17:49:50,846 INFO - mobilenetv3small.start() : Training started
+2022-01-14 17:52:56,848 INFO - mobilenetv3small.start() : Training completed
+2022-01-14 17:52:56,848 INFO - mobilenetv3small.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 323}{'loss': [0.24688979983329773], 'accuracy': [0.9047987461090088], 'val_loss': [0.14427857100963593], 'val_accuracy': [0.9492753744125366]}
+2022-01-14 17:52:57,124 INFO - mobilenetv3small.start() : Model saved
+2022-01-14 17:52:57,125 INFO - mobilenetv3small.start() : Prediction started
+2022-01-14 17:53:46,899 INFO - mobilenetv3small.start() : Prediction completed
+2022-01-14 17:53:47,762 INFO - mobilenetv3small.start() : Prediction results: method: MobileNetV3Small, description: ,  train_time: 186.00161695480347, predict_time: 49.77355980873108,  true_positive: 756, true_negative: 2519, false_positive: 28, false_negative: 147, sensitivity: 0.8372093023255814,  specificity: 0.989006674519042, precision: 0.9642857142857143,  accuracy: 0.9492753623188406,  error: 0.050724637681159424, f1: 0.8962655601659751, myScore1: 2.793539056856477, myScore2: 0.004818590154427306, myScore3: 0.018006860743136073
