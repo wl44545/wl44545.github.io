@@ -230,3 +230,12 @@
 2022-01-15 17:32:51,200 INFO - vgg19.start() : Prediction started
 2022-01-15 18:53:49,581 INFO - vgg19.start() : Prediction completed
 2022-01-15 18:53:50,781 INFO - vgg19.start() : Prediction results: method: VGG19, description: ,  train_time: 21435.280327558517, predict_time: 4858.380424499512,  true_positive: 645, true_negative: 2510, false_positive: 37, false_negative: 258, sensitivity: 0.7142857142857143,  specificity: 0.9854731056144483, precision: 0.9457478005865103,  accuracy: 0.9144927536231884,  error: 0.08550724637681162, f1: 0.8138801261829653, myScore1: 1.9324315259261975, myScore2: 3.7969185088593915e-05, myScore3: 0.00016752087219823006
+2022-01-15 18:53:57,297 INFO - statictics.insert() : History send to GIT
+2022-01-15 18:54:08,992 INFO - xception.__init__() : Algorithm initialized
+2022-01-15 18:54:08,993 INFO - xception.start() : Training started
+2022-01-15 19:37:43,379 INFO - xception.start() : Training completed
+2022-01-15 19:37:43,379 INFO - xception.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 323}{'loss': [4.056273460388184], 'accuracy': [0.6890479922294617], 'val_loss': [5.209755897521973], 'val_accuracy': [0.7443478107452393]}
+2022-01-15 19:37:43,706 INFO - xception.start() : Model saved
+2022-01-15 19:37:43,706 INFO - xception.start() : Prediction started
+2022-01-15 19:46:31,683 INFO - xception.start() : Prediction completed
+2022-01-15 19:46:32,535 INFO - xception.start() : Prediction results: method: Xception, description: ,  train_time: 2614.3867049217224, predict_time: 527.9769897460938,  true_positive: 22, true_negative: 2546, false_positive: 1, false_negative: 881, sensitivity: 0.024363233665559248,  specificity: 0.9996073812328229, precision: 0.9565217391304348,  accuracy: 0.7443478260869565,  error: 0.2556521739130435, f1: 0.047516198704103674, myScore1: 0.6873985799486632, myScore2: 1.8174893031184672e-05, myScore3: 8.999672263549669e-05
