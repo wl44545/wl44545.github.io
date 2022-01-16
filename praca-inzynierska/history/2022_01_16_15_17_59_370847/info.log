@@ -218,3 +218,12 @@
 2022-01-17 00:30:39,185 INFO - mobilenetv2.start() : Prediction started
 2022-01-17 00:31:45,354 INFO - mobilenetv2.start() : Prediction completed
 2022-01-17 00:31:46,156 INFO - mobilenetv2.start() : Prediction results: method: MobileNetV2, description: ,  train_time: 362.5666346549988, predict_time: 66.16812038421631,  true_positive: 721, true_negative: 2394, false_positive: 153, false_negative: 182, sensitivity: 0.7984496124031008,  specificity: 0.9399293286219081, precision: 0.8249427917620137,  accuracy: 0.9028985507246376,  error: 0.09710144927536235, f1: 0.811480022509848, myScore1: 1.7822127858747465, myScore2: 0.002238154162425933, myScore3: 0.012263912255597602
+2022-01-17 00:31:50,966 INFO - statictics.insert() : History send to GIT
+2022-01-17 00:31:53,723 INFO - mobilenetv3large.__init__() : Algorithm initialized
+2022-01-17 00:31:53,723 INFO - mobilenetv3large.start() : Training started
+2022-01-17 00:38:17,160 INFO - mobilenetv3large.start() : Training completed
+2022-01-17 00:38:17,160 INFO - mobilenetv3large.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.19875957071781158], 'accuracy': [0.9257732033729553], 'val_loss': [0.12426373362541199], 'val_accuracy': [0.95652174949646]}
+2022-01-17 00:38:17,497 INFO - mobilenetv3large.start() : Model saved
+2022-01-17 00:38:17,497 INFO - mobilenetv3large.start() : Prediction started
+2022-01-17 00:39:28,458 INFO - mobilenetv3large.start() : Prediction completed
+2022-01-17 00:39:29,247 INFO - mobilenetv3large.start() : Prediction results: method: MobileNetV3Large, description: ,  train_time: 383.4356973171234, predict_time: 70.96041417121887,  true_positive: 803, true_negative: 2497, false_positive: 50, false_negative: 100, sensitivity: 0.8892580287929125,  specificity: 0.9803690616411465, precision: 0.9413833528722158,  accuracy: 0.9565217391304348,  error: 0.04347826086956519, f1: 0.9145785876993165, myScore1: 3.134042512093331, myScore2: 0.002385220244485759, myScore3: 0.012888574543724468
