@@ -110,3 +110,12 @@
 2022-01-16 17:05:29,398 INFO - densenet201.start() : Prediction started
 2022-01-16 17:13:05,171 INFO - densenet201.start() : Prediction completed
 2022-01-16 17:13:05,987 INFO - densenet201.start() : Prediction results: method: DenseNet201, description: ,  train_time: 2659.178956747055, predict_time: 455.77328872680664,  true_positive: 631, true_negative: 2453, false_positive: 94, false_negative: 272, sensitivity: 0.698781838316722,  specificity: 0.9630938358853554, precision: 0.8703448275862069,  accuracy: 0.8939130434782608,  error: 0.10608695652173916, f1: 0.7751842751842751, myScore1: 1.672828442938464, myScore2: 0.0002915126389735536, myScore3: 0.0017008111145559595
+2022-01-16 17:13:10,807 INFO - statictics.insert() : History send to GIT
+2022-01-16 17:13:14,243 INFO - efficientnetb0.__init__() : Algorithm initialized
+2022-01-16 17:13:14,243 INFO - efficientnetb0.start() : Training started
+2022-01-16 17:21:49,295 INFO - efficientnetb0.start() : Training completed
+2022-01-16 17:21:49,295 INFO - efficientnetb0.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.26807162165641785], 'accuracy': [0.8971005082130432], 'val_loss': [0.16243894398212433], 'val_accuracy': [0.9449275135993958]}
+2022-01-16 17:21:49,640 INFO - efficientnetb0.start() : Model saved
+2022-01-16 17:21:49,640 INFO - efficientnetb0.start() : Prediction started
+2022-01-16 17:23:19,901 INFO - efficientnetb0.start() : Prediction completed
+2022-01-16 17:23:20,733 INFO - efficientnetb0.start() : Prediction results: method: EfficientNetB0, description: ,  train_time: 515.0524175167084, predict_time: 90.25933957099915,  true_positive: 758, true_negative: 2502, false_positive: 45, false_negative: 145, sensitivity: 0.8394241417497231,  specificity: 0.9823321554770318, precision: 0.9439601494396015,  accuracy: 0.9449275362318841,  error: 0.05507246376811592, f1: 0.8886283704572099, myScore1: 2.6311680572026406, myScore2: 0.0017253163760334795, myScore3: 0.009845278889484933
