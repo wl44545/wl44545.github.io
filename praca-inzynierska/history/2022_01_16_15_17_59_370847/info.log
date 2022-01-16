@@ -137,3 +137,12 @@
 2022-01-16 17:51:03,718 INFO - efficientnetb2.start() : Prediction started
 2022-01-16 17:53:25,995 INFO - efficientnetb2.start() : Prediction completed
 2022-01-16 17:53:26,802 INFO - efficientnetb2.start() : Prediction results: method: EfficientNetB2, description: ,  train_time: 777.8980476856232, predict_time: 142.27658772468567,  true_positive: 729, true_negative: 2509, false_positive: 38, false_negative: 174, sensitivity: 0.8073089700996677,  specificity: 0.9850804868472713, precision: 0.9504563233376793,  accuracy: 0.9385507246376812,  error: 0.06144927536231881, f1: 0.873053892215569, myScore1: 2.432025087166053, myScore2: 0.0011223243133377829, myScore3: 0.0061363145277632345
+2022-01-16 17:53:31,748 INFO - statictics.insert() : History send to GIT
+2022-01-16 17:53:35,995 INFO - efficientnetb3.__init__() : Algorithm initialized
+2022-01-16 17:53:35,995 INFO - efficientnetb3.start() : Training started
+2022-01-16 18:10:55,847 INFO - efficientnetb3.start() : Training completed
+2022-01-16 18:10:55,847 INFO - efficientnetb3.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.2777797281742096], 'accuracy': [0.8896262645721436], 'val_loss': [0.16479717195034027], 'val_accuracy': [0.9399999976158142]}
+2022-01-16 18:10:56,413 INFO - efficientnetb3.start() : Model saved
+2022-01-16 18:10:56,414 INFO - efficientnetb3.start() : Prediction started
+2022-01-16 18:13:52,278 INFO - efficientnetb3.start() : Prediction completed
+2022-01-16 18:13:53,107 INFO - efficientnetb3.start() : Prediction results: method: EfficientNetB3, description: ,  train_time: 1039.8522264957428, predict_time: 175.8643777370453,  true_positive: 765, true_negative: 2478, false_positive: 69, false_negative: 138, sensitivity: 0.8471760797342193,  specificity: 0.9729093050647821, precision: 0.9172661870503597,  accuracy: 0.94,  error: 0.06000000000000005, f1: 0.8808290155440414, myScore1: 2.4748163316236225, myScore2: 0.0008470713367729155, myScore3: 0.005008569824533018
