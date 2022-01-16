@@ -227,3 +227,12 @@
 2022-01-17 00:38:17,497 INFO - mobilenetv3large.start() : Prediction started
 2022-01-17 00:39:28,458 INFO - mobilenetv3large.start() : Prediction completed
 2022-01-17 00:39:29,247 INFO - mobilenetv3large.start() : Prediction results: method: MobileNetV3Large, description: ,  train_time: 383.4356973171234, predict_time: 70.96041417121887,  true_positive: 803, true_negative: 2497, false_positive: 50, false_negative: 100, sensitivity: 0.8892580287929125,  specificity: 0.9803690616411465, precision: 0.9413833528722158,  accuracy: 0.9565217391304348,  error: 0.04347826086956519, f1: 0.9145785876993165, myScore1: 3.134042512093331, myScore2: 0.002385220244485759, myScore3: 0.012888574543724468
+2022-01-17 00:39:39,338 INFO - statictics.insert() : History send to GIT
+2022-01-17 00:39:41,158 INFO - mobilenetv3small.__init__() : Algorithm initialized
+2022-01-17 00:39:41,159 INFO - mobilenetv3small.start() : Training started
+2022-01-17 00:42:37,935 INFO - mobilenetv3small.start() : Training completed
+2022-01-17 00:42:37,935 INFO - mobilenetv3small.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.22529847919940948], 'accuracy': [0.9127577543258667], 'val_loss': [0.1286238580942154], 'val_accuracy': [0.9556521773338318]}
+2022-01-17 00:42:38,202 INFO - mobilenetv3small.start() : Model saved
+2022-01-17 00:42:38,202 INFO - mobilenetv3small.start() : Prediction started
+2022-01-17 00:43:15,159 INFO - mobilenetv3small.start() : Prediction completed
+2022-01-17 00:43:15,946 INFO - mobilenetv3small.start() : Prediction results: method: MobileNetV3Small, description: ,  train_time: 176.77589225769043, predict_time: 36.95684266090393,  true_positive: 808, true_negative: 2489, false_positive: 58, false_negative: 95, sensitivity: 0.8947951273532669,  specificity: 0.9772281115037299, precision: 0.9330254041570438,  accuracy: 0.9556521739130435,  error: 0.04434782608695653, f1: 0.9135104578858111, myScore1: 3.0877272714199275, myScore2: 0.00516761899045694, myScore3: 0.024718303624248712
