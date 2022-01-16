@@ -69,3 +69,10 @@
 2022-01-16 15:26:42,756 INFO - mlp.start() : Prediction started
 2022-01-16 15:26:42,764 INFO - mlp.start() : Prediction completed
 2022-01-16 15:26:43,577 INFO - mlp.start() : Prediction results: method: MLP, description: Multi-layer Perceptron classifier.,  train_time: 17.186172246932983, predict_time: 0.00802159309387207,  true_positive: 717, true_negative: 2411, false_positive: 136, false_negative: 186, sensitivity: 0.7940199335548173,  specificity: 0.9466038476639184, precision: 0.8405627198124267,  accuracy: 0.9066666666666666,  error: 0.09333333333333338, f1: 0.816628701594533, myScore1: 1.8285282389956203, myScore2: 0.04751661334828454, myScore3: 101.80380530874592
+2022-01-16 15:26:47,996 INFO - statictics.insert() : History send to GIT
+2022-01-16 15:26:47,996 INFO - ada_boost.__init__() : Algorithm initialized
+2022-01-16 15:26:47,996 INFO - ada_boost.start() : Training started
+2022-01-16 15:27:08,153 INFO - ada_boost.start() : Training completed
+2022-01-16 15:27:08,153 INFO - ada_boost.start() : Prediction started
+2022-01-16 15:27:08,259 INFO - ada_boost.start() : Prediction completed
+2022-01-16 15:27:09,338 INFO - ada_boost.start() : Prediction results: method: AdaBoostClassifier, description: An AdaBoost classifier,  train_time: 20.15743613243103, predict_time: 0.10494089126586914,  true_positive: 490, true_negative: 2374, false_positive: 173, false_negative: 413, sensitivity: 0.5426356589147286,  specificity: 0.9320769532783667, precision: 0.7390648567119156,  accuracy: 0.8301449275362319,  error: 0.16985507246376808, f1: 0.6257982120051085, myScore1: 1.2060285470118666, myScore2: 0.031045526221376445, myScore3: 5.963339976021744
