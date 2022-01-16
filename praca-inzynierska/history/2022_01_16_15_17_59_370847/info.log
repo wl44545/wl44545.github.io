@@ -83,3 +83,12 @@
 2022-01-16 15:27:57,246 INFO - gradient_boost.start() : Prediction started
 2022-01-16 15:27:57,254 INFO - gradient_boost.start() : Prediction completed
 2022-01-16 15:27:58,156 INFO - gradient_boost.start() : Prediction results: method: GradientBoostingClassifier, description: An GradientBoost classifier,  train_time: 43.58311438560486, predict_time: 0.006997585296630859,  true_positive: 324, true_negative: 2506, false_positive: 41, false_negative: 579, sensitivity: 0.3588039867109635,  specificity: 0.9839026305457401, precision: 0.8876712328767123,  accuracy: 0.8202898550724638,  error: 0.17971014492753623, f1: 0.5110410094637224, myScore1: 1.1170388881556752, myScore2: 0.011725665241410905, myScore3: 73.03105111269944
+2022-01-16 15:28:02,440 INFO - statictics.insert() : History send to GIT
+2022-01-16 15:28:06,565 INFO - densenet121.__init__() : Algorithm initialized
+2022-01-16 15:28:06,565 INFO - densenet121.start() : Training started
+2022-01-16 15:47:34,855 INFO - densenet121.start() : Training completed
+2022-01-16 15:47:34,856 INFO - densenet121.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.6083589196205139], 'accuracy': [0.7770618796348572], 'val_loss': [0.26246294379234314], 'val_accuracy': [0.895652174949646]}
+2022-01-16 15:47:35,456 INFO - densenet121.start() : Model saved
+2022-01-16 15:47:35,456 INFO - densenet121.start() : Prediction started
+2022-01-16 15:50:45,129 INFO - densenet121.start() : Prediction completed
+2022-01-16 15:50:45,924 INFO - densenet121.start() : Prediction results: method: DenseNet121, description: ,  train_time: 1168.2897720336914, predict_time: 189.67248225212097,  true_positive: 611, true_negative: 2479, false_positive: 68, false_negative: 292, sensitivity: 0.6766334440753046,  specificity: 0.9733019238319591, precision: 0.8998527245949927,  accuracy: 0.8956521739130435,  error: 0.10434782608695647, f1: 0.7724399494310998, myScore1: 1.689097334690414, myScore2: 0.0006611715414459898, myScore3: 0.004072493491197837
