@@ -92,3 +92,12 @@
 2022-01-16 15:47:35,456 INFO - densenet121.start() : Prediction started
 2022-01-16 15:50:45,129 INFO - densenet121.start() : Prediction completed
 2022-01-16 15:50:45,924 INFO - densenet121.start() : Prediction results: method: DenseNet121, description: ,  train_time: 1168.2897720336914, predict_time: 189.67248225212097,  true_positive: 611, true_negative: 2479, false_positive: 68, false_negative: 292, sensitivity: 0.6766334440753046,  specificity: 0.9733019238319591, precision: 0.8998527245949927,  accuracy: 0.8956521739130435,  error: 0.10434782608695647, f1: 0.7724399494310998, myScore1: 1.689097334690414, myScore2: 0.0006611715414459898, myScore3: 0.004072493491197837
+2022-01-16 15:50:50,854 INFO - statictics.insert() : History send to GIT
+2022-01-16 15:50:57,000 INFO - densenet169.__init__() : Algorithm initialized
+2022-01-16 15:50:57,000 INFO - densenet169.start() : Training started
+2022-01-16 16:16:17,580 INFO - densenet169.start() : Training completed
+2022-01-16 16:16:17,581 INFO - densenet169.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.6778193116188049], 'accuracy': [0.7732602953910828], 'val_loss': [0.24503548443317413], 'val_accuracy': [0.901159405708313]}
+2022-01-16 16:16:18,453 INFO - densenet169.start() : Model saved
+2022-01-16 16:16:18,453 INFO - densenet169.start() : Prediction started
+2022-01-16 16:20:56,282 INFO - densenet169.start() : Prediction completed
+2022-01-16 16:20:57,073 INFO - densenet169.start() : Prediction results: method: DenseNet169, description: ,  train_time: 1520.5802824497223, predict_time: 277.8290627002716,  true_positive: 630, true_negative: 2479, false_positive: 68, false_negative: 273, sensitivity: 0.6976744186046512,  specificity: 0.9733019238319591, precision: 0.9025787965616046,  accuracy: 0.9011594202898551,  error: 0.09884057971014493, f1: 0.7870081199250468, myScore1: 1.7527057211699228, myScore2: 0.0005175709096116529, myScore3: 0.0028327062412980505
