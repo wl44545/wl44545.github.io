@@ -272,3 +272,12 @@
 2022-01-17 09:23:09,188 INFO - resnet152v2.start() : Prediction started
 2022-01-17 09:44:29,615 INFO - resnet152v2.start() : Prediction completed
 2022-01-17 09:44:30,721 INFO - resnet152v2.start() : Prediction results: method: ResNet152V2, description: ,  train_time: 9775.68490099907, predict_time: 1280.4257035255432,  true_positive: 0, true_negative: 2547, false_positive: 0, false_negative: 903, sensitivity: 0.0,  specificity: 1.0, precision: 0.0,  accuracy: 0.7382608695652174,  error: 0.2617391304347826, f1: 0.0, myScore1: 0.5558858876209736, myScore2: 0.0, myScore3: 0.0
+2022-01-17 09:44:37,518 INFO - statictics.insert() : History send to GIT
+2022-01-17 09:44:39,919 INFO - resnet50.__init__() : Algorithm initialized
+2022-01-17 09:44:39,919 INFO - resnet50.start() : Training started
+2022-01-17 10:38:37,409 INFO - resnet50.start() : Training completed
+2022-01-17 10:38:37,410 INFO - resnet50.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.28422147035598755], 'accuracy': [0.8824742436408997], 'val_loss': [0.15213994681835175], 'val_accuracy': [0.9405797123908997]}
+2022-01-17 10:38:37,807 INFO - resnet50.start() : Model saved
+2022-01-17 10:38:37,808 INFO - resnet50.start() : Prediction started
+2022-01-17 10:46:06,635 INFO - resnet50.start() : Prediction completed
+2022-01-17 10:46:07,476 INFO - resnet50.start() : Prediction results: method: ResNet50, description: ,  train_time: 3237.4893128871918, predict_time: 448.8272616863251,  true_positive: 758, true_negative: 2487, false_positive: 60, false_negative: 145, sensitivity: 0.8394241417497231,  specificity: 0.9764428739693758, precision: 0.9266503667481663,  accuracy: 0.9405797101449276,  error: 0.05942028985507242, f1: 0.8808832074375363, myScore1: 2.491678142248282, myScore2: 0.0002720883753750418, myScore3: 0.001962633027521321
