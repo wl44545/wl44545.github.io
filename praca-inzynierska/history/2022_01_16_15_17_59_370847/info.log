@@ -236,3 +236,12 @@
 2022-01-17 00:42:38,202 INFO - mobilenetv3small.start() : Prediction started
 2022-01-17 00:43:15,159 INFO - mobilenetv3small.start() : Prediction completed
 2022-01-17 00:43:15,946 INFO - mobilenetv3small.start() : Prediction results: method: MobileNetV3Small, description: ,  train_time: 176.77589225769043, predict_time: 36.95684266090393,  true_positive: 808, true_negative: 2489, false_positive: 58, false_negative: 95, sensitivity: 0.8947951273532669,  specificity: 0.9772281115037299, precision: 0.9330254041570438,  accuracy: 0.9556521739130435,  error: 0.04434782608695653, f1: 0.9135104578858111, myScore1: 3.0877272714199275, myScore2: 0.00516761899045694, myScore3: 0.024718303624248712
+2022-01-17 00:43:21,065 INFO - statictics.insert() : History send to GIT
+2022-01-17 00:43:25,455 INFO - resnet101.__init__() : Algorithm initialized
+2022-01-17 00:43:25,455 INFO - resnet101.start() : Training started
+2022-01-17 02:06:07,601 INFO - resnet101.start() : Training completed
+2022-01-17 02:06:07,602 INFO - resnet101.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.2755112648010254], 'accuracy': [0.889110803604126], 'val_loss': [0.13801506161689758], 'val_accuracy': [0.9481159448623657]}
+2022-01-17 02:06:08,333 INFO - resnet101.start() : Model saved
+2022-01-17 02:06:08,333 INFO - resnet101.start() : Prediction started
+2022-01-17 02:17:07,054 INFO - resnet101.start() : Prediction completed
+2022-01-17 02:17:07,923 INFO - resnet101.start() : Prediction results: method: ResNet101, description: ,  train_time: 4962.145923376083, predict_time: 658.7212479114532,  true_positive: 765, true_negative: 2506, false_positive: 41, false_negative: 138, sensitivity: 0.8471760797342193,  specificity: 0.9839026305457401, precision: 0.9491315136476427,  accuracy: 0.9481159420289855,  error: 0.051884057971014474, f1: 0.8952603861907548, myScore1: 2.747837111367015, myScore2: 0.00018041798851043233, myScore3: 0.001359088368607016
