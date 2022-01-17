@@ -299,3 +299,12 @@
 2022-01-17 14:12:03,027 INFO - vgg16.start() : Prediction started
 2022-01-17 14:34:53,410 INFO - vgg16.start() : Prediction completed
 2022-01-17 14:34:54,286 INFO - vgg16.start() : Prediction results: method: VGG16, description: ,  train_time: 9696.150354623795, predict_time: 1370.382220506668,  true_positive: 804, true_negative: 2377, false_positive: 170, false_negative: 99, sensitivity: 0.8903654485049833,  specificity: 0.9332548095798979, precision: 0.8254620123203286,  accuracy: 0.9220289855072463,  error: 0.07797101449275368, f1: 0.856686201385189, myScore1: 2.0679821073247315, myScore2: 8.835322989568348e-05, myScore3: 0.0006251439843319395
+2022-01-17 14:35:02,620 INFO - statictics.insert() : History send to GIT
+2022-01-17 14:35:03,366 INFO - vgg19.__init__() : Algorithm initialized
+2022-01-17 14:35:03,366 INFO - vgg19.start() : Training started
+2022-01-17 17:43:15,017 INFO - vgg19.start() : Training completed
+2022-01-17 17:43:15,017 INFO - vgg19.start() : Training results: {'verbose': 1, 'epochs': 1, 'steps': 485}{'loss': [0.42050495743751526], 'accuracy': [0.8518041372299194], 'val_loss': [0.2146449238061905], 'val_accuracy': [0.9304347634315491]}
+2022-01-17 17:43:15,135 INFO - vgg19.start() : Model saved
+2022-01-17 17:43:15,135 INFO - vgg19.start() : Prediction started
+2022-01-17 18:09:36,138 INFO - vgg19.start() : Prediction completed
+2022-01-17 18:09:36,962 INFO - vgg19.start() : Prediction results: method: VGG19, description: ,  train_time: 11291.650936841965, predict_time: 1581.0037245750427,  true_positive: 699, true_negative: 2511, false_positive: 36, false_negative: 204, sensitivity: 0.7740863787375415,  specificity: 0.9858657243816255, precision: 0.9510204081632653,  accuracy: 0.9304347826086956,  error: 0.06956521739130439, f1: 0.8534798534798534, myScore1: 2.2283806561290387, myScore2: 7.558503696701712e-05, myScore3: 0.0005398341826862299
