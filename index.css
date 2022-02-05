@@ -8,7 +8,13 @@ body{
 .subtitle{
     font-size: 6vh;
     color: darkblue;
+	margin-bottom: 0.5vh;
 }
+.contact{
+    font-size: 4vh;
+    color: black;
+}
+
 .link{
     font-size: 4vh;
 }
